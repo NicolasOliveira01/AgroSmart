@@ -9,7 +9,7 @@
       "id": "dht1",
       "top": -153.3,
       "left": -312.6,
-      "attrs": { "temperature": "58.6", "humidity": "88.5" }
+      "attrs": { "temperature": "64.9", "humidity": "31.5" }
     },
     { "type": "wokwi-potentiometer", "id": "pot1", "top": -145.3, "left": -77, "attrs": {} },
     {

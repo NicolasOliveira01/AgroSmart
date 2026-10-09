@@ -1,5 +1,6 @@
 // ===== AgroSmart - Estação de campo (Fase 6) =====
-// Lê o DHT22, o potenciômetro (umidade do solo) e o LDR (luminosidade), monta um JSON e publica no broker MQTT.
+// Lê o DHT22, o potenciômetro (umidade do solo) e o LDR (luminosidade), aplica as regras
+// de decisão (risco e recomendações), monta um JSON e publica no broker MQTT.
 // Biblioteca do sensor: DHT sensor library (Adafruit) + Adafruit Unified Sensor
 
 #include <WiFi.h>
@@ -21,7 +22,9 @@ const char* TALHAO    = "TALHAO-01";
 const int DHT_PIN  = 4;                    // fio verde (dados) está no GPIO 4
 const int SOLO_PIN = 34;                   // SIG do potenciômetro (ADC1, funciona com Wi-Fi)
 const int LDR_PIN  = 33;                   // AO do módulo LDR (ADC1, funciona com Wi-Fi)
-const unsigned long INTERVALO_MS = 1000;   // intervalo entre leituras
+const unsigned long INTERVALO_MS = 1000;   // intervalo entre leituras (o DHT22 só mede de novo a cada 2s)
+
+const size_t TAMANHO_MAX_MSG = 1024;       // tamanho máximo do JSON publicado (bytes)
 
 DHT dht(DHT_PIN, DHT22);                   // pino e modelo definidos na declaração
 WiFiClient wifiClient;
@@ -73,6 +76,32 @@ void conectarMQTT() {
   }
 }
 
+// ---------- Regras de decisão ----------
+// Níveis de risco em ordem crescente: o índice permite comparar qual é maior
+const char* NIVEIS_RISCO[] = {"Nenhum", "Baixo", "Médio", "Alto"};
+
+void avaliarRegras(float temperatura, float umidadeSolo, JsonDocument& doc) {
+  JsonArray alertas = doc["alertas"].to<JsonArray>();
+  int nivelGeral = 0;  // começa em "Nenhum"
+
+  // Adiciona um alerta à lista e atualiza o risco geral, se este for maior
+  auto adicionar = [&](const char* problema, int nivel, const char* recomendacao) {
+    JsonObject alerta = alertas.add<JsonObject>();
+    alerta["problema"]        = problema;
+    alerta["risco"]        = NIVEIS_RISCO[nivel];
+    alerta["recomendacao"] = recomendacao;
+    if (nivel > nivelGeral) nivelGeral = nivel;
+  };
+
+  // "if" independentes (e não "else if"): várias regras podem disparar juntas
+  if (umidadeSolo < 30.0) adicionar("solo_seco",        3, "Irrigar o talhão");
+  if (umidadeSolo > 85.0) adicionar("solo_encharcado",  2, "Suspender a irrigação e verificar a drenagem");
+  if (temperatura > 35.0) adicionar("estresse_termico", 2, "Monitorar estresse térmico");
+  if (temperatura < 5.0)  adicionar("risco_geada",      3, "Risco de geada: proteger a lavoura");
+
+  doc["risco_geral"] = NIVEIS_RISCO[nivelGeral];
+}
+
 // ---------- Leitura e envio ----------
 void enviarLeitura() {
   float temperatura = dht.readTemperature();
@@ -94,16 +123,23 @@ void enviarLeitura() {
   float luminosidade = 100.0 - (brutoLuz * 100.0 / 4095.0);
 
   JsonDocument doc;
-  doc["sensor_id"]   = SENSOR_ID;
-  doc["talhao"]      = TALHAO;
-  doc["timestamp"]   = timestampUTC();
-  doc["temperatura"] = round(temperatura * 10) / 10.0;
-  doc["umidade_ar"]  = round(umidade * 10) / 10.0;
+  doc["sensor_id"]    = SENSOR_ID;
+  doc["talhao"]       = TALHAO;
+  doc["timestamp"]    = timestampUTC();
+  doc["temperatura"]  = round(temperatura * 10) / 10.0;
+  doc["umidade_ar"]   = round(umidade * 10) / 10.0;
   doc["umidade_solo"] = round(umidadeSolo * 10) / 10.0;
   doc["luminosidade"] = round(luminosidade * 10) / 10.0;
 
-  char payload[256];
-  serializeJson(doc, payload);
+  // Regras de decisão: acrescenta "risco_geral" e a lista "alertas"
+  avaliarRegras(temperatura, umidadeSolo, doc);
+
+  char payload[TAMANHO_MAX_MSG];
+  size_t tamanho = serializeJson(doc, payload, sizeof(payload));
+  if (tamanho >= sizeof(payload) - 1) {
+    Serial.println("JSON maior que o buffer, pulando envio.");
+    return;
+  }
 
   bool ok = mqtt.publish(MQTT_TOPIC, payload);
   Serial.printf("%s -> %s\n", ok ? "Enviado" : "ERRO ao enviar", payload);
@@ -117,6 +153,7 @@ void setup() {
   conectarWiFi();
   sincronizarHorario();
   mqtt.setServer(MQTT_BROKER, MQTT_PORT);
+  mqtt.setBufferSize(TAMANHO_MAX_MSG);     // padrão é 256 bytes: pouco para o JSON com alertas
   conectarMQTT();
 }
 
