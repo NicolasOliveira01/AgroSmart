@@ -1,3 +1,18 @@
+# ===== AgroSmart =====
+# dados gerados localmente pelo subscriber
+dados_landing/
+
+# dbt
+dbt_packages/
+profiles.yml
+
+# Power BI (somente se usar o formato PBIP)
+.pbi/localSettings.json
+.pbi/cache.abf
+
+# arquivo de entrega
+*.zip
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
