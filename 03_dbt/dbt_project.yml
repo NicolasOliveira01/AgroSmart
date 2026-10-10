@@ -1,0 +1,14 @@
+name: agrosmart
+version: '1.0.0'
+config-version: 2
+
+profile: agrosmart
+
+model-paths: ["models"]
+
+models:
+  agrosmart:
+    stg:
+      +materialized: view
+    final:
+      +materialized: table
