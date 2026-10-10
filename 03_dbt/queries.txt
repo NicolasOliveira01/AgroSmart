@@ -1,0 +1,42 @@
+// ======================================================
+// queries de CREATE
+// ======================================================
+
+
+create database exists AGROSMART;
+create schema exists AGROSMART.RAW;
+
+create file format AGROSMART.RAW.FFT_JSONL
+    type = json
+    compression = auto;
+
+create stage AGROSMART.RAW.STG_LEITURAS
+    file_format = AGROSMART.RAW.FFT_JSONL;
+
+create table if not exists AGROSMART.RAW.LEITURAS_SENSORES (
+    _arquivo        string        comment 'Nome do arquivo de origem no stage',
+    _linha_arquivo  number        comment 'Número da linha dentro do arquivo',
+    _carregado_em   timestamp_ntz comment 'Momento da carga no Snowflake',
+    _doc            variant       comment 'Leitura completa do sensor em JSON'
+);
+
+// ======================================================
+// queries de consulta
+// ======================================================
+
+// stage
+;LIST @AGROSMART.RAW.STG_LEITURAS
+
+// tabela source
+;SELECT * FROM AGROSMART.RAW.LEITURAS_SENSORES
+;DESC TABLE AGROSMART.RAW.LEITURAS_SENSORES
+;TRUNCATE AGROSMART.RAW.LEITURAS_SENSORES
+
+// tabela stg
+;SELECT * FROM AGROSMART.ANALYTICS.STG_LEITURAS_SENSORES
+;SELECT * FROM AGROSMART.ANALYTICS.STG_ALERTAS
+limit 5
+
+// tabela final
+;SELECT *FROM AGROSMART.ANALYTICS.FCT_ALERTAS
+;SELECT * FROM AGROSMART.ANALYTICS.FCT_LEITURAS
