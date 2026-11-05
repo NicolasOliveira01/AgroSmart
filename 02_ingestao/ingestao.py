@@ -4,12 +4,18 @@ Assina o tópico em que o ESP32 publica, acumula as leituras num buffer
 e grava lotes em JSON Lines (uma leitura por linha).
 Ao encerrar, envia todos os arquivos para o stage interno do Snowflake
 e apaga localmente os que foram enviados com sucesso.
+
+Logs: console + arquivo logs/ingestao.log (na raiz do projeto), com rotação.
+O nível vem da variável LOG_LEVEL do .env (padrão INFO; use DEBUG para ver cada leitura).
 """
 import json
+import logging
 import os
+import sys
 import threading
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 import paho.mqtt.client as mqtt
@@ -30,58 +36,138 @@ INTERVALO_S = 30   # ...ou a cada 30 segundos, o que vier primeiro
 STAGE = "@AGROSMART.RAW.STG_LEITURAS/leituras/"
 TABELA = "AGROSMART.RAW.LEITURAS_SENSORES"
 
+# caminho montado a partir do script, e não da pasta de onde ele é executado
+PASTA_LOGS = Path(__file__).resolve().parent.parent / "logs"
+ARQUIVO_LOG = PASTA_LOGS / "ingestao.log"
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+
+# um logger por componente: o nome aparece em cada linha do log
+log = logging.getLogger("ingestao")
+log_mqtt = logging.getLogger("mqtt")
+log_lote = logging.getLogger("lote")
+log_sf = logging.getLogger("snowflake")
+log_copy = logging.getLogger("copy")
+
 buffer = []
 trava = threading.Lock()
+
+# contadores da execução, mostrados no resumo ao encerrar
+contadores = {
+    "recebidas": 0,
+    "invalidas": 0,
+    "lotes": 0,
+    "arquivos_enviados": 0,
+    "arquivos_com_erro": 0,
+    "linhas_carregadas": 0,
+}
+
+
+def somar(chave, valor=1):
+    """Incrementa um contador. Usa a trava porque o callback do MQTT roda em outra thread."""
+    with trava:
+        contadores[chave] += valor
+
+
+# ---------- Logging ----------
+def configurar_logging():
+    """Envia os logs para o console e para um arquivo com rotação."""
+    PASTA_LOGS.mkdir(exist_ok=True)
+
+    formato = logging.Formatter(
+        "%(asctime)s | %(levelname)-7s | %(name)-9s | %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+
+    console = logging.StreamHandler(sys.stdout)
+    console.setFormatter(formato)
+
+    # ao chegar em 5 MB vira ingestao.log.1 e começa outro; guarda até 3 antigos
+    arquivo = RotatingFileHandler(
+        ARQUIVO_LOG, maxBytes=5 * 1024 * 1024, backupCount=3, encoding="utf-8"
+    )
+    arquivo.setFormatter(formato)
+
+    raiz = logging.getLogger()
+    raiz.setLevel(LOG_LEVEL)
+    raiz.addHandler(console)
+    raiz.addHandler(arquivo)
+
+    # bibliotecas externas: só avisos e erros, senão o DEBUG vira ruído
+    for nome in ("snowflake.connector", "botocore", "boto3", "urllib3", "paho"):
+        logging.getLogger(nome).setLevel(logging.WARNING)
+
 
 # ---------- Callbacks do MQTT ----------
 def ao_conectar(cliente, userdata, flags, codigo, properties):
     if codigo.is_failure:
-        print(f"[mqtt] falha ao conectar: {codigo}")
+        log_mqtt.error("falha ao conectar no broker: %s", codigo)
         return
     cliente.subscribe(TOPICO)
-    print(f"[mqtt] conectado, assinando: {TOPICO}")
+    log_mqtt.info("conectado, assinando: %s", TOPICO)
 
 
 def ao_desconectar(cliente, userdata, flags, codigo, properties):
-    print(f"[mqtt] desconectado ({codigo}), tentando reconectar...")
+    if codigo.is_failure:
+        log_mqtt.warning("desconectado (%s), tentando reconectar...", codigo)
+    else:
+        log_mqtt.info("desconectado do broker")
 
 
 def ao_receber(cliente, userdata, msg):
     try:
         leitura = json.loads(msg.payload)
     except json.JSONDecodeError:
-        print(f"[aviso] mensagem inválida ignorada: {msg.payload[:80]!r}")
+        somar("invalidas")
+        log_mqtt.warning("mensagem inválida ignorada: %r", msg.payload[:80])
         return
 
     leitura["_recebido_em"] = datetime.now(timezone.utc).isoformat()
-    print(
-        f"[recebido] {leitura.get('talhao')} | {leitura.get('timestamp')} | "
-        f"temp={leitura.get('temperatura')}°C  "
-        f"ar={leitura.get('umidade_ar')}%  "
-        f"solo={leitura.get('umidade_solo')}%  "
-        f"luz={leitura.get('luminosidade')}%  "
-        f"risco={leitura.get('risco_geral')}"
+    somar("recebidas")
+    log_mqtt.debug(
+        "recebido %s | %s | temp=%s°C ar=%s%% solo=%s%% luz=%s%% risco=%s",
+        leitura.get("talhao"),
+        leitura.get("timestamp"),
+        leitura.get("temperatura"),
+        leitura.get("umidade_ar"),
+        leitura.get("umidade_solo"),
+        leitura.get("luminosidade"),
+        leitura.get("risco_geral"),
     )
 
     with trava:
         buffer.append(leitura)
         cheio = len(buffer) >= LOTE_MAX
     if cheio:
-        descarregar()
+        # um erro aqui roda na thread do MQTT: se não for tratado, a recepção para
+        try:
+            descarregar()
+        except Exception:
+            log_lote.exception("falha ao gravar lote")
+
 
 # ---------- Gravação dos lotes ----------
 def gravar_lote(leituras):
     """Grava uma lista de leituras em um arquivo JSONL nomeado pela data e hora (UTC)."""
     os.makedirs(PASTA_SAIDA, exist_ok=True)
 
-    agora = datetime.now(timezone.utc)
-    nome = f"{agora:%Y-%m-%dT%H-%M-%S}-{agora.microsecond // 1000:03d}Z.jsonl"
-    caminho = os.path.join(PASTA_SAIDA, nome)
+    # dois lotes no mesmo milissegundo teriam o mesmo nome: o modo "x" recusa
+    # sobrescrever, então espera 1 ms e tenta com um novo horário
+    for _ in range(5):
+        agora = datetime.now(timezone.utc)
+        nome = f"{agora:%Y-%m-%dT%H-%M-%S}-{agora.microsecond // 1000:03d}Z.jsonl"
+        caminho = os.path.join(PASTA_SAIDA, nome)
+        try:
+            with open(caminho, "x", encoding="utf-8") as f:
+                f.write("\n".join(json.dumps(l, ensure_ascii=False) for l in leituras))
+            break
+        except FileExistsError:
+            log_lote.debug("nome %s já existe, tentando outro", nome)
+            time.sleep(0.001)
+    else:
+        raise FileExistsError(f"não foi possível gerar um nome único em {PASTA_SAIDA}")
 
-    with open(caminho, "x", encoding="utf-8") as f:
-        f.write("\n".join(json.dumps(l, ensure_ascii=False) for l in leituras))
-
-    print(f"[lote] {len(leituras)} leituras -> {nome}")
+    somar("lotes")
+    log_lote.info("%d leituras -> %s", len(leituras), nome)
 
 
 def descarregar():
@@ -91,7 +177,12 @@ def descarregar():
             return
         leituras = list(buffer)
         buffer.clear()
-    gravar_lote(leituras)
+    try:
+        gravar_lote(leituras)
+    except OSError:
+        log_lote.error("lote de %d leituras não foi gravado", len(leituras))
+        raise
+
 
 # ---------- Snowflake ----------
 def conectar_snowflake():
@@ -117,10 +208,10 @@ def enviar_arquivo(conn, arquivo):
                 "AUTO_COMPRESS=TRUE OVERWRITE=FALSE"
             )
     except snowflake.connector.errors.Error as e:
-        print(f"[erro] {arquivo.name}: {e}")
+        log_sf.error("falha no PUT de %s: %s", arquivo.name, e)
         return False
 
-    print(f"[snowflake] enviado {arquivo.name}")
+    log_sf.info("enviado %s", arquivo.name)
     return True
 
 def enviar_arquivos(conn):
@@ -128,17 +219,25 @@ def enviar_arquivos(conn):
     e apaga localmente os que foram confirmados."""
     arquivos = sorted(Path(PASTA_SAIDA).glob("*.jsonl"))
     if not arquivos:
-        print("[snowflake] nenhum arquivo para enviar")
+        log_sf.info("nenhum arquivo para enviar")
         return
 
-    print(f"[snowflake] enviando {len(arquivos)} arquivo(s)...")
+    log_sf.info("enviando %d arquivo(s)...", len(arquivos))
     enviados = 0
     for arquivo in arquivos:
         if enviar_arquivo(conn, arquivo):
             arquivo.unlink()  # só apaga o que o Snowflake confirmou
             enviados += 1
 
-    print(f"[snowflake] {enviados}/{len(arquivos)} enviado(s)")
+    somar("arquivos_enviados", enviados)
+    somar("arquivos_com_erro", len(arquivos) - enviados)
+    if enviados < len(arquivos):
+        log_sf.warning(
+            "%d/%d enviado(s); os que falharam continuam em %s",
+            enviados, len(arquivos), PASTA_SAIDA,
+        )
+    else:
+        log_sf.info("%d/%d enviado(s)", enviados, len(arquivos))
 
 def carregar_tabela(conn):
     """Carrega na tabela raw os arquivos do stage que ainda não foram carregados."""
@@ -161,29 +260,51 @@ def carregar_tabela(conn):
             colunas = [c[0].lower() for c in cur.description]
             resultados = [dict(zip(colunas, linha)) for linha in cur.fetchall()]
     except snowflake.connector.errors.Error as e:
-        print(f"[erro] COPY INTO falhou: {e}")
+        log_copy.error("COPY INTO falhou: %s", e)
         return
 
     # sem arquivos novos, o Snowflake responde só com uma mensagem, sem a coluna "file"
     if "file" not in colunas:
-        print("[copy] nenhum arquivo novo para carregar")
+        log_copy.info("nenhum arquivo novo para carregar")
         return
 
     total = 0
     for r in resultados:
-        print(f"[copy] {r['status']:<16} {r['file']} ({r['rows_loaded']} linhas)")
+        nivel = logging.INFO if r["status"] == "LOADED" else logging.WARNING
+        log_copy.log(nivel, "%-16s %s (%s linhas)", r["status"], r["file"], r["rows_loaded"])
         total += r["rows_loaded"] or 0
 
-    print(f"[copy] {total} linha(s) carregada(s) em {TABELA}")
+    somar("linhas_carregadas", total)
+    log_copy.info("%d linha(s) carregada(s) em %s", total, TABELA)
+
+
+def registrar_resumo(inicio):
+    """Uma linha com os totais da execução: serve de indicador rápido de funcionamento."""
+    duracao = timedelta(seconds=round(time.monotonic() - inicio))
+    with trava:
+        c = dict(contadores)
+    log.info(
+        "resumo | recebidas=%d inválidas=%d lotes=%d arquivos_enviados=%d "
+        "arquivos_com_erro=%d linhas_carregadas=%d duração=%s",
+        c["recebidas"], c["invalidas"], c["lotes"], c["arquivos_enviados"],
+        c["arquivos_com_erro"], c["linhas_carregadas"], duracao,
+    )
 
 
 # ---------- Execução ----------
 def main():
+    inicio = time.monotonic()
+    log.info(
+        "iniciando ingestão | broker=%s tópico=%s nível=%s log=%s",
+        BROKER, TOPICO, LOG_LEVEL, ARQUIVO_LOG,
+    )
+
     # conecta primeiro: se a credencial estiver errada, falha antes de começar a coleta
     conn = conectar_snowflake()
-    print("[snowflake] conectado")
+    log_sf.info("conectado")
 
     cliente = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+    cliente.enable_logger(logging.getLogger("paho"))  # erros internos da biblioteca vão para o log
     cliente.on_connect = ao_conectar
     cliente.on_disconnect = ao_desconectar
     cliente.on_message = ao_receber
@@ -196,7 +317,7 @@ def main():
             time.sleep(INTERVALO_S)
             descarregar()  # garante gravação mesmo com poucas mensagens
     except KeyboardInterrupt:
-        print("\nEncerrando...")
+        log.info("encerrando (Ctrl+C)...")
     finally:
         cliente.loop_stop()    # para de receber antes do último flush
         cliente.disconnect()
@@ -204,6 +325,13 @@ def main():
         enviar_arquivos(conn)  # sobe tudo e apaga os enviados
         carregar_tabela(conn)   # stage → tabela raw
         conn.close()
+        registrar_resumo(inicio)
 
 if __name__ == "__main__":
-    main()
+    configurar_logging()
+    try:
+        main()
+    except Exception:
+        # qualquer erro não tratado (ex.: credencial errada) vai com traceback para o arquivo
+        log.exception("erro inesperado, encerrando")
+        sys.exit(1)
