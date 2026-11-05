@@ -7,11 +7,11 @@ select
     umidade_ar,
     umidade_solo,
     luminosidade,
+    nivel_risco as risco_geral,
     case nivel_risco
-        when 0 then 'Nenhum'
-        when 1 then 'Baixo'
-        when 2 then 'Médio'
-        when 3 then 'Alto'
-    end as risco_geral,
-    nivel_risco
+        when 'Nenhum' then 0
+        when 'Baixo'  then 1
+        when 'Médio'  then 2
+        when 'Alto'   then 3
+    end as nivel_risco
 from {{ ref('stg_leituras_sensores') }}
