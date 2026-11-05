@@ -75,3 +75,4 @@ select
 from eventos
 -- leituras antigas podem não ter algum dos horários (ex.: arquivo com outro padrão de nome)
 where momento is not null
+order by case_id asc, ordem asc
