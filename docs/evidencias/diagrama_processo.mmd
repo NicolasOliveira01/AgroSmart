@@ -1,0 +1,31 @@
+---
+title: "AgroSmart · Processo de uma leitura (254 leituras · 04 e 05/11/2026)"
+---
+flowchart TD
+    G["<b>Leitura gerada</b><br/>ESP32 · 254 leituras"]
+
+    ET["Alerta: Estresse Térmico<br/>127 leituras (50%)"]
+    SS["Alerta: Solo Seco<br/>95 leituras (37%)"]
+    SE["Alerta: Solo Encharcado<br/>25 leituras (10%)"]
+    RG["Alerta: Risco de Geada<br/>12 leituras (5%)"]
+
+    R["<b>Recebida pelo subscriber</b><br/>ingestao.py · 254<br/><i>⏱ após a geração: mediana 45 s · máx 32 min<br/>(relógio do Wokwi atrasado, não é rede)</i>"]
+    L["<b>Gravada em lote (.jsonl)</b><br/>ingestao.py · 254 leituras em 23 lotes"]
+    C["<b>Carregada no Snowflake</b><br/>COPY INTO · 254 leituras em 9 cargas"]
+
+    G --> ET & SS & SE & RG
+    G -->|"63 sem alerta (25%)"| R
+    ET & SS & SE & RG --> R
+
+    R -->|"⏱ mediana 13 s · máx 30 s<br/>(buffer: 20 leituras ou 30 s)"| L
+    L ==>|"⏱ mediana 9 s<br/>máx 4,8 min<br/>espera até o Ctrl+C (gargalo)"| C
+
+
+    classDef etapa fill:#e8f4ea,stroke:#2e7d32,color:#1b1b1b
+    classDef alerta fill:#fff4e5,stroke:#ef6c00,color:#1b1b1b
+    classDef gargalo fill:#fdecea,stroke:#c62828,color:#1b1b1b,stroke-width:2px
+    class G,R,L etapa
+    class ET,SS,SE,RG alerta
+    class C gargalo
+    linkStyle 10 stroke:#c62828,stroke-width:3px
+
