@@ -1,0 +1,36 @@
+(.venv) PS C:\repositorios\AgroSmart\02_ingestao> python ingestao.py
+2026-11-05 18:10:08 | INFO    | ingestao  | iniciando ingestão | broker=broker.hivemq.com tópico=agrosmart-fiap/talhao01/leituras nível=DEBUG log=C:\repositorios\AgroSmart\logs\ingestao.log
+2026-11-05 18:10:11 | INFO    | snowflake | conectado
+2026-11-05 18:10:21 | INFO    | mqtt      | conectado, assinando: agrosmart-fiap/talhao01/leituras
+2026-11-05 18:10:21 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:50Z | temp=-5.6°C ar=80.5% solo=90.3% luz=77.3% risco=Alto
+2026-11-05 18:10:24 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:51Z | temp=-5.6°C ar=80.5% solo=90.3% luz=77.3% risco=Alto
+2026-11-05 18:10:27 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:52Z | temp=-5.6°C ar=80.5% solo=90.3% luz=77.3% risco=Alto
+2026-11-05 18:10:29 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:53Z | temp=-5.6°C ar=80.5% solo=90.3% luz=77.3% risco=Alto
+2026-11-05 18:10:32 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:54Z | temp=-5.6°C ar=80.5% solo=90.3% luz=77.3% risco=Alto
+2026-11-05 18:10:33 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:55Z | temp=-5.6°C ar=80.5% solo=90.3% luz=6.1% risco=Alto
+2026-11-05 18:10:35 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:56Z | temp=-5.6°C ar=40.5% solo=90.3% luz=6.1% risco=Alto
+2026-11-05 18:10:37 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:57Z | temp=-5.6°C ar=40.5% solo=10.7% luz=6.1% risco=Alto
+2026-11-05 18:10:38 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:58Z | temp=45.4°C ar=76.5% solo=10.7% luz=6.1% risco=Alto
+2026-11-05 18:10:40 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:09:59Z | temp=45.4°C ar=76.5% solo=10.7% luz=6.1% risco=Alto
+2026-11-05 18:10:42 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:00Z | temp=45.4°C ar=76.5% solo=70.4% luz=6.1% risco=Médio
+2026-11-05 18:10:43 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:01Z | temp=45.4°C ar=76.5% solo=70.4% luz=54.9% risco=Médio
+2026-11-05 18:10:45 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:02Z | temp=27.9°C ar=76.5% solo=70.4% luz=54.9% risco=Nenhum
+2026-11-05 18:10:47 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:03Z | temp=27.9°C ar=76.5% solo=70.4% luz=54.9% risco=Nenhum
+2026-11-05 18:10:48 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:04Z | temp=23.1°C ar=52.5% solo=0.4% luz=54.9% risco=Alto
+2026-11-05 18:10:50 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:05Z | temp=23.1°C ar=52.5% solo=0.4% luz=80.5% risco=Alto
+2026-11-05 18:10:51 | INFO    | lote      | 16 leituras -> 2026-11-05T21-10-51-050Z.jsonl
+2026-11-05 18:10:52 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:06Z | temp=23.1°C ar=52.5% solo=0.4% luz=80.5% risco=Alto
+2026-11-05 18:10:53 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:07Z | temp=23.1°C ar=52.5% solo=0.4% luz=80.5% risco=Alto
+2026-11-05 18:10:55 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:08Z | temp=23.1°C ar=83% solo=0.4% luz=80.5% risco=Alto
+2026-11-05 18:10:56 | DEBUG   | mqtt      | recebido TALHAO-01 | 2026-11-05T21:10:09Z | temp=23.1°C ar=83% solo=0.4% luz=80.5% risco=Alto
+2026-11-05 18:10:57 | INFO    | ingestao  | encerrando (Ctrl+C)...
+2026-11-05 18:10:57 | INFO    | mqtt      | desconectado do broker
+2026-11-05 18:10:57 | INFO    | lote      | 4 leituras -> 2026-11-05T21-10-57-998Z.jsonl
+2026-11-05 18:10:58 | INFO    | snowflake | enviando 2 arquivo(s)...
+2026-11-05 18:10:59 | INFO    | snowflake | enviado 2026-11-05T21-10-51-050Z.jsonl
+2026-11-05 18:10:59 | INFO    | snowflake | enviado 2026-11-05T21-10-57-998Z.jsonl
+2026-11-05 18:10:59 | INFO    | snowflake | 2/2 enviado(s)
+2026-11-05 18:11:01 | INFO    | copy      | LOADED           stg_leituras/leituras/2026-11-05T21-10-51-050Z.jsonl.gz (16 linhas)
+2026-11-05 18:11:01 | INFO    | copy      | LOADED           stg_leituras/leituras/2026-11-05T21-10-57-998Z.jsonl.gz (4 linhas)
+2026-11-05 18:11:02 | INFO    | copy      | 20 linha(s) carregada(s) em AGROSMART.RAW.LEITURAS_SENSORES
+2026-11-05 18:11:02 | INFO    | ingestao  | resumo | recebidas=20 inválidas=0 lotes=2 arquivos_enviados=2 arquivos_com_erro=0 linhas_carregadas=20 duração=0:00:54

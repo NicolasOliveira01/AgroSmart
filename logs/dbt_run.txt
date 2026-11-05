@@ -1,0 +1,23 @@
+(.venv) PS C:\repositorios\AgroSmart\03_dbt> dbt run -s +fct_alertas +fct_event_log +fct_leituras
+21:12:47  Running with dbt=1.12.5
+21:12:53  Registered adapter: snowflake=1.12.1
+21:12:55  Found 5 models, 1 source, 562 macros
+21:12:55
+21:12:55  Concurrency: 4 threads (target='dev')
+21:12:55
+21:13:00  1 of 5 START sql view model RAW.stg_alertas .................................... [RUN]
+21:13:00  2 of 5 START sql view model RAW.stg_leituras_sensores .......................... [RUN]
+21:13:01  1 of 5 OK created sql view model RAW.stg_alertas ............................... [SUCCESS 1 in 0.72s]
+21:13:01  2 of 5 OK created sql view model RAW.stg_leituras_sensores ..................... [SUCCESS 1 in 0.73s]
+21:13:01  3 of 5 START sql table model RAW.fct_alertas ................................... [RUN]
+21:13:01  4 of 5 START sql table model RAW.fct_event_log ................................. [RUN]
+21:13:01  5 of 5 START sql table model RAW.fct_leituras .................................. [RUN]
+21:13:03  3 of 5 OK created sql table model RAW.fct_alertas .............................. [SUCCESS 287 in 1.92s]
+21:13:03  5 of 5 OK created sql table model RAW.fct_leituras ............................. [SUCCESS 274 in 1.91s]
+21:13:03  4 of 5 OK created sql table model RAW.fct_event_log ............................ [SUCCESS 1383 in 1.93s]
+21:13:03
+21:13:03  Finished running 3 table models, 2 view models in 0 hours 0 minutes and 8.01 seconds (8.01s).
+21:13:04
+21:13:04  Completed successfully
+21:13:04
+21:13:04  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
