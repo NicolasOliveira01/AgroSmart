@@ -1,0 +1,1276 @@
+CASE_ID,ATIVIDADE,MOMENTO,RECURSO,ORDEM
+002ed8bd77657f8cd5dd67dbf805253b,Leitura gerada,2026-11-05 00:44:30.000,ESP32,1
+002ed8bd77657f8cd5dd67dbf805253b,Alerta: Solo Seco,2026-11-05 00:44:30.000,ESP32,2
+002ed8bd77657f8cd5dd67dbf805253b,Recebida pelo subscriber,2026-11-05 00:45:15.165,ingestao.py,3
+002ed8bd77657f8cd5dd67dbf805253b,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+002ed8bd77657f8cd5dd67dbf805253b,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+0053b5cb9df03d120ddb83440400c140,Leitura gerada,2026-11-04 11:48:17.000,ESP32,1
+0053b5cb9df03d120ddb83440400c140,Alerta: Estresse Termico,2026-11-04 11:48:17.000,ESP32,2
+0053b5cb9df03d120ddb83440400c140,Recebida pelo subscriber,2026-11-04 11:49:07.004,ingestao.py,3
+0053b5cb9df03d120ddb83440400c140,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+0053b5cb9df03d120ddb83440400c140,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+007c376e2e7ef554d35b53ea2e6e9f47,Leitura gerada,2026-11-04 00:31:56.000,ESP32,1
+007c376e2e7ef554d35b53ea2e6e9f47,Alerta: Solo Seco,2026-11-04 00:31:56.000,ESP32,2
+007c376e2e7ef554d35b53ea2e6e9f47,Recebida pelo subscriber,2026-11-04 00:32:08.796,ingestao.py,3
+007c376e2e7ef554d35b53ea2e6e9f47,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+007c376e2e7ef554d35b53ea2e6e9f47,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+007e9354d749a433e33dbe4738bb20f3,Leitura gerada,2026-11-05 00:48:44.000,ESP32,1
+007e9354d749a433e33dbe4738bb20f3,Alerta: Solo Seco,2026-11-05 00:48:44.000,ESP32,2
+007e9354d749a433e33dbe4738bb20f3,Alerta: Estresse Termico,2026-11-05 00:48:44.000,ESP32,2
+007e9354d749a433e33dbe4738bb20f3,Recebida pelo subscriber,2026-11-05 01:19:46.743,ingestao.py,3
+007e9354d749a433e33dbe4738bb20f3,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+007e9354d749a433e33dbe4738bb20f3,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+00edc2822ca3b6922847cdeffbda93ef,Leitura gerada,2026-11-05 00:40:46.000,ESP32,1
+00edc2822ca3b6922847cdeffbda93ef,Alerta: Solo Seco,2026-11-05 00:40:46.000,ESP32,2
+00edc2822ca3b6922847cdeffbda93ef,Alerta: Estresse Termico,2026-11-05 00:40:46.000,ESP32,2
+00edc2822ca3b6922847cdeffbda93ef,Recebida pelo subscriber,2026-11-05 00:41:41.996,ingestao.py,3
+00edc2822ca3b6922847cdeffbda93ef,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+00edc2822ca3b6922847cdeffbda93ef,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+0150ede211ee3d46018a8c61feb1805a,Leitura gerada,2026-11-04 10:40:15.000,ESP32,1
+0150ede211ee3d46018a8c61feb1805a,Alerta: Estresse Termico,2026-11-04 10:40:15.000,ESP32,2
+0150ede211ee3d46018a8c61feb1805a,Recebida pelo subscriber,2026-11-04 10:42:59.707,ingestao.py,3
+0150ede211ee3d46018a8c61feb1805a,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+0150ede211ee3d46018a8c61feb1805a,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+02dede66f7cea3766060f6fd378f3ef6,Leitura gerada,2026-11-04 00:27:35.000,ESP32,1
+02dede66f7cea3766060f6fd378f3ef6,Alerta: Estresse Termico,2026-11-04 00:27:35.000,ESP32,2
+02dede66f7cea3766060f6fd378f3ef6,Recebida pelo subscriber,2026-11-04 00:28:05.405,ingestao.py,3
+02dede66f7cea3766060f6fd378f3ef6,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+02dede66f7cea3766060f6fd378f3ef6,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+0386aa6328b0bf27198d856547e8790f,Leitura gerada,2026-11-05 00:40:56.000,ESP32,1
+0386aa6328b0bf27198d856547e8790f,Alerta: Estresse Termico,2026-11-05 00:40:56.000,ESP32,2
+0386aa6328b0bf27198d856547e8790f,Alerta: Solo Seco,2026-11-05 00:40:56.000,ESP32,2
+0386aa6328b0bf27198d856547e8790f,Recebida pelo subscriber,2026-11-05 00:42:03.334,ingestao.py,3
+0386aa6328b0bf27198d856547e8790f,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+0386aa6328b0bf27198d856547e8790f,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+05846d9645784852bf2fb29a492043a6,Leitura gerada,2026-11-04 00:27:36.000,ESP32,1
+05846d9645784852bf2fb29a492043a6,Alerta: Estresse Termico,2026-11-04 00:27:36.000,ESP32,2
+05846d9645784852bf2fb29a492043a6,Recebida pelo subscriber,2026-11-04 00:28:07.098,ingestao.py,3
+05846d9645784852bf2fb29a492043a6,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+05846d9645784852bf2fb29a492043a6,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+08133196c8edb20476a7bbd92c3ab3b2,Leitura gerada,2026-11-04 00:31:55.000,ESP32,1
+08133196c8edb20476a7bbd92c3ab3b2,Alerta: Solo Seco,2026-11-04 00:31:55.000,ESP32,2
+08133196c8edb20476a7bbd92c3ab3b2,Recebida pelo subscriber,2026-11-04 00:32:07.009,ingestao.py,3
+08133196c8edb20476a7bbd92c3ab3b2,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+08133196c8edb20476a7bbd92c3ab3b2,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+09ea08ded4004ef51ba72b98dda334ce,Leitura gerada,2026-11-04 11:41:45.000,ESP32,1
+09ea08ded4004ef51ba72b98dda334ce,Recebida pelo subscriber,2026-11-04 11:42:14.331,ingestao.py,3
+09ea08ded4004ef51ba72b98dda334ce,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+09ea08ded4004ef51ba72b98dda334ce,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+0c8439f017fb9274993a96de84122b05,Leitura gerada,2026-11-04 00:32:21.000,ESP32,1
+0c8439f017fb9274993a96de84122b05,Alerta: Solo Encharcado,2026-11-04 00:32:21.000,ESP32,2
+0c8439f017fb9274993a96de84122b05,Recebida pelo subscriber,2026-11-04 00:32:50.354,ingestao.py,3
+0c8439f017fb9274993a96de84122b05,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+0c8439f017fb9274993a96de84122b05,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+0d2e30e7f5f40edb117d8ddffc91a386,Leitura gerada,2026-11-04 00:27:48.000,ESP32,1
+0d2e30e7f5f40edb117d8ddffc91a386,Alerta: Solo Seco,2026-11-04 00:27:48.000,ESP32,2
+0d2e30e7f5f40edb117d8ddffc91a386,Alerta: Estresse Termico,2026-11-04 00:27:48.000,ESP32,2
+0d2e30e7f5f40edb117d8ddffc91a386,Recebida pelo subscriber,2026-11-04 00:28:28.972,ingestao.py,3
+0d2e30e7f5f40edb117d8ddffc91a386,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+0d2e30e7f5f40edb117d8ddffc91a386,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+0d6d9c7496c3d7e7f560025501baaacd,Leitura gerada,2026-11-05 00:44:59.000,ESP32,1
+0d6d9c7496c3d7e7f560025501baaacd,Alerta: Solo Seco,2026-11-05 00:44:59.000,ESP32,2
+0d6d9c7496c3d7e7f560025501baaacd,Recebida pelo subscriber,2026-11-05 01:07:01.141,ingestao.py,3
+0d6d9c7496c3d7e7f560025501baaacd,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+0d6d9c7496c3d7e7f560025501baaacd,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+0ed3c9b81961ec2d9086b460b48d50e7,Leitura gerada,2026-11-05 00:44:19.000,ESP32,1
+0ed3c9b81961ec2d9086b460b48d50e7,Recebida pelo subscriber,2026-11-05 00:44:56.508,ingestao.py,3
+0ed3c9b81961ec2d9086b460b48d50e7,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+0ed3c9b81961ec2d9086b460b48d50e7,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+0f5a7048d80c1e4936c956edf60f5fee,Leitura gerada,2026-11-04 11:41:34.000,ESP32,1
+0f5a7048d80c1e4936c956edf60f5fee,Alerta: Risco Geada,2026-11-04 11:41:34.000,ESP32,2
+0f5a7048d80c1e4936c956edf60f5fee,Recebida pelo subscriber,2026-11-04 11:41:56.132,ingestao.py,3
+0f5a7048d80c1e4936c956edf60f5fee,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+0f5a7048d80c1e4936c956edf60f5fee,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+0f82efe8562f581e0db2ea646653e5bb,Leitura gerada,2026-11-05 00:44:16.000,ESP32,1
+0f82efe8562f581e0db2ea646653e5bb,Recebida pelo subscriber,2026-11-05 00:44:50.056,ingestao.py,3
+0f82efe8562f581e0db2ea646653e5bb,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+0f82efe8562f581e0db2ea646653e5bb,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+0f9345de4b7f7caebcd9001603a5c532,Leitura gerada,2026-11-04 00:27:38.000,ESP32,1
+0f9345de4b7f7caebcd9001603a5c532,Alerta: Estresse Termico,2026-11-04 00:27:38.000,ESP32,2
+0f9345de4b7f7caebcd9001603a5c532,Recebida pelo subscriber,2026-11-04 00:28:10.350,ingestao.py,3
+0f9345de4b7f7caebcd9001603a5c532,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+0f9345de4b7f7caebcd9001603a5c532,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+1082c1c88e29a5b135b4137ec4b14be1,Leitura gerada,2026-11-04 00:32:08.000,ESP32,1
+1082c1c88e29a5b135b4137ec4b14be1,Alerta: Estresse Termico,2026-11-04 00:32:08.000,ESP32,2
+1082c1c88e29a5b135b4137ec4b14be1,Recebida pelo subscriber,2026-11-04 00:32:28.538,ingestao.py,3
+1082c1c88e29a5b135b4137ec4b14be1,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+1082c1c88e29a5b135b4137ec4b14be1,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+11486d02fd850f94d09c3a4e8cf33099,Leitura gerada,2026-11-05 00:48:40.000,ESP32,1
+11486d02fd850f94d09c3a4e8cf33099,Alerta: Solo Encharcado,2026-11-05 00:48:40.000,ESP32,2
+11486d02fd850f94d09c3a4e8cf33099,Alerta: Estresse Termico,2026-11-05 00:48:40.000,ESP32,2
+11486d02fd850f94d09c3a4e8cf33099,Recebida pelo subscriber,2026-11-05 01:19:37.569,ingestao.py,3
+11486d02fd850f94d09c3a4e8cf33099,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+11486d02fd850f94d09c3a4e8cf33099,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+125f3afe1735557adf1f40cdc6ec4670,Leitura gerada,2026-11-05 00:44:36.000,ESP32,1
+125f3afe1735557adf1f40cdc6ec4670,Recebida pelo subscriber,2026-11-05 00:45:25.766,ingestao.py,3
+125f3afe1735557adf1f40cdc6ec4670,Gravada em lote,2026-11-05 00:45:26.771,ingestao.py,4
+125f3afe1735557adf1f40cdc6ec4670,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+137c03f3ba881950ca4d00cb8df7e911,Leitura gerada,2026-11-04 10:40:04.000,ESP32,1
+137c03f3ba881950ca4d00cb8df7e911,Recebida pelo subscriber,2026-11-04 10:42:39.318,ingestao.py,3
+137c03f3ba881950ca4d00cb8df7e911,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+137c03f3ba881950ca4d00cb8df7e911,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+13afb4d2ce6ed8ea7d79410af9a87ca3,Leitura gerada,2026-11-05 00:48:49.000,ESP32,1
+13afb4d2ce6ed8ea7d79410af9a87ca3,Recebida pelo subscriber,2026-11-05 01:19:56.254,ingestao.py,3
+13afb4d2ce6ed8ea7d79410af9a87ca3,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+13afb4d2ce6ed8ea7d79410af9a87ca3,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+140b102dc979ef9bdbc6632a4f099828,Leitura gerada,2026-11-05 00:44:34.000,ESP32,1
+140b102dc979ef9bdbc6632a4f099828,Alerta: Solo Encharcado,2026-11-05 00:44:34.000,ESP32,2
+140b102dc979ef9bdbc6632a4f099828,Recebida pelo subscriber,2026-11-05 00:45:21.763,ingestao.py,3
+140b102dc979ef9bdbc6632a4f099828,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+140b102dc979ef9bdbc6632a4f099828,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+1424c901ccecda3c9b41d7b4405c6631,Leitura gerada,2026-11-04 00:27:43.000,ESP32,1
+1424c901ccecda3c9b41d7b4405c6631,Alerta: Estresse Termico,2026-11-04 00:27:43.000,ESP32,2
+1424c901ccecda3c9b41d7b4405c6631,Recebida pelo subscriber,2026-11-04 00:28:19.945,ingestao.py,3
+1424c901ccecda3c9b41d7b4405c6631,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+1424c901ccecda3c9b41d7b4405c6631,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+14f8d16ed88173ab93cd57c6c9f2698b,Leitura gerada,2026-11-05 00:48:52.000,ESP32,1
+14f8d16ed88173ab93cd57c6c9f2698b,Recebida pelo subscriber,2026-11-05 01:20:03.158,ingestao.py,3
+14f8d16ed88173ab93cd57c6c9f2698b,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+14f8d16ed88173ab93cd57c6c9f2698b,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+1707f315fe0b8403544faaf1c0596545,Leitura gerada,2026-11-05 00:49:13.000,ESP32,1
+1707f315fe0b8403544faaf1c0596545,Alerta: Estresse Termico,2026-11-05 00:49:13.000,ESP32,2
+1707f315fe0b8403544faaf1c0596545,Alerta: Solo Seco,2026-11-05 00:49:13.000,ESP32,2
+1707f315fe0b8403544faaf1c0596545,Recebida pelo subscriber,2026-11-05 01:20:48.176,ingestao.py,3
+1707f315fe0b8403544faaf1c0596545,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+1707f315fe0b8403544faaf1c0596545,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+18c1621c368ae7c6d89219d281e8bf74,Leitura gerada,2026-11-05 00:40:40.000,ESP32,1
+18c1621c368ae7c6d89219d281e8bf74,Alerta: Estresse Termico,2026-11-05 00:40:40.000,ESP32,2
+18c1621c368ae7c6d89219d281e8bf74,Alerta: Solo Seco,2026-11-05 00:40:40.000,ESP32,2
+18c1621c368ae7c6d89219d281e8bf74,Recebida pelo subscriber,2026-11-05 00:41:26.614,ingestao.py,3
+18c1621c368ae7c6d89219d281e8bf74,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+18c1621c368ae7c6d89219d281e8bf74,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+18dd62be6aaa4b71fbad5a310ef3da24,Leitura gerada,2026-11-04 11:41:48.000,ESP32,1
+18dd62be6aaa4b71fbad5a310ef3da24,Recebida pelo subscriber,2026-11-04 11:42:19.414,ingestao.py,3
+18dd62be6aaa4b71fbad5a310ef3da24,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+18dd62be6aaa4b71fbad5a310ef3da24,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+1abc2f6c861f2f5168ab46e0ce7ca217,Leitura gerada,2026-11-05 00:44:06.000,ESP32,1
+1abc2f6c861f2f5168ab46e0ce7ca217,Recebida pelo subscriber,2026-11-05 00:44:24.978,ingestao.py,3
+1abc2f6c861f2f5168ab46e0ce7ca217,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+1abc2f6c861f2f5168ab46e0ce7ca217,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+1b1686ecf0653376be6bfa08bcc25572,Leitura gerada,2026-11-04 10:40:19.000,ESP32,1
+1b1686ecf0653376be6bfa08bcc25572,Alerta: Estresse Termico,2026-11-04 10:40:19.000,ESP32,2
+1b1686ecf0653376be6bfa08bcc25572,Recebida pelo subscriber,2026-11-04 10:43:07.687,ingestao.py,3
+1b1686ecf0653376be6bfa08bcc25572,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+1b1686ecf0653376be6bfa08bcc25572,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+1b684502449ee25e7f97f04df9c31a87,Leitura gerada,2026-11-04 10:40:09.000,ESP32,1
+1b684502449ee25e7f97f04df9c31a87,Alerta: Estresse Termico,2026-11-04 10:40:09.000,ESP32,2
+1b684502449ee25e7f97f04df9c31a87,Recebida pelo subscriber,2026-11-04 10:42:48.649,ingestao.py,3
+1b684502449ee25e7f97f04df9c31a87,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+1b684502449ee25e7f97f04df9c31a87,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+1d65074d4c94d4cc179dab2109f0cf00,Leitura gerada,2026-11-05 00:40:47.000,ESP32,1
+1d65074d4c94d4cc179dab2109f0cf00,Alerta: Estresse Termico,2026-11-05 00:40:47.000,ESP32,2
+1d65074d4c94d4cc179dab2109f0cf00,Alerta: Solo Seco,2026-11-05 00:40:47.000,ESP32,2
+1d65074d4c94d4cc179dab2109f0cf00,Recebida pelo subscriber,2026-11-05 00:41:44.606,ingestao.py,3
+1d65074d4c94d4cc179dab2109f0cf00,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+1d65074d4c94d4cc179dab2109f0cf00,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+1e541c6c10de88ca70d76a55672f788f,Leitura gerada,2026-11-05 00:40:33.000,ESP32,1
+1e541c6c10de88ca70d76a55672f788f,Alerta: Solo Seco,2026-11-05 00:40:33.000,ESP32,2
+1e541c6c10de88ca70d76a55672f788f,Alerta: Estresse Termico,2026-11-05 00:40:33.000,ESP32,2
+1e541c6c10de88ca70d76a55672f788f,Recebida pelo subscriber,2026-11-05 00:41:14.927,ingestao.py,3
+1e541c6c10de88ca70d76a55672f788f,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+1e541c6c10de88ca70d76a55672f788f,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+1eadeb4d8d573398f1709a542836f48a,Leitura gerada,2026-11-05 00:49:12.000,ESP32,1
+1eadeb4d8d573398f1709a542836f48a,Alerta: Solo Seco,2026-11-05 00:49:12.000,ESP32,2
+1eadeb4d8d573398f1709a542836f48a,Recebida pelo subscriber,2026-11-05 01:20:46.506,ingestao.py,3
+1eadeb4d8d573398f1709a542836f48a,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+1eadeb4d8d573398f1709a542836f48a,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+20037f86527eb178079bc34a8aea5248,Leitura gerada,2026-11-04 11:48:18.000,ESP32,1
+20037f86527eb178079bc34a8aea5248,Alerta: Estresse Termico,2026-11-04 11:48:18.000,ESP32,2
+20037f86527eb178079bc34a8aea5248,Recebida pelo subscriber,2026-11-04 11:49:09.164,ingestao.py,3
+20037f86527eb178079bc34a8aea5248,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+20037f86527eb178079bc34a8aea5248,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+2087560be1380bfa3522f9ff76db94f1,Leitura gerada,2026-11-05 00:44:25.000,ESP32,1
+2087560be1380bfa3522f9ff76db94f1,Alerta: Risco Geada,2026-11-05 00:44:25.000,ESP32,2
+2087560be1380bfa3522f9ff76db94f1,Recebida pelo subscriber,2026-11-05 00:45:06.751,ingestao.py,3
+2087560be1380bfa3522f9ff76db94f1,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+2087560be1380bfa3522f9ff76db94f1,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+20cb14e8dbdc56ca382833c4db1935b0,Leitura gerada,2026-11-04 10:40:07.000,ESP32,1
+20cb14e8dbdc56ca382833c4db1935b0,Alerta: Estresse Termico,2026-11-04 10:40:07.000,ESP32,2
+20cb14e8dbdc56ca382833c4db1935b0,Recebida pelo subscriber,2026-11-04 10:42:44.958,ingestao.py,3
+20cb14e8dbdc56ca382833c4db1935b0,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+20cb14e8dbdc56ca382833c4db1935b0,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+2220d316fbbfde9056e971c3af16f9df,Leitura gerada,2026-11-05 00:40:48.000,ESP32,1
+2220d316fbbfde9056e971c3af16f9df,Alerta: Estresse Termico,2026-11-05 00:40:48.000,ESP32,2
+2220d316fbbfde9056e971c3af16f9df,Alerta: Solo Seco,2026-11-05 00:40:48.000,ESP32,2
+2220d316fbbfde9056e971c3af16f9df,Recebida pelo subscriber,2026-11-05 00:41:46.572,ingestao.py,3
+2220d316fbbfde9056e971c3af16f9df,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+2220d316fbbfde9056e971c3af16f9df,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+23561e49db3aae7d1c31fa29a1c41f40,Leitura gerada,2026-11-05 00:40:34.000,ESP32,1
+23561e49db3aae7d1c31fa29a1c41f40,Alerta: Solo Seco,2026-11-05 00:40:34.000,ESP32,2
+23561e49db3aae7d1c31fa29a1c41f40,Alerta: Estresse Termico,2026-11-05 00:40:34.000,ESP32,2
+23561e49db3aae7d1c31fa29a1c41f40,Recebida pelo subscriber,2026-11-05 00:41:16.576,ingestao.py,3
+23561e49db3aae7d1c31fa29a1c41f40,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+23561e49db3aae7d1c31fa29a1c41f40,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+24922f3ab43a89b822d7c108392767d6,Leitura gerada,2026-11-04 10:39:58.000,ESP32,1
+24922f3ab43a89b822d7c108392767d6,Alerta: Estresse Termico,2026-11-04 10:39:58.000,ESP32,2
+24922f3ab43a89b822d7c108392767d6,Recebida pelo subscriber,2026-11-04 10:42:26.210,ingestao.py,3
+24922f3ab43a89b822d7c108392767d6,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+24922f3ab43a89b822d7c108392767d6,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+2553e803fa1db9f7a691879cc71ab72a,Leitura gerada,2026-11-04 00:32:11.000,ESP32,1
+2553e803fa1db9f7a691879cc71ab72a,Alerta: Estresse Termico,2026-11-04 00:32:11.000,ESP32,2
+2553e803fa1db9f7a691879cc71ab72a,Recebida pelo subscriber,2026-11-04 00:32:33.577,ingestao.py,3
+2553e803fa1db9f7a691879cc71ab72a,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+2553e803fa1db9f7a691879cc71ab72a,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+25b8d139dc9ec59483ecb9f6052fa5c2,Leitura gerada,2026-11-05 00:44:07.000,ESP32,1
+25b8d139dc9ec59483ecb9f6052fa5c2,Recebida pelo subscriber,2026-11-05 00:44:27.805,ingestao.py,3
+25b8d139dc9ec59483ecb9f6052fa5c2,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+25b8d139dc9ec59483ecb9f6052fa5c2,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+25cc20875fe6a4bbfc428300281844a1,Leitura gerada,2026-11-05 00:49:14.000,ESP32,1
+25cc20875fe6a4bbfc428300281844a1,Alerta: Solo Seco,2026-11-05 00:49:14.000,ESP32,2
+25cc20875fe6a4bbfc428300281844a1,Alerta: Estresse Termico,2026-11-05 00:49:14.000,ESP32,2
+25cc20875fe6a4bbfc428300281844a1,Recebida pelo subscriber,2026-11-05 01:20:49.855,ingestao.py,3
+25cc20875fe6a4bbfc428300281844a1,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+25cc20875fe6a4bbfc428300281844a1,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+26a480f3dc627240150fd720fdb8b930,Leitura gerada,2026-11-04 11:48:09.000,ESP32,1
+26a480f3dc627240150fd720fdb8b930,Recebida pelo subscriber,2026-11-04 11:48:53.221,ingestao.py,3
+26a480f3dc627240150fd720fdb8b930,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+26a480f3dc627240150fd720fdb8b930,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+26cc13bc45394e955a4d0e080184baec,Leitura gerada,2026-11-04 00:27:34.000,ESP32,1
+26cc13bc45394e955a4d0e080184baec,Alerta: Estresse Termico,2026-11-04 00:27:34.000,ESP32,2
+26cc13bc45394e955a4d0e080184baec,Recebida pelo subscriber,2026-11-04 00:28:03.751,ingestao.py,3
+26cc13bc45394e955a4d0e080184baec,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+26cc13bc45394e955a4d0e080184baec,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+27c2d06128cec395b8a114a5bc6c991f,Leitura gerada,2026-11-04 11:41:46.000,ESP32,1
+27c2d06128cec395b8a114a5bc6c991f,Recebida pelo subscriber,2026-11-04 11:42:15.948,ingestao.py,3
+27c2d06128cec395b8a114a5bc6c991f,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+27c2d06128cec395b8a114a5bc6c991f,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+285bff5440e203818a17622655070c18,Leitura gerada,2026-11-05 00:44:18.000,ESP32,1
+285bff5440e203818a17622655070c18,Recebida pelo subscriber,2026-11-05 00:44:54.672,ingestao.py,3
+285bff5440e203818a17622655070c18,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+285bff5440e203818a17622655070c18,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+2a2fc9e5faf7b20aed89845e1c486b52,Leitura gerada,2026-11-05 00:44:35.000,ESP32,1
+2a2fc9e5faf7b20aed89845e1c486b52,Recebida pelo subscriber,2026-11-05 00:45:23.443,ingestao.py,3
+2a2fc9e5faf7b20aed89845e1c486b52,Gravada em lote,2026-11-05 00:45:26.771,ingestao.py,4
+2a2fc9e5faf7b20aed89845e1c486b52,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+2a6adcb18fc0565a7f0bd0a60f92cfa0,Leitura gerada,2026-11-05 00:44:52.000,ESP32,1
+2a6adcb18fc0565a7f0bd0a60f92cfa0,Recebida pelo subscriber,2026-11-05 01:06:44.092,ingestao.py,3
+2a6adcb18fc0565a7f0bd0a60f92cfa0,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+2a6adcb18fc0565a7f0bd0a60f92cfa0,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+2c1986ce7c5f8f570df137c077df887e,Leitura gerada,2026-11-05 00:45:08.000,ESP32,1
+2c1986ce7c5f8f570df137c077df887e,Alerta: Solo Encharcado,2026-11-05 00:45:08.000,ESP32,2
+2c1986ce7c5f8f570df137c077df887e,Recebida pelo subscriber,2026-11-05 01:07:20.242,ingestao.py,3
+2c1986ce7c5f8f570df137c077df887e,Gravada em lote,2026-11-05 01:07:28.189,ingestao.py,4
+2c1986ce7c5f8f570df137c077df887e,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+2d24baaabd6f75f36c133de9f144c0a6,Leitura gerada,2026-11-05 00:45:03.000,ESP32,1
+2d24baaabd6f75f36c133de9f144c0a6,Alerta: Solo Encharcado,2026-11-05 00:45:03.000,ESP32,2
+2d24baaabd6f75f36c133de9f144c0a6,Recebida pelo subscriber,2026-11-05 01:07:08.047,ingestao.py,3
+2d24baaabd6f75f36c133de9f144c0a6,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+2d24baaabd6f75f36c133de9f144c0a6,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+2ef0749437b592a5570278842f5fc2e4,Leitura gerada,2026-11-05 00:49:01.000,ESP32,1
+2ef0749437b592a5570278842f5fc2e4,Recebida pelo subscriber,2026-11-05 01:20:25.367,ingestao.py,3
+2ef0749437b592a5570278842f5fc2e4,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+2ef0749437b592a5570278842f5fc2e4,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+2fa29282cf8659caaa1c54d8df96a8f9,Leitura gerada,2026-11-04 10:40:14.000,ESP32,1
+2fa29282cf8659caaa1c54d8df96a8f9,Alerta: Estresse Termico,2026-11-04 10:40:14.000,ESP32,2
+2fa29282cf8659caaa1c54d8df96a8f9,Recebida pelo subscriber,2026-11-04 10:42:57.862,ingestao.py,3
+2fa29282cf8659caaa1c54d8df96a8f9,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+2fa29282cf8659caaa1c54d8df96a8f9,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+2fe992f1ee3dd6dca1b75a35e35988ab,Leitura gerada,2026-11-05 00:44:33.000,ESP32,1
+2fe992f1ee3dd6dca1b75a35e35988ab,Alerta: Solo Encharcado,2026-11-05 00:44:33.000,ESP32,2
+2fe992f1ee3dd6dca1b75a35e35988ab,Recebida pelo subscriber,2026-11-05 00:45:20.191,ingestao.py,3
+2fe992f1ee3dd6dca1b75a35e35988ab,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+2fe992f1ee3dd6dca1b75a35e35988ab,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+306c589858518fd9101ffee0f8a4c521,Leitura gerada,2026-11-05 00:49:02.000,ESP32,1
+306c589858518fd9101ffee0f8a4c521,Recebida pelo subscriber,2026-11-05 01:20:27.422,ingestao.py,3
+306c589858518fd9101ffee0f8a4c521,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+306c589858518fd9101ffee0f8a4c521,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+30d957c1ce51e45a3a71425007df0e14,Leitura gerada,2026-11-05 00:40:54.000,ESP32,1
+30d957c1ce51e45a3a71425007df0e14,Alerta: Estresse Termico,2026-11-05 00:40:54.000,ESP32,2
+30d957c1ce51e45a3a71425007df0e14,Alerta: Solo Seco,2026-11-05 00:40:54.000,ESP32,2
+30d957c1ce51e45a3a71425007df0e14,Recebida pelo subscriber,2026-11-05 00:41:59.927,ingestao.py,3
+30d957c1ce51e45a3a71425007df0e14,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+30d957c1ce51e45a3a71425007df0e14,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+31a9b042093f0b6813b86245cfe698c6,Leitura gerada,2026-11-04 11:41:50.000,ESP32,1
+31a9b042093f0b6813b86245cfe698c6,Alerta: Solo Seco,2026-11-04 11:41:50.000,ESP32,2
+31a9b042093f0b6813b86245cfe698c6,Recebida pelo subscriber,2026-11-04 11:42:23.910,ingestao.py,3
+31a9b042093f0b6813b86245cfe698c6,Gravada em lote,2026-11-04 11:42:31.114,ingestao.py,4
+31a9b042093f0b6813b86245cfe698c6,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+31aad524e231db8420136ec117a8bfd5,Leitura gerada,2026-11-05 00:40:41.000,ESP32,1
+31aad524e231db8420136ec117a8bfd5,Alerta: Solo Seco,2026-11-05 00:40:41.000,ESP32,2
+31aad524e231db8420136ec117a8bfd5,Alerta: Estresse Termico,2026-11-05 00:40:41.000,ESP32,2
+31aad524e231db8420136ec117a8bfd5,Recebida pelo subscriber,2026-11-05 00:41:28.568,ingestao.py,3
+31aad524e231db8420136ec117a8bfd5,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+31aad524e231db8420136ec117a8bfd5,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+32645efc2be70fb2683fd4a31d03c3ee,Leitura gerada,2026-11-04 11:48:12.000,ESP32,1
+32645efc2be70fb2683fd4a31d03c3ee,Alerta: Solo Seco,2026-11-04 11:48:12.000,ESP32,2
+32645efc2be70fb2683fd4a31d03c3ee,Recebida pelo subscriber,2026-11-04 11:48:58.350,ingestao.py,3
+32645efc2be70fb2683fd4a31d03c3ee,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+32645efc2be70fb2683fd4a31d03c3ee,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+32d181fc95dd0c2407a4a9c70af366a8,Leitura gerada,2026-11-04 00:31:59.000,ESP32,1
+32d181fc95dd0c2407a4a9c70af366a8,Alerta: Solo Seco,2026-11-04 00:31:59.000,ESP32,2
+32d181fc95dd0c2407a4a9c70af366a8,Alerta: Estresse Termico,2026-11-04 00:31:59.000,ESP32,2
+32d181fc95dd0c2407a4a9c70af366a8,Recebida pelo subscriber,2026-11-04 00:32:13.779,ingestao.py,3
+32d181fc95dd0c2407a4a9c70af366a8,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+32d181fc95dd0c2407a4a9c70af366a8,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+33f7ea4f60e2dc8c1f1c294b60074fef,Leitura gerada,2026-11-04 10:40:18.000,ESP32,1
+33f7ea4f60e2dc8c1f1c294b60074fef,Alerta: Estresse Termico,2026-11-04 10:40:18.000,ESP32,2
+33f7ea4f60e2dc8c1f1c294b60074fef,Recebida pelo subscriber,2026-11-04 10:43:05.843,ingestao.py,3
+33f7ea4f60e2dc8c1f1c294b60074fef,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+33f7ea4f60e2dc8c1f1c294b60074fef,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+34f9a6cdee03f67158ef914102eac78a,Leitura gerada,2026-11-04 10:40:13.000,ESP32,1
+34f9a6cdee03f67158ef914102eac78a,Alerta: Estresse Termico,2026-11-04 10:40:13.000,ESP32,2
+34f9a6cdee03f67158ef914102eac78a,Recebida pelo subscriber,2026-11-04 10:42:56.038,ingestao.py,3
+34f9a6cdee03f67158ef914102eac78a,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+34f9a6cdee03f67158ef914102eac78a,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+351a50a52b9dc4166c3fc8292a3d8c38,Leitura gerada,2026-11-05 00:44:58.000,ESP32,1
+351a50a52b9dc4166c3fc8292a3d8c38,Alerta: Solo Seco,2026-11-05 00:44:58.000,ESP32,2
+351a50a52b9dc4166c3fc8292a3d8c38,Recebida pelo subscriber,2026-11-05 01:06:59.308,ingestao.py,3
+351a50a52b9dc4166c3fc8292a3d8c38,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+351a50a52b9dc4166c3fc8292a3d8c38,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+35a3ce9b1153c181b914141f9b65e8ab,Leitura gerada,2026-11-04 00:27:25.000,ESP32,1
+35a3ce9b1153c181b914141f9b65e8ab,Alerta: Solo Seco,2026-11-04 00:27:25.000,ESP32,2
+35a3ce9b1153c181b914141f9b65e8ab,Alerta: Risco Geada,2026-11-04 00:27:25.000,ESP32,2
+35a3ce9b1153c181b914141f9b65e8ab,Recebida pelo subscriber,2026-11-04 00:27:48.782,ingestao.py,3
+35a3ce9b1153c181b914141f9b65e8ab,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+35a3ce9b1153c181b914141f9b65e8ab,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+37b957f129c6e8215542828068319e63,Leitura gerada,2026-11-04 11:48:15.000,ESP32,1
+37b957f129c6e8215542828068319e63,Recebida pelo subscriber,2026-11-04 11:49:03.553,ingestao.py,3
+37b957f129c6e8215542828068319e63,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+37b957f129c6e8215542828068319e63,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+3c2534b809919a2c410f6304e904332f,Leitura gerada,2026-11-04 11:41:41.000,ESP32,1
+3c2534b809919a2c410f6304e904332f,Alerta: Solo Seco,2026-11-04 11:41:41.000,ESP32,2
+3c2534b809919a2c410f6304e904332f,Recebida pelo subscriber,2026-11-04 11:42:07.648,ingestao.py,3
+3c2534b809919a2c410f6304e904332f,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+3c2534b809919a2c410f6304e904332f,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+3fe6497ae643f6a2f8e35ff68bfee8cb,Leitura gerada,2026-11-05 00:48:50.000,ESP32,1
+3fe6497ae643f6a2f8e35ff68bfee8cb,Recebida pelo subscriber,2026-11-05 01:19:58.465,ingestao.py,3
+3fe6497ae643f6a2f8e35ff68bfee8cb,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+3fe6497ae643f6a2f8e35ff68bfee8cb,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+41351168169a439d25fc55d7e2c3d2fa,Leitura gerada,2026-11-05 00:49:11.000,ESP32,1
+41351168169a439d25fc55d7e2c3d2fa,Alerta: Solo Seco,2026-11-05 00:49:11.000,ESP32,2
+41351168169a439d25fc55d7e2c3d2fa,Recebida pelo subscriber,2026-11-05 01:20:44.759,ingestao.py,3
+41351168169a439d25fc55d7e2c3d2fa,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+41351168169a439d25fc55d7e2c3d2fa,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+42c3d52fe008412451e65060832c26ce,Leitura gerada,2026-11-04 11:48:14.000,ESP32,1
+42c3d52fe008412451e65060832c26ce,Alerta: Solo Seco,2026-11-04 11:48:14.000,ESP32,2
+42c3d52fe008412451e65060832c26ce,Recebida pelo subscriber,2026-11-04 11:49:01.792,ingestao.py,3
+42c3d52fe008412451e65060832c26ce,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+42c3d52fe008412451e65060832c26ce,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+43ab3210886d6e2c2cb14b352695feec,Leitura gerada,2026-11-04 11:48:05.000,ESP32,1
+43ab3210886d6e2c2cb14b352695feec,Recebida pelo subscriber,2026-11-04 11:48:46.099,ingestao.py,3
+43ab3210886d6e2c2cb14b352695feec,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+43ab3210886d6e2c2cb14b352695feec,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+46a946f5673bc38945a5ffc728f00b79,Leitura gerada,2026-11-04 00:27:41.000,ESP32,1
+46a946f5673bc38945a5ffc728f00b79,Alerta: Estresse Termico,2026-11-04 00:27:41.000,ESP32,2
+46a946f5673bc38945a5ffc728f00b79,Recebida pelo subscriber,2026-11-04 00:28:15.239,ingestao.py,3
+46a946f5673bc38945a5ffc728f00b79,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+46a946f5673bc38945a5ffc728f00b79,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+47a6e80839d96022eeb737531fdbf02b,Leitura gerada,2026-11-05 00:49:15.000,ESP32,1
+47a6e80839d96022eeb737531fdbf02b,Alerta: Solo Seco,2026-11-05 00:49:15.000,ESP32,2
+47a6e80839d96022eeb737531fdbf02b,Alerta: Estresse Termico,2026-11-05 00:49:15.000,ESP32,2
+47a6e80839d96022eeb737531fdbf02b,Recebida pelo subscriber,2026-11-05 01:20:51.600,ingestao.py,3
+47a6e80839d96022eeb737531fdbf02b,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+47a6e80839d96022eeb737531fdbf02b,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+486d87aa9fb23eeed5afa86f012c7945,Leitura gerada,2026-11-05 00:45:04.000,ESP32,1
+486d87aa9fb23eeed5afa86f012c7945,Alerta: Solo Encharcado,2026-11-05 00:45:04.000,ESP32,2
+486d87aa9fb23eeed5afa86f012c7945,Recebida pelo subscriber,2026-11-05 01:07:09.836,ingestao.py,3
+486d87aa9fb23eeed5afa86f012c7945,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+486d87aa9fb23eeed5afa86f012c7945,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+4a0241bab567c3ee39a976f7d874941d,Leitura gerada,2026-11-04 00:32:04.000,ESP32,1
+4a0241bab567c3ee39a976f7d874941d,Alerta: Estresse Termico,2026-11-04 00:32:04.000,ESP32,2
+4a0241bab567c3ee39a976f7d874941d,Recebida pelo subscriber,2026-11-04 00:32:22.026,ingestao.py,3
+4a0241bab567c3ee39a976f7d874941d,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+4a0241bab567c3ee39a976f7d874941d,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+4c952f9e67be1e034775d86fce0dbf40,Leitura gerada,2026-11-04 00:27:30.000,ESP32,1
+4c952f9e67be1e034775d86fce0dbf40,Alerta: Estresse Termico,2026-11-04 00:27:30.000,ESP32,2
+4c952f9e67be1e034775d86fce0dbf40,Recebida pelo subscriber,2026-11-04 00:27:57.152,ingestao.py,3
+4c952f9e67be1e034775d86fce0dbf40,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+4c952f9e67be1e034775d86fce0dbf40,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+4d09ebf8aef980a85aed92b3fc88db9d,Leitura gerada,2026-11-04 11:41:49.000,ESP32,1
+4d09ebf8aef980a85aed92b3fc88db9d,Recebida pelo subscriber,2026-11-04 11:42:21.847,ingestao.py,3
+4d09ebf8aef980a85aed92b3fc88db9d,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+4d09ebf8aef980a85aed92b3fc88db9d,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+4da627d6b85c519fa047688c6e4b6cd3,Leitura gerada,2026-11-05 00:44:22.000,ESP32,1
+4da627d6b85c519fa047688c6e4b6cd3,Alerta: Estresse Termico,2026-11-05 00:44:22.000,ESP32,2
+4da627d6b85c519fa047688c6e4b6cd3,Recebida pelo subscriber,2026-11-05 00:45:01.590,ingestao.py,3
+4da627d6b85c519fa047688c6e4b6cd3,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+4da627d6b85c519fa047688c6e4b6cd3,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+4e105d417783c43a785d118090a4a535,Leitura gerada,2026-11-04 11:48:11.000,ESP32,1
+4e105d417783c43a785d118090a4a535,Alerta: Solo Seco,2026-11-04 11:48:11.000,ESP32,2
+4e105d417783c43a785d118090a4a535,Recebida pelo subscriber,2026-11-04 11:48:56.688,ingestao.py,3
+4e105d417783c43a785d118090a4a535,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+4e105d417783c43a785d118090a4a535,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+4f479ed456a6d620d71bbea0ea5319ea,Leitura gerada,2026-11-04 00:27:56.000,ESP32,1
+4f479ed456a6d620d71bbea0ea5319ea,Alerta: Solo Seco,2026-11-04 00:27:56.000,ESP32,2
+4f479ed456a6d620d71bbea0ea5319ea,Recebida pelo subscriber,2026-11-04 00:28:42.001,ingestao.py,3
+4f479ed456a6d620d71bbea0ea5319ea,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+4f479ed456a6d620d71bbea0ea5319ea,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+4fd4c2395000c1bf205093a2d4b6df61,Leitura gerada,2026-11-04 00:27:52.000,ESP32,1
+4fd4c2395000c1bf205093a2d4b6df61,Alerta: Estresse Termico,2026-11-04 00:27:52.000,ESP32,2
+4fd4c2395000c1bf205093a2d4b6df61,Alerta: Solo Seco,2026-11-04 00:27:52.000,ESP32,2
+4fd4c2395000c1bf205093a2d4b6df61,Recebida pelo subscriber,2026-11-04 00:28:35.552,ingestao.py,3
+4fd4c2395000c1bf205093a2d4b6df61,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+4fd4c2395000c1bf205093a2d4b6df61,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+509810a7a9d26e3c1e8872e52ddee6f2,Leitura gerada,2026-11-04 10:40:03.000,ESP32,1
+509810a7a9d26e3c1e8872e52ddee6f2,Recebida pelo subscriber,2026-11-04 10:42:37.344,ingestao.py,3
+509810a7a9d26e3c1e8872e52ddee6f2,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+509810a7a9d26e3c1e8872e52ddee6f2,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+51bbdb32eeaafefc944d49b53ba72a32,Leitura gerada,2026-11-04 00:32:15.000,ESP32,1
+51bbdb32eeaafefc944d49b53ba72a32,Alerta: Estresse Termico,2026-11-04 00:32:15.000,ESP32,2
+51bbdb32eeaafefc944d49b53ba72a32,Alerta: Solo Seco,2026-11-04 00:32:15.000,ESP32,2
+51bbdb32eeaafefc944d49b53ba72a32,Recebida pelo subscriber,2026-11-04 00:32:40.216,ingestao.py,3
+51bbdb32eeaafefc944d49b53ba72a32,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+51bbdb32eeaafefc944d49b53ba72a32,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+54cf179780e4b499a7fb715386b8ea26,Leitura gerada,2026-11-04 00:32:10.000,ESP32,1
+54cf179780e4b499a7fb715386b8ea26,Alerta: Estresse Termico,2026-11-04 00:32:10.000,ESP32,2
+54cf179780e4b499a7fb715386b8ea26,Recebida pelo subscriber,2026-11-04 00:32:31.791,ingestao.py,3
+54cf179780e4b499a7fb715386b8ea26,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+54cf179780e4b499a7fb715386b8ea26,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+55515dfa667e1fbce1f9aa2a51307714,Leitura gerada,2026-11-05 00:40:39.000,ESP32,1
+55515dfa667e1fbce1f9aa2a51307714,Alerta: Estresse Termico,2026-11-05 00:40:39.000,ESP32,2
+55515dfa667e1fbce1f9aa2a51307714,Alerta: Solo Seco,2026-11-05 00:40:39.000,ESP32,2
+55515dfa667e1fbce1f9aa2a51307714,Recebida pelo subscriber,2026-11-05 00:41:24.961,ingestao.py,3
+55515dfa667e1fbce1f9aa2a51307714,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+55515dfa667e1fbce1f9aa2a51307714,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+5620ee192a6ca27d43d1544f17bad141,Leitura gerada,2026-11-04 00:32:16.000,ESP32,1
+5620ee192a6ca27d43d1544f17bad141,Alerta: Solo Seco,2026-11-04 00:32:16.000,ESP32,2
+5620ee192a6ca27d43d1544f17bad141,Alerta: Estresse Termico,2026-11-04 00:32:16.000,ESP32,2
+5620ee192a6ca27d43d1544f17bad141,Recebida pelo subscriber,2026-11-04 00:32:41.923,ingestao.py,3
+5620ee192a6ca27d43d1544f17bad141,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+5620ee192a6ca27d43d1544f17bad141,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+58952dca0e972b6ef1301a170dfb5592,Leitura gerada,2026-11-04 00:27:40.000,ESP32,1
+58952dca0e972b6ef1301a170dfb5592,Alerta: Estresse Termico,2026-11-04 00:27:40.000,ESP32,2
+58952dca0e972b6ef1301a170dfb5592,Recebida pelo subscriber,2026-11-04 00:28:13.524,ingestao.py,3
+58952dca0e972b6ef1301a170dfb5592,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+58952dca0e972b6ef1301a170dfb5592,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+58b08cd27ee79b57da4049a72838b7a6,Leitura gerada,2026-11-04 00:27:26.000,ESP32,1
+58b08cd27ee79b57da4049a72838b7a6,Alerta: Solo Seco,2026-11-04 00:27:26.000,ESP32,2
+58b08cd27ee79b57da4049a72838b7a6,Alerta: Estresse Termico,2026-11-04 00:27:26.000,ESP32,2
+58b08cd27ee79b57da4049a72838b7a6,Recebida pelo subscriber,2026-11-04 00:27:50.448,ingestao.py,3
+58b08cd27ee79b57da4049a72838b7a6,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+58b08cd27ee79b57da4049a72838b7a6,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+5b6ab34249af3842e263944fceeac271,Leitura gerada,2026-11-04 00:32:06.000,ESP32,1
+5b6ab34249af3842e263944fceeac271,Alerta: Estresse Termico,2026-11-04 00:32:06.000,ESP32,2
+5b6ab34249af3842e263944fceeac271,Recebida pelo subscriber,2026-11-04 00:32:25.280,ingestao.py,3
+5b6ab34249af3842e263944fceeac271,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+5b6ab34249af3842e263944fceeac271,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+5cb767b80840898aa5b54b29e9d39244,Leitura gerada,2026-11-04 00:32:03.000,ESP32,1
+5cb767b80840898aa5b54b29e9d39244,Alerta: Estresse Termico,2026-11-04 00:32:03.000,ESP32,2
+5cb767b80840898aa5b54b29e9d39244,Recebida pelo subscriber,2026-11-04 00:32:20.405,ingestao.py,3
+5cb767b80840898aa5b54b29e9d39244,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+5cb767b80840898aa5b54b29e9d39244,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+5db3f8a74d4e5f9e3f818b8ebaa86e97,Leitura gerada,2026-11-05 00:49:08.000,ESP32,1
+5db3f8a74d4e5f9e3f818b8ebaa86e97,Recebida pelo subscriber,2026-11-05 01:20:38.155,ingestao.py,3
+5db3f8a74d4e5f9e3f818b8ebaa86e97,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+5db3f8a74d4e5f9e3f818b8ebaa86e97,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+5e12147642e449263019cda8c89d45ea,Leitura gerada,2026-11-05 00:44:53.000,ESP32,1
+5e12147642e449263019cda8c89d45ea,Recebida pelo subscriber,2026-11-05 01:06:47.300,ingestao.py,3
+5e12147642e449263019cda8c89d45ea,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+5e12147642e449263019cda8c89d45ea,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+5ec491177e9865531908dcf5c36d04f0,Leitura gerada,2026-11-05 00:45:11.000,ESP32,1
+5ec491177e9865531908dcf5c36d04f0,Alerta: Solo Encharcado,2026-11-05 00:45:11.000,ESP32,2
+5ec491177e9865531908dcf5c36d04f0,Recebida pelo subscriber,2026-11-05 01:07:28.187,ingestao.py,3
+5ec491177e9865531908dcf5c36d04f0,Gravada em lote,2026-11-05 01:07:28.189,ingestao.py,4
+5ec491177e9865531908dcf5c36d04f0,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+5ee39e54632ed66776e3ddc384a938a6,Leitura gerada,2026-11-05 00:48:43.000,ESP32,1
+5ee39e54632ed66776e3ddc384a938a6,Alerta: Estresse Termico,2026-11-05 00:48:43.000,ESP32,2
+5ee39e54632ed66776e3ddc384a938a6,Alerta: Solo Seco,2026-11-05 00:48:43.000,ESP32,2
+5ee39e54632ed66776e3ddc384a938a6,Recebida pelo subscriber,2026-11-05 01:19:43.052,ingestao.py,3
+5ee39e54632ed66776e3ddc384a938a6,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+5ee39e54632ed66776e3ddc384a938a6,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+61229183e89957e02db110857fff354b,Leitura gerada,2026-11-04 11:41:38.000,ESP32,1
+61229183e89957e02db110857fff354b,Alerta: Estresse Termico,2026-11-04 11:41:38.000,ESP32,2
+61229183e89957e02db110857fff354b,Alerta: Solo Seco,2026-11-04 11:41:38.000,ESP32,2
+61229183e89957e02db110857fff354b,Recebida pelo subscriber,2026-11-04 11:42:02.753,ingestao.py,3
+61229183e89957e02db110857fff354b,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+61229183e89957e02db110857fff354b,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+61ef0aeab7169489cd19843c39bbba12,Leitura gerada,2026-11-05 00:44:09.000,ESP32,1
+61ef0aeab7169489cd19843c39bbba12,Recebida pelo subscriber,2026-11-05 00:44:33.159,ingestao.py,3
+61ef0aeab7169489cd19843c39bbba12,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+61ef0aeab7169489cd19843c39bbba12,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+61fd0acc2df2ac3bbb2c3eb32e71a912,Leitura gerada,2026-11-04 10:40:01.000,ESP32,1
+61fd0acc2df2ac3bbb2c3eb32e71a912,Alerta: Estresse Termico,2026-11-04 10:40:01.000,ESP32,2
+61fd0acc2df2ac3bbb2c3eb32e71a912,Recebida pelo subscriber,2026-11-04 10:42:32.883,ingestao.py,3
+61fd0acc2df2ac3bbb2c3eb32e71a912,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+61fd0acc2df2ac3bbb2c3eb32e71a912,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+63a85aadd93d30047a2277497d5bca37,Leitura gerada,2026-11-04 00:27:32.000,ESP32,1
+63a85aadd93d30047a2277497d5bca37,Alerta: Estresse Termico,2026-11-04 00:27:32.000,ESP32,2
+63a85aadd93d30047a2277497d5bca37,Recebida pelo subscriber,2026-11-04 00:28:00.447,ingestao.py,3
+63a85aadd93d30047a2277497d5bca37,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+63a85aadd93d30047a2277497d5bca37,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+643a3f7f0d475ac2227a3ab2053c42e2,Leitura gerada,2026-11-05 00:40:32.000,ESP32,1
+643a3f7f0d475ac2227a3ab2053c42e2,Alerta: Estresse Termico,2026-11-05 00:40:32.000,ESP32,2
+643a3f7f0d475ac2227a3ab2053c42e2,Alerta: Solo Seco,2026-11-05 00:40:32.000,ESP32,2
+643a3f7f0d475ac2227a3ab2053c42e2,Recebida pelo subscriber,2026-11-05 00:41:13.319,ingestao.py,3
+643a3f7f0d475ac2227a3ab2053c42e2,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+643a3f7f0d475ac2227a3ab2053c42e2,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+64a764aa3f6cfa4c971ed1e45ff1c191,Leitura gerada,2026-11-04 00:27:37.000,ESP32,1
+64a764aa3f6cfa4c971ed1e45ff1c191,Alerta: Estresse Termico,2026-11-04 00:27:37.000,ESP32,2
+64a764aa3f6cfa4c971ed1e45ff1c191,Recebida pelo subscriber,2026-11-04 00:28:08.709,ingestao.py,3
+64a764aa3f6cfa4c971ed1e45ff1c191,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+64a764aa3f6cfa4c971ed1e45ff1c191,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+65e1257f08685fc0468ac266dab08576,Leitura gerada,2026-11-04 10:40:06.000,ESP32,1
+65e1257f08685fc0468ac266dab08576,Alerta: Estresse Termico,2026-11-04 10:40:06.000,ESP32,2
+65e1257f08685fc0468ac266dab08576,Recebida pelo subscriber,2026-11-04 10:42:43.145,ingestao.py,3
+65e1257f08685fc0468ac266dab08576,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+65e1257f08685fc0468ac266dab08576,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+6687e4910c3a9d874eb57048d439182b,Leitura gerada,2026-11-04 11:41:53.000,ESP32,1
+6687e4910c3a9d874eb57048d439182b,Alerta: Solo Seco,2026-11-04 11:41:53.000,ESP32,2
+6687e4910c3a9d874eb57048d439182b,Recebida pelo subscriber,2026-11-04 11:42:29.103,ingestao.py,3
+6687e4910c3a9d874eb57048d439182b,Gravada em lote,2026-11-04 11:42:31.114,ingestao.py,4
+6687e4910c3a9d874eb57048d439182b,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+67a7c820ad56a0f33ac22c413cddc7d9,Leitura gerada,2026-11-05 00:45:10.000,ESP32,1
+67a7c820ad56a0f33ac22c413cddc7d9,Alerta: Solo Encharcado,2026-11-05 00:45:10.000,ESP32,2
+67a7c820ad56a0f33ac22c413cddc7d9,Recebida pelo subscriber,2026-11-05 01:07:25.550,ingestao.py,3
+67a7c820ad56a0f33ac22c413cddc7d9,Gravada em lote,2026-11-05 01:07:28.189,ingestao.py,4
+67a7c820ad56a0f33ac22c413cddc7d9,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+6addf677cedaa6ad6b69af964cbbeac0,Leitura gerada,2026-11-04 10:39:55.000,ESP32,1
+6addf677cedaa6ad6b69af964cbbeac0,Recebida pelo subscriber,2026-11-04 10:42:19.098,ingestao.py,3
+6addf677cedaa6ad6b69af964cbbeac0,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+6addf677cedaa6ad6b69af964cbbeac0,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+6eb8546c4bfaf6f16958ad3e9a2144c9,Leitura gerada,2026-11-05 00:44:20.000,ESP32,1
+6eb8546c4bfaf6f16958ad3e9a2144c9,Recebida pelo subscriber,2026-11-05 00:44:58.238,ingestao.py,3
+6eb8546c4bfaf6f16958ad3e9a2144c9,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+6eb8546c4bfaf6f16958ad3e9a2144c9,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+6f6ad1b00ad0887aadad16444ea0e0a7,Leitura gerada,2026-11-05 00:40:42.000,ESP32,1
+6f6ad1b00ad0887aadad16444ea0e0a7,Alerta: Estresse Termico,2026-11-05 00:40:42.000,ESP32,2
+6f6ad1b00ad0887aadad16444ea0e0a7,Alerta: Solo Seco,2026-11-05 00:40:42.000,ESP32,2
+6f6ad1b00ad0887aadad16444ea0e0a7,Recebida pelo subscriber,2026-11-05 00:41:31.617,ingestao.py,3
+6f6ad1b00ad0887aadad16444ea0e0a7,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+6f6ad1b00ad0887aadad16444ea0e0a7,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+705f6920d492269cd29b8910db9da476,Leitura gerada,2026-11-05 00:49:21.000,ESP32,1
+705f6920d492269cd29b8910db9da476,Recebida pelo subscriber,2026-11-05 01:21:04.567,ingestao.py,3
+705f6920d492269cd29b8910db9da476,Gravada em lote,2026-11-05 01:21:11.000,ingestao.py,4
+705f6920d492269cd29b8910db9da476,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+706c913bd7111bb98890f3f598de55ab,Leitura gerada,2026-11-04 00:32:09.000,ESP32,1
+706c913bd7111bb98890f3f598de55ab,Alerta: Estresse Termico,2026-11-04 00:32:09.000,ESP32,2
+706c913bd7111bb98890f3f598de55ab,Recebida pelo subscriber,2026-11-04 00:32:30.174,ingestao.py,3
+706c913bd7111bb98890f3f598de55ab,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+706c913bd7111bb98890f3f598de55ab,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+71aa613d386282740a13116967dd8dc1,Leitura gerada,2026-11-05 00:40:44.000,ESP32,1
+71aa613d386282740a13116967dd8dc1,Alerta: Solo Seco,2026-11-05 00:40:44.000,ESP32,2
+71aa613d386282740a13116967dd8dc1,Alerta: Estresse Termico,2026-11-05 00:40:44.000,ESP32,2
+71aa613d386282740a13116967dd8dc1,Recebida pelo subscriber,2026-11-05 00:41:37.160,ingestao.py,3
+71aa613d386282740a13116967dd8dc1,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+71aa613d386282740a13116967dd8dc1,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+71da9b5ec2bb2bd0422f5a7139a5b352,Leitura gerada,2026-11-05 00:49:06.000,ESP32,1
+71da9b5ec2bb2bd0422f5a7139a5b352,Recebida pelo subscriber,2026-11-05 01:20:34.593,ingestao.py,3
+71da9b5ec2bb2bd0422f5a7139a5b352,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+71da9b5ec2bb2bd0422f5a7139a5b352,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+76a10a5f3f86831df675f9305217b021,Leitura gerada,2026-11-04 00:32:23.000,ESP32,1
+76a10a5f3f86831df675f9305217b021,Alerta: Solo Encharcado,2026-11-04 00:32:23.000,ESP32,2
+76a10a5f3f86831df675f9305217b021,Recebida pelo subscriber,2026-11-04 00:32:53.946,ingestao.py,3
+76a10a5f3f86831df675f9305217b021,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+76a10a5f3f86831df675f9305217b021,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+777057ecf2e4c520736cf22a58e85a3d,Leitura gerada,2026-11-05 00:44:11.000,ESP32,1
+777057ecf2e4c520736cf22a58e85a3d,Recebida pelo subscriber,2026-11-05 00:44:37.880,ingestao.py,3
+777057ecf2e4c520736cf22a58e85a3d,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+777057ecf2e4c520736cf22a58e85a3d,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+7bace2861d11ff612cd0079ef4391bd3,Leitura gerada,2026-11-05 00:49:16.000,ESP32,1
+7bace2861d11ff612cd0079ef4391bd3,Alerta: Estresse Termico,2026-11-05 00:49:16.000,ESP32,2
+7bace2861d11ff612cd0079ef4391bd3,Recebida pelo subscriber,2026-11-05 01:20:53.261,ingestao.py,3
+7bace2861d11ff612cd0079ef4391bd3,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+7bace2861d11ff612cd0079ef4391bd3,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+7da7fc874cf52c9924e6b1673d0f8981,Leitura gerada,2026-11-04 00:27:42.000,ESP32,1
+7da7fc874cf52c9924e6b1673d0f8981,Alerta: Estresse Termico,2026-11-04 00:27:42.000,ESP32,2
+7da7fc874cf52c9924e6b1673d0f8981,Recebida pelo subscriber,2026-11-04 00:28:17.033,ingestao.py,3
+7da7fc874cf52c9924e6b1673d0f8981,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+7da7fc874cf52c9924e6b1673d0f8981,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+7fb0c05f90cfa83244a77b349926be79,Leitura gerada,2026-11-04 00:31:53.000,ESP32,1
+7fb0c05f90cfa83244a77b349926be79,Alerta: Solo Seco,2026-11-04 00:31:53.000,ESP32,2
+7fb0c05f90cfa83244a77b349926be79,Recebida pelo subscriber,2026-11-04 00:32:03.177,ingestao.py,3
+7fb0c05f90cfa83244a77b349926be79,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+7fb0c05f90cfa83244a77b349926be79,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+81721108e85c6fc00331d5671f65005f,Leitura gerada,2026-11-05 00:40:51.000,ESP32,1
+81721108e85c6fc00331d5671f65005f,Alerta: Estresse Termico,2026-11-05 00:40:51.000,ESP32,2
+81721108e85c6fc00331d5671f65005f,Alerta: Solo Seco,2026-11-05 00:40:51.000,ESP32,2
+81721108e85c6fc00331d5671f65005f,Recebida pelo subscriber,2026-11-05 00:41:53.804,ingestao.py,3
+81721108e85c6fc00331d5671f65005f,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+81721108e85c6fc00331d5671f65005f,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+81e679b5da4ee93015e85e7d1110452b,Leitura gerada,2026-11-04 00:32:18.000,ESP32,1
+81e679b5da4ee93015e85e7d1110452b,Alerta: Solo Seco,2026-11-04 00:32:18.000,ESP32,2
+81e679b5da4ee93015e85e7d1110452b,Alerta: Estresse Termico,2026-11-04 00:32:18.000,ESP32,2
+81e679b5da4ee93015e85e7d1110452b,Recebida pelo subscriber,2026-11-04 00:32:45.279,ingestao.py,3
+81e679b5da4ee93015e85e7d1110452b,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+81e679b5da4ee93015e85e7d1110452b,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+8212139e8b93275eeccf65580cc1cd5e,Leitura gerada,2026-11-05 00:49:04.000,ESP32,1
+8212139e8b93275eeccf65580cc1cd5e,Recebida pelo subscriber,2026-11-05 01:20:30.929,ingestao.py,3
+8212139e8b93275eeccf65580cc1cd5e,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+8212139e8b93275eeccf65580cc1cd5e,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+8334ff318fb67d17c76c796719f9b1f0,Leitura gerada,2026-11-05 00:40:50.000,ESP32,1
+8334ff318fb67d17c76c796719f9b1f0,Alerta: Solo Seco,2026-11-05 00:40:50.000,ESP32,2
+8334ff318fb67d17c76c796719f9b1f0,Alerta: Estresse Termico,2026-11-05 00:40:50.000,ESP32,2
+8334ff318fb67d17c76c796719f9b1f0,Recebida pelo subscriber,2026-11-05 00:41:50.707,ingestao.py,3
+8334ff318fb67d17c76c796719f9b1f0,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+8334ff318fb67d17c76c796719f9b1f0,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+83d8865409285a689a919ad2e02df26a,Leitura gerada,2026-11-04 00:27:23.000,ESP32,1
+83d8865409285a689a919ad2e02df26a,Alerta: Risco Geada,2026-11-04 00:27:23.000,ESP32,2
+83d8865409285a689a919ad2e02df26a,Alerta: Solo Seco,2026-11-04 00:27:23.000,ESP32,2
+83d8865409285a689a919ad2e02df26a,Recebida pelo subscriber,2026-11-04 00:27:44.887,ingestao.py,3
+83d8865409285a689a919ad2e02df26a,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+83d8865409285a689a919ad2e02df26a,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+83fba118621913b1adb24f0b0f5229b8,Leitura gerada,2026-11-04 00:27:46.000,ESP32,1
+83fba118621913b1adb24f0b0f5229b8,Alerta: Solo Encharcado,2026-11-04 00:27:46.000,ESP32,2
+83fba118621913b1adb24f0b0f5229b8,Alerta: Estresse Termico,2026-11-04 00:27:46.000,ESP32,2
+83fba118621913b1adb24f0b0f5229b8,Recebida pelo subscriber,2026-11-04 00:28:25.753,ingestao.py,3
+83fba118621913b1adb24f0b0f5229b8,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+83fba118621913b1adb24f0b0f5229b8,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+847ac1236c1f728279b2adbc7989ba67,Leitura gerada,2026-11-04 00:27:31.000,ESP32,1
+847ac1236c1f728279b2adbc7989ba67,Alerta: Estresse Termico,2026-11-04 00:27:31.000,ESP32,2
+847ac1236c1f728279b2adbc7989ba67,Recebida pelo subscriber,2026-11-04 00:27:58.816,ingestao.py,3
+847ac1236c1f728279b2adbc7989ba67,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+847ac1236c1f728279b2adbc7989ba67,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+849b33c4b818bb133d93a9a3751588b2,Leitura gerada,2026-11-05 00:44:08.000,ESP32,1
+849b33c4b818bb133d93a9a3751588b2,Recebida pelo subscriber,2026-11-05 00:44:30.928,ingestao.py,3
+849b33c4b818bb133d93a9a3751588b2,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+849b33c4b818bb133d93a9a3751588b2,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+854d2ae8cfa0cb624b4e1501da630aa7,Leitura gerada,2026-11-04 11:48:16.000,ESP32,1
+854d2ae8cfa0cb624b4e1501da630aa7,Recebida pelo subscriber,2026-11-04 11:49:05.299,ingestao.py,3
+854d2ae8cfa0cb624b4e1501da630aa7,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+854d2ae8cfa0cb624b4e1501da630aa7,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+867d6cae6536365dd847c2aa35cae1b2,Leitura gerada,2026-11-04 11:48:19.000,ESP32,1
+867d6cae6536365dd847c2aa35cae1b2,Alerta: Estresse Termico,2026-11-04 11:48:19.000,ESP32,2
+867d6cae6536365dd847c2aa35cae1b2,Recebida pelo subscriber,2026-11-04 11:49:12.400,ingestao.py,3
+867d6cae6536365dd847c2aa35cae1b2,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+867d6cae6536365dd847c2aa35cae1b2,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+8696874743987e9432fc09303139cc24,Leitura gerada,2026-11-05 00:44:29.000,ESP32,1
+8696874743987e9432fc09303139cc24,Recebida pelo subscriber,2026-11-05 00:45:13.530,ingestao.py,3
+8696874743987e9432fc09303139cc24,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+8696874743987e9432fc09303139cc24,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+8e3a48ace5374e13b30c43b73df1f061,Leitura gerada,2026-11-04 11:41:37.000,ESP32,1
+8e3a48ace5374e13b30c43b73df1f061,Alerta: Estresse Termico,2026-11-04 11:41:37.000,ESP32,2
+8e3a48ace5374e13b30c43b73df1f061,Recebida pelo subscriber,2026-11-04 11:42:01.080,ingestao.py,3
+8e3a48ace5374e13b30c43b73df1f061,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+8e3a48ace5374e13b30c43b73df1f061,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+8e9c36376f2225faf06c0e5170de0112,Leitura gerada,2026-11-04 10:40:17.000,ESP32,1
+8e9c36376f2225faf06c0e5170de0112,Alerta: Estresse Termico,2026-11-04 10:40:17.000,ESP32,2
+8e9c36376f2225faf06c0e5170de0112,Recebida pelo subscriber,2026-11-04 10:43:03.816,ingestao.py,3
+8e9c36376f2225faf06c0e5170de0112,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+8e9c36376f2225faf06c0e5170de0112,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+8e9fdee0609ddda1b3bd33aae72482ef,Leitura gerada,2026-11-05 00:48:39.000,ESP32,1
+8e9fdee0609ddda1b3bd33aae72482ef,Alerta: Estresse Termico,2026-11-05 00:48:39.000,ESP32,2
+8e9fdee0609ddda1b3bd33aae72482ef,Alerta: Solo Encharcado,2026-11-05 00:48:39.000,ESP32,2
+8e9fdee0609ddda1b3bd33aae72482ef,Recebida pelo subscriber,2026-11-05 01:19:35.700,ingestao.py,3
+8e9fdee0609ddda1b3bd33aae72482ef,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+8e9fdee0609ddda1b3bd33aae72482ef,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+943108a37538cd0a21c61888107a9c2e,Leitura gerada,2026-11-05 00:40:31.000,ESP32,1
+943108a37538cd0a21c61888107a9c2e,Alerta: Solo Seco,2026-11-05 00:40:31.000,ESP32,2
+943108a37538cd0a21c61888107a9c2e,Alerta: Estresse Termico,2026-11-05 00:40:31.000,ESP32,2
+943108a37538cd0a21c61888107a9c2e,Recebida pelo subscriber,2026-11-05 00:41:11.477,ingestao.py,3
+943108a37538cd0a21c61888107a9c2e,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+943108a37538cd0a21c61888107a9c2e,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+9806d3043495643e4b45a9e64e443dd1,Leitura gerada,2026-11-04 00:32:14.000,ESP32,1
+9806d3043495643e4b45a9e64e443dd1,Alerta: Estresse Termico,2026-11-04 00:32:14.000,ESP32,2
+9806d3043495643e4b45a9e64e443dd1,Alerta: Solo Seco,2026-11-04 00:32:14.000,ESP32,2
+9806d3043495643e4b45a9e64e443dd1,Recebida pelo subscriber,2026-11-04 00:32:38.505,ingestao.py,3
+9806d3043495643e4b45a9e64e443dd1,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+9806d3043495643e4b45a9e64e443dd1,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+980e3a8822d6d03b7e3669672318ead5,Leitura gerada,2026-11-04 00:27:45.000,ESP32,1
+980e3a8822d6d03b7e3669672318ead5,Alerta: Estresse Termico,2026-11-04 00:27:45.000,ESP32,2
+980e3a8822d6d03b7e3669672318ead5,Alerta: Solo Encharcado,2026-11-04 00:27:45.000,ESP32,2
+980e3a8822d6d03b7e3669672318ead5,Recebida pelo subscriber,2026-11-04 00:28:24.178,ingestao.py,3
+980e3a8822d6d03b7e3669672318ead5,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+980e3a8822d6d03b7e3669672318ead5,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+98769abe7cd664b63baf4d11202735cd,Leitura gerada,2026-11-04 00:32:13.000,ESP32,1
+98769abe7cd664b63baf4d11202735cd,Alerta: Solo Seco,2026-11-04 00:32:13.000,ESP32,2
+98769abe7cd664b63baf4d11202735cd,Alerta: Estresse Termico,2026-11-04 00:32:13.000,ESP32,2
+98769abe7cd664b63baf4d11202735cd,Recebida pelo subscriber,2026-11-04 00:32:36.924,ingestao.py,3
+98769abe7cd664b63baf4d11202735cd,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+98769abe7cd664b63baf4d11202735cd,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+98d7c569a6259f51dc234b3e668df88b,Leitura gerada,2026-11-04 00:32:17.000,ESP32,1
+98d7c569a6259f51dc234b3e668df88b,Alerta: Estresse Termico,2026-11-04 00:32:17.000,ESP32,2
+98d7c569a6259f51dc234b3e668df88b,Alerta: Solo Seco,2026-11-04 00:32:17.000,ESP32,2
+98d7c569a6259f51dc234b3e668df88b,Recebida pelo subscriber,2026-11-04 00:32:43.612,ingestao.py,3
+98d7c569a6259f51dc234b3e668df88b,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+98d7c569a6259f51dc234b3e668df88b,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+9a773eff977e8fab5a8869fad81eb3f4,Leitura gerada,2026-11-04 10:40:12.000,ESP32,1
+9a773eff977e8fab5a8869fad81eb3f4,Alerta: Estresse Termico,2026-11-04 10:40:12.000,ESP32,2
+9a773eff977e8fab5a8869fad81eb3f4,Recebida pelo subscriber,2026-11-04 10:42:54.252,ingestao.py,3
+9a773eff977e8fab5a8869fad81eb3f4,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+9a773eff977e8fab5a8869fad81eb3f4,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+9b2b2ae897eb4057ba337f4e1cfd6b3c,Leitura gerada,2026-11-05 00:45:01.000,ESP32,1
+9b2b2ae897eb4057ba337f4e1cfd6b3c,Alerta: Estresse Termico,2026-11-05 00:45:01.000,ESP32,2
+9b2b2ae897eb4057ba337f4e1cfd6b3c,Alerta: Solo Encharcado,2026-11-05 00:45:01.000,ESP32,2
+9b2b2ae897eb4057ba337f4e1cfd6b3c,Recebida pelo subscriber,2026-11-05 01:07:04.585,ingestao.py,3
+9b2b2ae897eb4057ba337f4e1cfd6b3c,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+9b2b2ae897eb4057ba337f4e1cfd6b3c,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+9b7e1c681c86994e24bb75d1b03a0e9f,Leitura gerada,2026-11-05 00:44:21.000,ESP32,1
+9b7e1c681c86994e24bb75d1b03a0e9f,Alerta: Estresse Termico,2026-11-05 00:44:21.000,ESP32,2
+9b7e1c681c86994e24bb75d1b03a0e9f,Recebida pelo subscriber,2026-11-05 00:44:59.952,ingestao.py,3
+9b7e1c681c86994e24bb75d1b03a0e9f,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+9b7e1c681c86994e24bb75d1b03a0e9f,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+9e3ce4249a0abe32bee1df5631ac90b1,Leitura gerada,2026-11-04 00:32:02.000,ESP32,1
+9e3ce4249a0abe32bee1df5631ac90b1,Alerta: Estresse Termico,2026-11-04 00:32:02.000,ESP32,2
+9e3ce4249a0abe32bee1df5631ac90b1,Recebida pelo subscriber,2026-11-04 00:32:19.001,ingestao.py,3
+9e3ce4249a0abe32bee1df5631ac90b1,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+9e3ce4249a0abe32bee1df5631ac90b1,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+9e4d2b0f4549a683a2594bd4324c0e70,Leitura gerada,2026-11-05 00:49:22.000,ESP32,1
+9e4d2b0f4549a683a2594bd4324c0e70,Recebida pelo subscriber,2026-11-05 01:21:07.226,ingestao.py,3
+9e4d2b0f4549a683a2594bd4324c0e70,Gravada em lote,2026-11-05 01:21:11.000,ingestao.py,4
+9e4d2b0f4549a683a2594bd4324c0e70,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+9f401a44214089cbb91c0026dddde7c5,Leitura gerada,2026-11-04 10:40:02.000,ESP32,1
+9f401a44214089cbb91c0026dddde7c5,Recebida pelo subscriber,2026-11-04 10:42:35.126,ingestao.py,3
+9f401a44214089cbb91c0026dddde7c5,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+9f401a44214089cbb91c0026dddde7c5,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+a0de398a8d0af9b3e8c03c4fb354f4f1,Leitura gerada,2026-11-05 00:48:47.000,ESP32,1
+a0de398a8d0af9b3e8c03c4fb354f4f1,Alerta: Solo Seco,2026-11-05 00:48:47.000,ESP32,2
+a0de398a8d0af9b3e8c03c4fb354f4f1,Recebida pelo subscriber,2026-11-05 01:19:52.772,ingestao.py,3
+a0de398a8d0af9b3e8c03c4fb354f4f1,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+a0de398a8d0af9b3e8c03c4fb354f4f1,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+a36e3a235f059b0951b52c61a3458bf5,Leitura gerada,2026-11-05 00:44:56.000,ESP32,1
+a36e3a235f059b0951b52c61a3458bf5,Alerta: Solo Seco,2026-11-05 00:44:56.000,ESP32,2
+a36e3a235f059b0951b52c61a3458bf5,Recebida pelo subscriber,2026-11-05 01:06:55.771,ingestao.py,3
+a36e3a235f059b0951b52c61a3458bf5,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+a36e3a235f059b0951b52c61a3458bf5,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+a3bdb9a857391a4558b9cf67149b50b1,Leitura gerada,2026-11-05 00:49:19.000,ESP32,1
+a3bdb9a857391a4558b9cf67149b50b1,Recebida pelo subscriber,2026-11-05 01:20:59.352,ingestao.py,3
+a3bdb9a857391a4558b9cf67149b50b1,Gravada em lote,2026-11-05 01:21:11.000,ingestao.py,4
+a3bdb9a857391a4558b9cf67149b50b1,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+a433fb683bb14be46ef094d2e0f71b3c,Leitura gerada,2026-11-04 00:32:25.000,ESP32,1
+a433fb683bb14be46ef094d2e0f71b3c,Alerta: Solo Encharcado,2026-11-04 00:32:25.000,ESP32,2
+a433fb683bb14be46ef094d2e0f71b3c,Recebida pelo subscriber,2026-11-04 00:32:59.052,ingestao.py,3
+a433fb683bb14be46ef094d2e0f71b3c,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+a433fb683bb14be46ef094d2e0f71b3c,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+a4916c3b80d25c19aa17734f6b2893c4,Leitura gerada,2026-11-05 00:40:53.000,ESP32,1
+a4916c3b80d25c19aa17734f6b2893c4,Alerta: Estresse Termico,2026-11-05 00:40:53.000,ESP32,2
+a4916c3b80d25c19aa17734f6b2893c4,Alerta: Solo Seco,2026-11-05 00:40:53.000,ESP32,2
+a4916c3b80d25c19aa17734f6b2893c4,Recebida pelo subscriber,2026-11-05 00:41:58.087,ingestao.py,3
+a4916c3b80d25c19aa17734f6b2893c4,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+a4916c3b80d25c19aa17734f6b2893c4,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+a5456a38451ea0829722fb5de008ae05,Leitura gerada,2026-11-05 00:44:23.000,ESP32,1
+a5456a38451ea0829722fb5de008ae05,Alerta: Risco Geada,2026-11-05 00:44:23.000,ESP32,2
+a5456a38451ea0829722fb5de008ae05,Recebida pelo subscriber,2026-11-05 00:45:03.323,ingestao.py,3
+a5456a38451ea0829722fb5de008ae05,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+a5456a38451ea0829722fb5de008ae05,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+a573aa07f5b561b3d50e859a2c7382d1,Leitura gerada,2026-11-04 10:39:59.000,ESP32,1
+a573aa07f5b561b3d50e859a2c7382d1,Alerta: Estresse Termico,2026-11-04 10:39:59.000,ESP32,2
+a573aa07f5b561b3d50e859a2c7382d1,Recebida pelo subscriber,2026-11-04 10:42:28.368,ingestao.py,3
+a573aa07f5b561b3d50e859a2c7382d1,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+a573aa07f5b561b3d50e859a2c7382d1,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+a5a779cff61d59d106830e399fae915e,Leitura gerada,2026-11-05 00:40:38.000,ESP32,1
+a5a779cff61d59d106830e399fae915e,Alerta: Estresse Termico,2026-11-05 00:40:38.000,ESP32,2
+a5a779cff61d59d106830e399fae915e,Alerta: Solo Seco,2026-11-05 00:40:38.000,ESP32,2
+a5a779cff61d59d106830e399fae915e,Recebida pelo subscriber,2026-11-05 00:41:23.446,ingestao.py,3
+a5a779cff61d59d106830e399fae915e,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+a5a779cff61d59d106830e399fae915e,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+a66fecdfaf0dabc50a880d1d2e04c04f,Leitura gerada,2026-11-05 00:44:28.000,ESP32,1
+a66fecdfaf0dabc50a880d1d2e04c04f,Alerta: Estresse Termico,2026-11-05 00:44:28.000,ESP32,2
+a66fecdfaf0dabc50a880d1d2e04c04f,Recebida pelo subscriber,2026-11-05 00:45:11.741,ingestao.py,3
+a66fecdfaf0dabc50a880d1d2e04c04f,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+a66fecdfaf0dabc50a880d1d2e04c04f,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+a6b3c6ffad298f201e51d3d040f4fedd,Leitura gerada,2026-11-04 11:48:07.000,ESP32,1
+a6b3c6ffad298f201e51d3d040f4fedd,Recebida pelo subscriber,2026-11-04 11:48:49.659,ingestao.py,3
+a6b3c6ffad298f201e51d3d040f4fedd,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+a6b3c6ffad298f201e51d3d040f4fedd,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+a84e3be13ef132272768f59aa8131779,Leitura gerada,2026-11-04 11:48:06.000,ESP32,1
+a84e3be13ef132272768f59aa8131779,Recebida pelo subscriber,2026-11-04 11:48:47.916,ingestao.py,3
+a84e3be13ef132272768f59aa8131779,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+a84e3be13ef132272768f59aa8131779,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+a8759a5855cbcde3de6e5b404a9f20d6,Leitura gerada,2026-11-05 00:45:06.000,ESP32,1
+a8759a5855cbcde3de6e5b404a9f20d6,Alerta: Solo Encharcado,2026-11-05 00:45:06.000,ESP32,2
+a8759a5855cbcde3de6e5b404a9f20d6,Recebida pelo subscriber,2026-11-05 01:07:14.756,ingestao.py,3
+a8759a5855cbcde3de6e5b404a9f20d6,Gravada em lote,2026-11-05 01:07:28.189,ingestao.py,4
+a8759a5855cbcde3de6e5b404a9f20d6,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+aa0b0ca1cb2eda8520b10048cfc5ad21,Leitura gerada,2026-11-05 00:44:27.000,ESP32,1
+aa0b0ca1cb2eda8520b10048cfc5ad21,Alerta: Estresse Termico,2026-11-05 00:44:27.000,ESP32,2
+aa0b0ca1cb2eda8520b10048cfc5ad21,Recebida pelo subscriber,2026-11-05 00:45:10.089,ingestao.py,3
+aa0b0ca1cb2eda8520b10048cfc5ad21,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+aa0b0ca1cb2eda8520b10048cfc5ad21,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+aa3631fc794e172052ff958a9f0a8009,Leitura gerada,2026-11-04 11:41:47.000,ESP32,1
+aa3631fc794e172052ff958a9f0a8009,Recebida pelo subscriber,2026-11-04 11:42:17.683,ingestao.py,3
+aa3631fc794e172052ff958a9f0a8009,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+aa3631fc794e172052ff958a9f0a8009,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+ab5256c72d6cf1afda2b6324327faf7e,Leitura gerada,2026-11-04 11:41:44.000,ESP32,1
+ab5256c72d6cf1afda2b6324327faf7e,Recebida pelo subscriber,2026-11-04 11:42:12.635,ingestao.py,3
+ab5256c72d6cf1afda2b6324327faf7e,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+ab5256c72d6cf1afda2b6324327faf7e,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+abe42c5f4bdaa2dbb66305f9ceef2eb1,Leitura gerada,2026-11-05 00:44:24.000,ESP32,1
+abe42c5f4bdaa2dbb66305f9ceef2eb1,Alerta: Risco Geada,2026-11-05 00:44:24.000,ESP32,2
+abe42c5f4bdaa2dbb66305f9ceef2eb1,Recebida pelo subscriber,2026-11-05 00:45:05.040,ingestao.py,3
+abe42c5f4bdaa2dbb66305f9ceef2eb1,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+abe42c5f4bdaa2dbb66305f9ceef2eb1,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+ac51069d9e589aa1840e85c910da1c98,Leitura gerada,2026-11-04 00:32:24.000,ESP32,1
+ac51069d9e589aa1840e85c910da1c98,Alerta: Solo Encharcado,2026-11-04 00:32:24.000,ESP32,2
+ac51069d9e589aa1840e85c910da1c98,Recebida pelo subscriber,2026-11-04 00:32:57.006,ingestao.py,3
+ac51069d9e589aa1840e85c910da1c98,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+ac51069d9e589aa1840e85c910da1c98,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+accc615e935a71a2b747fed24b7e538b,Leitura gerada,2026-11-05 00:44:55.000,ESP32,1
+accc615e935a71a2b747fed24b7e538b,Recebida pelo subscriber,2026-11-05 01:06:53.531,ingestao.py,3
+accc615e935a71a2b747fed24b7e538b,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+accc615e935a71a2b747fed24b7e538b,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+acf5eed6d0631ce0060ec39bcdb41062,Leitura gerada,2026-11-04 00:32:26.000,ESP32,1
+acf5eed6d0631ce0060ec39bcdb41062,Alerta: Solo Encharcado,2026-11-04 00:32:26.000,ESP32,2
+acf5eed6d0631ce0060ec39bcdb41062,Recebida pelo subscriber,2026-11-04 00:33:00.952,ingestao.py,3
+acf5eed6d0631ce0060ec39bcdb41062,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+acf5eed6d0631ce0060ec39bcdb41062,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+ad69647b3eca0ae4743c5dee966f74c2,Leitura gerada,2026-11-04 10:40:08.000,ESP32,1
+ad69647b3eca0ae4743c5dee966f74c2,Alerta: Estresse Termico,2026-11-04 10:40:08.000,ESP32,2
+ad69647b3eca0ae4743c5dee966f74c2,Recebida pelo subscriber,2026-11-04 10:42:46.802,ingestao.py,3
+ad69647b3eca0ae4743c5dee966f74c2,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+ad69647b3eca0ae4743c5dee966f74c2,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+aea36b50f8d0f02215601cafc257b259,Leitura gerada,2026-11-05 00:45:09.000,ESP32,1
+aea36b50f8d0f02215601cafc257b259,Alerta: Solo Encharcado,2026-11-05 00:45:09.000,ESP32,2
+aea36b50f8d0f02215601cafc257b259,Recebida pelo subscriber,2026-11-05 01:07:22.752,ingestao.py,3
+aea36b50f8d0f02215601cafc257b259,Gravada em lote,2026-11-05 01:07:28.189,ingestao.py,4
+aea36b50f8d0f02215601cafc257b259,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+aeb984c183618390b098fc279b986320,Leitura gerada,2026-11-05 00:48:54.000,ESP32,1
+aeb984c183618390b098fc279b986320,Recebida pelo subscriber,2026-11-05 01:20:07.176,ingestao.py,3
+aeb984c183618390b098fc279b986320,Gravada em lote,2026-11-05 01:20:08.186,ingestao.py,4
+aeb984c183618390b098fc279b986320,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+aeea7bf4115475e3c351820c52a72fa6,Leitura gerada,2026-11-04 00:32:00.000,ESP32,1
+aeea7bf4115475e3c351820c52a72fa6,Alerta: Estresse Termico,2026-11-04 00:32:00.000,ESP32,2
+aeea7bf4115475e3c351820c52a72fa6,Recebida pelo subscriber,2026-11-04 00:32:15.408,ingestao.py,3
+aeea7bf4115475e3c351820c52a72fa6,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+aeea7bf4115475e3c351820c52a72fa6,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+b0e5b3ec51a26c8f6e6a3eb5a1a72b35,Leitura gerada,2026-11-04 00:32:20.000,ESP32,1
+b0e5b3ec51a26c8f6e6a3eb5a1a72b35,Alerta: Solo Seco,2026-11-04 00:32:20.000,ESP32,2
+b0e5b3ec51a26c8f6e6a3eb5a1a72b35,Recebida pelo subscriber,2026-11-04 00:32:48.679,ingestao.py,3
+b0e5b3ec51a26c8f6e6a3eb5a1a72b35,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+b0e5b3ec51a26c8f6e6a3eb5a1a72b35,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+b1b6b0ed8d8b075b1e4ce41d29dd556f,Leitura gerada,2026-11-04 11:41:36.000,ESP32,1
+b1b6b0ed8d8b075b1e4ce41d29dd556f,Alerta: Risco Geada,2026-11-04 11:41:36.000,ESP32,2
+b1b6b0ed8d8b075b1e4ce41d29dd556f,Recebida pelo subscriber,2026-11-04 11:41:59.342,ingestao.py,3
+b1b6b0ed8d8b075b1e4ce41d29dd556f,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+b1b6b0ed8d8b075b1e4ce41d29dd556f,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+b3193b6ed0d599b2889ab1aaafda2e0a,Leitura gerada,2026-11-05 00:44:31.000,ESP32,1
+b3193b6ed0d599b2889ab1aaafda2e0a,Alerta: Solo Seco,2026-11-05 00:44:31.000,ESP32,2
+b3193b6ed0d599b2889ab1aaafda2e0a,Recebida pelo subscriber,2026-11-05 00:45:16.865,ingestao.py,3
+b3193b6ed0d599b2889ab1aaafda2e0a,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+b3193b6ed0d599b2889ab1aaafda2e0a,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+b492004314e92d5f225d9d98f7ee3df3,Leitura gerada,2026-11-04 00:27:57.000,ESP32,1
+b492004314e92d5f225d9d98f7ee3df3,Alerta: Solo Seco,2026-11-04 00:27:57.000,ESP32,2
+b492004314e92d5f225d9d98f7ee3df3,Recebida pelo subscriber,2026-11-04 00:28:43.766,ingestao.py,3
+b492004314e92d5f225d9d98f7ee3df3,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+b492004314e92d5f225d9d98f7ee3df3,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+b5302629f86af35906b56d4bb9b51094,Leitura gerada,2026-11-04 00:31:58.000,ESP32,1
+b5302629f86af35906b56d4bb9b51094,Alerta: Solo Seco,2026-11-04 00:31:58.000,ESP32,2
+b5302629f86af35906b56d4bb9b51094,Alerta: Estresse Termico,2026-11-04 00:31:58.000,ESP32,2
+b5302629f86af35906b56d4bb9b51094,Recebida pelo subscriber,2026-11-04 00:32:12.073,ingestao.py,3
+b5302629f86af35906b56d4bb9b51094,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+b5302629f86af35906b56d4bb9b51094,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+b681ef38dfdfcb1e3e5412c611d002eb,Leitura gerada,2026-11-04 00:27:55.000,ESP32,1
+b681ef38dfdfcb1e3e5412c611d002eb,Alerta: Solo Seco,2026-11-04 00:27:55.000,ESP32,2
+b681ef38dfdfcb1e3e5412c611d002eb,Recebida pelo subscriber,2026-11-04 00:28:40.325,ingestao.py,3
+b681ef38dfdfcb1e3e5412c611d002eb,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+b681ef38dfdfcb1e3e5412c611d002eb,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+b6a37ae5d245519fdf6a43f56ae4c185,Leitura gerada,2026-11-05 00:44:54.000,ESP32,1
+b6a37ae5d245519fdf6a43f56ae4c185,Recebida pelo subscriber,2026-11-05 01:06:49.998,ingestao.py,3
+b6a37ae5d245519fdf6a43f56ae4c185,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+b6a37ae5d245519fdf6a43f56ae4c185,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+b75a6b7bbf968734d8e3275acd96aecc,Leitura gerada,2026-11-04 00:27:29.000,ESP32,1
+b75a6b7bbf968734d8e3275acd96aecc,Alerta: Estresse Termico,2026-11-04 00:27:29.000,ESP32,2
+b75a6b7bbf968734d8e3275acd96aecc,Recebida pelo subscriber,2026-11-04 00:27:55.377,ingestao.py,3
+b75a6b7bbf968734d8e3275acd96aecc,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+b75a6b7bbf968734d8e3275acd96aecc,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+b7dbf4a1db5172ec3a2005e4fd582e40,Leitura gerada,2026-11-04 11:41:51.000,ESP32,1
+b7dbf4a1db5172ec3a2005e4fd582e40,Alerta: Solo Seco,2026-11-04 11:41:51.000,ESP32,2
+b7dbf4a1db5172ec3a2005e4fd582e40,Recebida pelo subscriber,2026-11-04 11:42:25.622,ingestao.py,3
+b7dbf4a1db5172ec3a2005e4fd582e40,Gravada em lote,2026-11-04 11:42:31.114,ingestao.py,4
+b7dbf4a1db5172ec3a2005e4fd582e40,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+b84a699b018984ae1aba0b63be04fe49,Leitura gerada,2026-11-05 00:40:49.000,ESP32,1
+b84a699b018984ae1aba0b63be04fe49,Alerta: Solo Seco,2026-11-05 00:40:49.000,ESP32,2
+b84a699b018984ae1aba0b63be04fe49,Alerta: Estresse Termico,2026-11-05 00:40:49.000,ESP32,2
+b84a699b018984ae1aba0b63be04fe49,Recebida pelo subscriber,2026-11-05 00:41:48.686,ingestao.py,3
+b84a699b018984ae1aba0b63be04fe49,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+b84a699b018984ae1aba0b63be04fe49,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+ba834dd80feeca9ee9e41b9c881edd5f,Leitura gerada,2026-11-05 00:45:02.000,ESP32,1
+ba834dd80feeca9ee9e41b9c881edd5f,Alerta: Solo Encharcado,2026-11-05 00:45:02.000,ESP32,2
+ba834dd80feeca9ee9e41b9c881edd5f,Recebida pelo subscriber,2026-11-05 01:07:06.287,ingestao.py,3
+ba834dd80feeca9ee9e41b9c881edd5f,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+ba834dd80feeca9ee9e41b9c881edd5f,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+bee93628522e8fd3034b46201e8da610,Leitura gerada,2026-11-05 00:48:51.000,ESP32,1
+bee93628522e8fd3034b46201e8da610,Recebida pelo subscriber,2026-11-05 01:20:01.250,ingestao.py,3
+bee93628522e8fd3034b46201e8da610,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+bee93628522e8fd3034b46201e8da610,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+c09a656d3e645bf4e39dcbc4cda9777a,Leitura gerada,2026-11-05 00:49:03.000,ESP32,1
+c09a656d3e645bf4e39dcbc4cda9777a,Recebida pelo subscriber,2026-11-05 01:20:29.234,ingestao.py,3
+c09a656d3e645bf4e39dcbc4cda9777a,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+c09a656d3e645bf4e39dcbc4cda9777a,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+c128cec536c7509d1500cbe67ceaf81c,Leitura gerada,2026-11-04 10:39:57.000,ESP32,1
+c128cec536c7509d1500cbe67ceaf81c,Alerta: Estresse Termico,2026-11-04 10:39:57.000,ESP32,2
+c128cec536c7509d1500cbe67ceaf81c,Recebida pelo subscriber,2026-11-04 10:42:23.859,ingestao.py,3
+c128cec536c7509d1500cbe67ceaf81c,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+c128cec536c7509d1500cbe67ceaf81c,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+c159d0e6dea173c010f25623a1d8a73f,Leitura gerada,2026-11-04 10:40:05.000,ESP32,1
+c159d0e6dea173c010f25623a1d8a73f,Recebida pelo subscriber,2026-11-04 10:42:41.184,ingestao.py,3
+c159d0e6dea173c010f25623a1d8a73f,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+c159d0e6dea173c010f25623a1d8a73f,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+c1e95df0a9a34560442521f4944d0231,Leitura gerada,2026-11-04 10:40:10.000,ESP32,1
+c1e95df0a9a34560442521f4944d0231,Alerta: Estresse Termico,2026-11-04 10:40:10.000,ESP32,2
+c1e95df0a9a34560442521f4944d0231,Recebida pelo subscriber,2026-11-04 10:42:50.584,ingestao.py,3
+c1e95df0a9a34560442521f4944d0231,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+c1e95df0a9a34560442521f4944d0231,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+c31d07a0f5cccc1f321f68ae437d3291,Leitura gerada,2026-11-05 00:48:41.000,ESP32,1
+c31d07a0f5cccc1f321f68ae437d3291,Alerta: Solo Seco,2026-11-05 00:48:41.000,ESP32,2
+c31d07a0f5cccc1f321f68ae437d3291,Alerta: Estresse Termico,2026-11-05 00:48:41.000,ESP32,2
+c31d07a0f5cccc1f321f68ae437d3291,Recebida pelo subscriber,2026-11-05 01:19:39.371,ingestao.py,3
+c31d07a0f5cccc1f321f68ae437d3291,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+c31d07a0f5cccc1f321f68ae437d3291,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+c36a1fa4afbea61690843e28704b4262,Leitura gerada,2026-11-05 00:40:37.000,ESP32,1
+c36a1fa4afbea61690843e28704b4262,Alerta: Estresse Termico,2026-11-05 00:40:37.000,ESP32,2
+c36a1fa4afbea61690843e28704b4262,Alerta: Solo Seco,2026-11-05 00:40:37.000,ESP32,2
+c36a1fa4afbea61690843e28704b4262,Recebida pelo subscriber,2026-11-05 00:41:21.750,ingestao.py,3
+c36a1fa4afbea61690843e28704b4262,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+c36a1fa4afbea61690843e28704b4262,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+c49c3b691afc8744dcee1032d7627ab6,Leitura gerada,2026-11-04 10:40:11.000,ESP32,1
+c49c3b691afc8744dcee1032d7627ab6,Alerta: Estresse Termico,2026-11-04 10:40:11.000,ESP32,2
+c49c3b691afc8744dcee1032d7627ab6,Recebida pelo subscriber,2026-11-04 10:42:52.324,ingestao.py,3
+c49c3b691afc8744dcee1032d7627ab6,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+c49c3b691afc8744dcee1032d7627ab6,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+c4ff4d468318146b90ca586c62bf4607,Leitura gerada,2026-11-05 00:48:46.000,ESP32,1
+c4ff4d468318146b90ca586c62bf4607,Alerta: Solo Seco,2026-11-05 00:48:46.000,ESP32,2
+c4ff4d468318146b90ca586c62bf4607,Alerta: Estresse Termico,2026-11-05 00:48:46.000,ESP32,2
+c4ff4d468318146b90ca586c62bf4607,Recebida pelo subscriber,2026-11-05 01:19:51.014,ingestao.py,3
+c4ff4d468318146b90ca586c62bf4607,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+c4ff4d468318146b90ca586c62bf4607,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+c5f39dd05a800ac574a0e3e5894cbce7,Leitura gerada,2026-11-04 00:27:49.000,ESP32,1
+c5f39dd05a800ac574a0e3e5894cbce7,Alerta: Estresse Termico,2026-11-04 00:27:49.000,ESP32,2
+c5f39dd05a800ac574a0e3e5894cbce7,Alerta: Solo Seco,2026-11-04 00:27:49.000,ESP32,2
+c5f39dd05a800ac574a0e3e5894cbce7,Recebida pelo subscriber,2026-11-04 00:28:30.497,ingestao.py,3
+c5f39dd05a800ac574a0e3e5894cbce7,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+c5f39dd05a800ac574a0e3e5894cbce7,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+c693bb7899a3205e61e7f545b8f4e737,Leitura gerada,2026-11-04 00:31:57.000,ESP32,1
+c693bb7899a3205e61e7f545b8f4e737,Alerta: Solo Seco,2026-11-04 00:31:57.000,ESP32,2
+c693bb7899a3205e61e7f545b8f4e737,Alerta: Estresse Termico,2026-11-04 00:31:57.000,ESP32,2
+c693bb7899a3205e61e7f545b8f4e737,Recebida pelo subscriber,2026-11-04 00:32:10.465,ingestao.py,3
+c693bb7899a3205e61e7f545b8f4e737,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+c693bb7899a3205e61e7f545b8f4e737,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+c91a9f02a0231d3a8ccefd6c7f9b1132,Leitura gerada,2026-11-04 10:40:21.000,ESP32,1
+c91a9f02a0231d3a8ccefd6c7f9b1132,Alerta: Estresse Termico,2026-11-04 10:40:21.000,ESP32,2
+c91a9f02a0231d3a8ccefd6c7f9b1132,Recebida pelo subscriber,2026-11-04 10:43:11.581,ingestao.py,3
+c91a9f02a0231d3a8ccefd6c7f9b1132,Gravada em lote,2026-11-04 10:43:15.531,ingestao.py,4
+c91a9f02a0231d3a8ccefd6c7f9b1132,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+c930670ba8c13c61045047db9024c728,Leitura gerada,2026-11-05 00:45:00.000,ESP32,1
+c930670ba8c13c61045047db9024c728,Alerta: Solo Seco,2026-11-05 00:45:00.000,ESP32,2
+c930670ba8c13c61045047db9024c728,Alerta: Estresse Termico,2026-11-05 00:45:00.000,ESP32,2
+c930670ba8c13c61045047db9024c728,Recebida pelo subscriber,2026-11-05 01:07:02.889,ingestao.py,3
+c930670ba8c13c61045047db9024c728,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+c930670ba8c13c61045047db9024c728,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+cacb8a504601d5e47b1c1164f4d8b189,Leitura gerada,2026-11-05 00:40:35.000,ESP32,1
+cacb8a504601d5e47b1c1164f4d8b189,Alerta: Solo Seco,2026-11-05 00:40:35.000,ESP32,2
+cacb8a504601d5e47b1c1164f4d8b189,Alerta: Estresse Termico,2026-11-05 00:40:35.000,ESP32,2
+cacb8a504601d5e47b1c1164f4d8b189,Recebida pelo subscriber,2026-11-05 00:41:18.349,ingestao.py,3
+cacb8a504601d5e47b1c1164f4d8b189,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+cacb8a504601d5e47b1c1164f4d8b189,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+ccefe7b8a3bcb354a66520aba3641ae1,Leitura gerada,2026-11-04 00:27:27.000,ESP32,1
+ccefe7b8a3bcb354a66520aba3641ae1,Alerta: Estresse Termico,2026-11-04 00:27:27.000,ESP32,2
+ccefe7b8a3bcb354a66520aba3641ae1,Recebida pelo subscriber,2026-11-04 00:27:52.058,ingestao.py,3
+ccefe7b8a3bcb354a66520aba3641ae1,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+ccefe7b8a3bcb354a66520aba3641ae1,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+cdb0da242395f59809c40819477cc2ce,Leitura gerada,2026-11-05 00:48:48.000,ESP32,1
+cdb0da242395f59809c40819477cc2ce,Alerta: Solo Encharcado,2026-11-05 00:48:48.000,ESP32,2
+cdb0da242395f59809c40819477cc2ce,Recebida pelo subscriber,2026-11-05 01:19:54.529,ingestao.py,3
+cdb0da242395f59809c40819477cc2ce,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+cdb0da242395f59809c40819477cc2ce,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+cf8048b4554ca6b7acd7f0e21607050b,Leitura gerada,2026-11-04 10:40:16.000,ESP32,1
+cf8048b4554ca6b7acd7f0e21607050b,Alerta: Estresse Termico,2026-11-04 10:40:16.000,ESP32,2
+cf8048b4554ca6b7acd7f0e21607050b,Recebida pelo subscriber,2026-11-04 10:43:01.589,ingestao.py,3
+cf8048b4554ca6b7acd7f0e21607050b,Gravada em lote,2026-11-04 10:43:09.031,ingestao.py,4
+cf8048b4554ca6b7acd7f0e21607050b,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+d1447b9bdff43fe98d16c5a808240bbc,Leitura gerada,2026-11-05 00:40:43.000,ESP32,1
+d1447b9bdff43fe98d16c5a808240bbc,Alerta: Solo Seco,2026-11-05 00:40:43.000,ESP32,2
+d1447b9bdff43fe98d16c5a808240bbc,Alerta: Estresse Termico,2026-11-05 00:40:43.000,ESP32,2
+d1447b9bdff43fe98d16c5a808240bbc,Recebida pelo subscriber,2026-11-05 00:41:34.537,ingestao.py,3
+d1447b9bdff43fe98d16c5a808240bbc,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+d1447b9bdff43fe98d16c5a808240bbc,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+d1d9384764a21e949ce302a83381ba12,Leitura gerada,2026-11-05 00:40:58.000,ESP32,1
+d1d9384764a21e949ce302a83381ba12,Alerta: Solo Seco,2026-11-05 00:40:58.000,ESP32,2
+d1d9384764a21e949ce302a83381ba12,Alerta: Estresse Termico,2026-11-05 00:40:58.000,ESP32,2
+d1d9384764a21e949ce302a83381ba12,Recebida pelo subscriber,2026-11-05 00:42:06.547,ingestao.py,3
+d1d9384764a21e949ce302a83381ba12,Gravada em lote,2026-11-05 00:42:07.555,ingestao.py,4
+d1d9384764a21e949ce302a83381ba12,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+d27a010eca8316366376520ce9d61654,Leitura gerada,2026-11-04 11:41:52.000,ESP32,1
+d27a010eca8316366376520ce9d61654,Alerta: Solo Seco,2026-11-04 11:41:52.000,ESP32,2
+d27a010eca8316366376520ce9d61654,Recebida pelo subscriber,2026-11-04 11:42:27.273,ingestao.py,3
+d27a010eca8316366376520ce9d61654,Gravada em lote,2026-11-04 11:42:31.114,ingestao.py,4
+d27a010eca8316366376520ce9d61654,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+d2bd6d7bd62ed59067a85142a430390b,Leitura gerada,2026-11-04 00:31:54.000,ESP32,1
+d2bd6d7bd62ed59067a85142a430390b,Alerta: Solo Seco,2026-11-04 00:31:54.000,ESP32,2
+d2bd6d7bd62ed59067a85142a430390b,Recebida pelo subscriber,2026-11-04 00:32:05.154,ingestao.py,3
+d2bd6d7bd62ed59067a85142a430390b,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+d2bd6d7bd62ed59067a85142a430390b,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+d314a68c65798f3838966b9379e89954,Leitura gerada,2026-11-05 00:44:10.000,ESP32,1
+d314a68c65798f3838966b9379e89954,Recebida pelo subscriber,2026-11-05 00:44:35.495,ingestao.py,3
+d314a68c65798f3838966b9379e89954,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+d314a68c65798f3838966b9379e89954,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+d314cdb65da7ef965ef18577f623646e,Leitura gerada,2026-11-04 00:27:53.000,ESP32,1
+d314cdb65da7ef965ef18577f623646e,Alerta: Estresse Termico,2026-11-04 00:27:53.000,ESP32,2
+d314cdb65da7ef965ef18577f623646e,Alerta: Solo Seco,2026-11-04 00:27:53.000,ESP32,2
+d314cdb65da7ef965ef18577f623646e,Recebida pelo subscriber,2026-11-04 00:28:37.153,ingestao.py,3
+d314cdb65da7ef965ef18577f623646e,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+d314cdb65da7ef965ef18577f623646e,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+d40354a7e77a6b49df16add383d9c375,Leitura gerada,2026-11-05 00:40:52.000,ESP32,1
+d40354a7e77a6b49df16add383d9c375,Alerta: Solo Seco,2026-11-05 00:40:52.000,ESP32,2
+d40354a7e77a6b49df16add383d9c375,Alerta: Estresse Termico,2026-11-05 00:40:52.000,ESP32,2
+d40354a7e77a6b49df16add383d9c375,Recebida pelo subscriber,2026-11-05 00:41:56.064,ingestao.py,3
+d40354a7e77a6b49df16add383d9c375,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+d40354a7e77a6b49df16add383d9c375,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+d47616b308052ad16335350ca824564e,Leitura gerada,2026-11-05 00:48:45.000,ESP32,1
+d47616b308052ad16335350ca824564e,Alerta: Solo Seco,2026-11-05 00:48:45.000,ESP32,2
+d47616b308052ad16335350ca824564e,Alerta: Estresse Termico,2026-11-05 00:48:45.000,ESP32,2
+d47616b308052ad16335350ca824564e,Recebida pelo subscriber,2026-11-05 01:19:49.192,ingestao.py,3
+d47616b308052ad16335350ca824564e,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+d47616b308052ad16335350ca824564e,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+d51606aa665dc7e6c40125b91f92d765,Leitura gerada,2026-11-05 00:44:13.000,ESP32,1
+d51606aa665dc7e6c40125b91f92d765,Recebida pelo subscriber,2026-11-05 00:44:42.973,ingestao.py,3
+d51606aa665dc7e6c40125b91f92d765,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+d51606aa665dc7e6c40125b91f92d765,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+d51e75caffd88307cecbaa3ce0b65ab4,Leitura gerada,2026-11-04 00:27:33.000,ESP32,1
+d51e75caffd88307cecbaa3ce0b65ab4,Alerta: Estresse Termico,2026-11-04 00:27:33.000,ESP32,2
+d51e75caffd88307cecbaa3ce0b65ab4,Recebida pelo subscriber,2026-11-04 00:28:02.021,ingestao.py,3
+d51e75caffd88307cecbaa3ce0b65ab4,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+d51e75caffd88307cecbaa3ce0b65ab4,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+d5f24321eca6f19cca9289214c1cf1dd,Leitura gerada,2026-11-04 10:40:20.000,ESP32,1
+d5f24321eca6f19cca9289214c1cf1dd,Alerta: Estresse Termico,2026-11-04 10:40:20.000,ESP32,2
+d5f24321eca6f19cca9289214c1cf1dd,Recebida pelo subscriber,2026-11-04 10:43:09.733,ingestao.py,3
+d5f24321eca6f19cca9289214c1cf1dd,Gravada em lote,2026-11-04 10:43:15.531,ingestao.py,4
+d5f24321eca6f19cca9289214c1cf1dd,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+d602a3743aeb0f7d4d4e7587d91c9025,Leitura gerada,2026-11-05 00:49:10.000,ESP32,1
+d602a3743aeb0f7d4d4e7587d91c9025,Alerta: Solo Seco,2026-11-05 00:49:10.000,ESP32,2
+d602a3743aeb0f7d4d4e7587d91c9025,Recebida pelo subscriber,2026-11-05 01:20:42.845,ingestao.py,3
+d602a3743aeb0f7d4d4e7587d91c9025,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+d602a3743aeb0f7d4d4e7587d91c9025,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+d6bebd4711d9120c565de32bda925482,Leitura gerada,2026-11-04 00:27:54.000,ESP32,1
+d6bebd4711d9120c565de32bda925482,Alerta: Solo Seco,2026-11-04 00:27:54.000,ESP32,2
+d6bebd4711d9120c565de32bda925482,Recebida pelo subscriber,2026-11-04 00:28:38.756,ingestao.py,3
+d6bebd4711d9120c565de32bda925482,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+d6bebd4711d9120c565de32bda925482,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+d750e82fbba25680633ae6deeea4e825,Leitura gerada,2026-11-04 00:27:44.000,ESP32,1
+d750e82fbba25680633ae6deeea4e825,Alerta: Estresse Termico,2026-11-04 00:27:44.000,ESP32,2
+d750e82fbba25680633ae6deeea4e825,Recebida pelo subscriber,2026-11-04 00:28:22.394,ingestao.py,3
+d750e82fbba25680633ae6deeea4e825,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+d750e82fbba25680633ae6deeea4e825,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+d87100104b5dc39bb4bda7f9727cf090,Leitura gerada,2026-11-05 00:44:15.000,ESP32,1
+d87100104b5dc39bb4bda7f9727cf090,Recebida pelo subscriber,2026-11-05 00:44:47.636,ingestao.py,3
+d87100104b5dc39bb4bda7f9727cf090,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+d87100104b5dc39bb4bda7f9727cf090,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+d8f0bac477b3ae59049bf5d6eef1b8a7,Leitura gerada,2026-11-04 00:32:19.000,ESP32,1
+d8f0bac477b3ae59049bf5d6eef1b8a7,Alerta: Solo Seco,2026-11-04 00:32:19.000,ESP32,2
+d8f0bac477b3ae59049bf5d6eef1b8a7,Recebida pelo subscriber,2026-11-04 00:32:46.974,ingestao.py,3
+d8f0bac477b3ae59049bf5d6eef1b8a7,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+d8f0bac477b3ae59049bf5d6eef1b8a7,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+d95595d2ed33e0bf1583283a0c2a9a6f,Leitura gerada,2026-11-04 00:27:39.000,ESP32,1
+d95595d2ed33e0bf1583283a0c2a9a6f,Alerta: Estresse Termico,2026-11-04 00:27:39.000,ESP32,2
+d95595d2ed33e0bf1583283a0c2a9a6f,Recebida pelo subscriber,2026-11-04 00:28:11.888,ingestao.py,3
+d95595d2ed33e0bf1583283a0c2a9a6f,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+d95595d2ed33e0bf1583283a0c2a9a6f,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+d969aadc7ccbcc351795cccc2d96dd64,Leitura gerada,2026-11-04 11:48:08.000,ESP32,1
+d969aadc7ccbcc351795cccc2d96dd64,Recebida pelo subscriber,2026-11-04 11:48:51.422,ingestao.py,3
+d969aadc7ccbcc351795cccc2d96dd64,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+d969aadc7ccbcc351795cccc2d96dd64,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+d9ed361d28f351736162e99392cbd461,Leitura gerada,2026-11-04 00:32:22.000,ESP32,1
+d9ed361d28f351736162e99392cbd461,Alerta: Solo Encharcado,2026-11-04 00:32:22.000,ESP32,2
+d9ed361d28f351736162e99392cbd461,Recebida pelo subscriber,2026-11-04 00:32:51.990,ingestao.py,3
+d9ed361d28f351736162e99392cbd461,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+d9ed361d28f351736162e99392cbd461,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+da3513339b3f0cdc143a0216160321b0,Leitura gerada,2026-11-05 00:49:18.000,ESP32,1
+da3513339b3f0cdc143a0216160321b0,Recebida pelo subscriber,2026-11-05 01:20:57.007,ingestao.py,3
+da3513339b3f0cdc143a0216160321b0,Gravada em lote,2026-11-05 01:21:11.000,ingestao.py,4
+da3513339b3f0cdc143a0216160321b0,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+da77c4c84e734e9178c62e293d4a9a85,Leitura gerada,2026-11-05 00:49:09.000,ESP32,1
+da77c4c84e734e9178c62e293d4a9a85,Recebida pelo subscriber,2026-11-05 01:20:40.376,ingestao.py,3
+da77c4c84e734e9178c62e293d4a9a85,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+da77c4c84e734e9178c62e293d4a9a85,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+db508f2ce8dad81559364bb2ab33a6ea,Leitura gerada,2026-11-04 11:41:42.000,ESP32,1
+db508f2ce8dad81559364bb2ab33a6ea,Alerta: Solo Seco,2026-11-04 11:41:42.000,ESP32,2
+db508f2ce8dad81559364bb2ab33a6ea,Recebida pelo subscriber,2026-11-04 11:42:09.313,ingestao.py,3
+db508f2ce8dad81559364bb2ab33a6ea,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+db508f2ce8dad81559364bb2ab33a6ea,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+db9c16d748f333237f22f8f8a5d268bf,Leitura gerada,2026-11-04 11:41:40.000,ESP32,1
+db9c16d748f333237f22f8f8a5d268bf,Alerta: Solo Seco,2026-11-04 11:41:40.000,ESP32,2
+db9c16d748f333237f22f8f8a5d268bf,Alerta: Estresse Termico,2026-11-04 11:41:40.000,ESP32,2
+db9c16d748f333237f22f8f8a5d268bf,Recebida pelo subscriber,2026-11-04 11:42:05.958,ingestao.py,3
+db9c16d748f333237f22f8f8a5d268bf,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+db9c16d748f333237f22f8f8a5d268bf,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+dbf488b216dedf8c6fffd282566421a2,Leitura gerada,2026-11-04 11:48:20.000,ESP32,1
+dbf488b216dedf8c6fffd282566421a2,Alerta: Estresse Termico,2026-11-04 11:48:20.000,ESP32,2
+dbf488b216dedf8c6fffd282566421a2,Recebida pelo subscriber,2026-11-04 11:49:14.921,ingestao.py,3
+dbf488b216dedf8c6fffd282566421a2,Gravada em lote,2026-11-04 11:49:14.922,ingestao.py,4
+dbf488b216dedf8c6fffd282566421a2,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+dc2c552e2419c12c08cf8262d7dfce6d,Leitura gerada,2026-11-05 00:49:17.000,ESP32,1
+dc2c552e2419c12c08cf8262d7dfce6d,Recebida pelo subscriber,2026-11-05 01:20:55.109,ingestao.py,3
+dc2c552e2419c12c08cf8262d7dfce6d,Gravada em lote,2026-11-05 01:21:11.000,ingestao.py,4
+dc2c552e2419c12c08cf8262d7dfce6d,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+dcaeb99749c3a600ec2207900981128a,Leitura gerada,2026-11-05 00:40:45.000,ESP32,1
+dcaeb99749c3a600ec2207900981128a,Alerta: Solo Seco,2026-11-05 00:40:45.000,ESP32,2
+dcaeb99749c3a600ec2207900981128a,Alerta: Estresse Termico,2026-11-05 00:40:45.000,ESP32,2
+dcaeb99749c3a600ec2207900981128a,Recebida pelo subscriber,2026-11-05 00:41:39.442,ingestao.py,3
+dcaeb99749c3a600ec2207900981128a,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+dcaeb99749c3a600ec2207900981128a,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+dd34c83732c9b689ff0d47fb9b219115,Leitura gerada,2026-11-04 00:32:01.000,ESP32,1
+dd34c83732c9b689ff0d47fb9b219115,Alerta: Estresse Termico,2026-11-04 00:32:01.000,ESP32,2
+dd34c83732c9b689ff0d47fb9b219115,Recebida pelo subscriber,2026-11-04 00:32:16.999,ingestao.py,3
+dd34c83732c9b689ff0d47fb9b219115,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+dd34c83732c9b689ff0d47fb9b219115,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+df8f18cfde3c52f00d22075d63e182b7,Leitura gerada,2026-11-05 00:44:17.000,ESP32,1
+df8f18cfde3c52f00d22075d63e182b7,Recebida pelo subscriber,2026-11-05 00:44:52.795,ingestao.py,3
+df8f18cfde3c52f00d22075d63e182b7,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+df8f18cfde3c52f00d22075d63e182b7,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+dfcc3fa6defb819c7300389db204b981,Leitura gerada,2026-11-05 00:45:05.000,ESP32,1
+dfcc3fa6defb819c7300389db204b981,Alerta: Solo Encharcado,2026-11-05 00:45:05.000,ESP32,2
+dfcc3fa6defb819c7300389db204b981,Recebida pelo subscriber,2026-11-05 01:07:11.594,ingestao.py,3
+dfcc3fa6defb819c7300389db204b981,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+dfcc3fa6defb819c7300389db204b981,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+e1a62de158e5dda907f5e9e7c3d4fcbf,Leitura gerada,2026-11-05 00:44:32.000,ESP32,1
+e1a62de158e5dda907f5e9e7c3d4fcbf,Alerta: Solo Encharcado,2026-11-05 00:44:32.000,ESP32,2
+e1a62de158e5dda907f5e9e7c3d4fcbf,Recebida pelo subscriber,2026-11-05 00:45:18.524,ingestao.py,3
+e1a62de158e5dda907f5e9e7c3d4fcbf,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+e1a62de158e5dda907f5e9e7c3d4fcbf,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+e1ae215c8fd8cc2e9975d0741935db1a,Leitura gerada,2026-11-04 10:40:00.000,ESP32,1
+e1ae215c8fd8cc2e9975d0741935db1a,Alerta: Estresse Termico,2026-11-04 10:40:00.000,ESP32,2
+e1ae215c8fd8cc2e9975d0741935db1a,Recebida pelo subscriber,2026-11-04 10:42:30.687,ingestao.py,3
+e1ae215c8fd8cc2e9975d0741935db1a,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+e1ae215c8fd8cc2e9975d0741935db1a,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+e1b00757e6fd61947ff26376fd7461f1,Leitura gerada,2026-11-04 11:48:10.000,ESP32,1
+e1b00757e6fd61947ff26376fd7461f1,Alerta: Solo Seco,2026-11-04 11:48:10.000,ESP32,2
+e1b00757e6fd61947ff26376fd7461f1,Recebida pelo subscriber,2026-11-04 11:48:54.914,ingestao.py,3
+e1b00757e6fd61947ff26376fd7461f1,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+e1b00757e6fd61947ff26376fd7461f1,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+e220906e97a33ebb4f931cb63a2a6ec8,Leitura gerada,2026-11-05 00:44:12.000,ESP32,1
+e220906e97a33ebb4f931cb63a2a6ec8,Recebida pelo subscriber,2026-11-05 00:44:40.356,ingestao.py,3
+e220906e97a33ebb4f931cb63a2a6ec8,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+e220906e97a33ebb4f931cb63a2a6ec8,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+e26f6cf2f4f646443adee301b4ba8a00,Leitura gerada,2026-11-04 00:32:05.000,ESP32,1
+e26f6cf2f4f646443adee301b4ba8a00,Alerta: Estresse Termico,2026-11-04 00:32:05.000,ESP32,2
+e26f6cf2f4f646443adee301b4ba8a00,Recebida pelo subscriber,2026-11-04 00:32:23.700,ingestao.py,3
+e26f6cf2f4f646443adee301b4ba8a00,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+e26f6cf2f4f646443adee301b4ba8a00,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+e29f886113600b1fdea17f3dc3c34916,Leitura gerada,2026-11-05 00:48:53.000,ESP32,1
+e29f886113600b1fdea17f3dc3c34916,Recebida pelo subscriber,2026-11-05 01:20:04.935,ingestao.py,3
+e29f886113600b1fdea17f3dc3c34916,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+e29f886113600b1fdea17f3dc3c34916,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+e315f07a9bcca6015c3e519aee6b123b,Leitura gerada,2026-11-05 00:49:07.000,ESP32,1
+e315f07a9bcca6015c3e519aee6b123b,Recebida pelo subscriber,2026-11-05 01:20:36.419,ingestao.py,3
+e315f07a9bcca6015c3e519aee6b123b,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+e315f07a9bcca6015c3e519aee6b123b,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+e3a7715f34eee22f0f0ff98a2de09a0c,Leitura gerada,2026-11-05 00:49:20.000,ESP32,1
+e3a7715f34eee22f0f0ff98a2de09a0c,Recebida pelo subscriber,2026-11-05 01:21:01.916,ingestao.py,3
+e3a7715f34eee22f0f0ff98a2de09a0c,Gravada em lote,2026-11-05 01:21:11.000,ingestao.py,4
+e3a7715f34eee22f0f0ff98a2de09a0c,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+e3aeabba18dd9998b798fa856725c8b2,Leitura gerada,2026-11-04 11:41:43.000,ESP32,1
+e3aeabba18dd9998b798fa856725c8b2,Recebida pelo subscriber,2026-11-04 11:42:10.995,ingestao.py,3
+e3aeabba18dd9998b798fa856725c8b2,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+e3aeabba18dd9998b798fa856725c8b2,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+e49dd41deff31e9d48a4cbef9610a488,Leitura gerada,2026-11-04 00:27:51.000,ESP32,1
+e49dd41deff31e9d48a4cbef9610a488,Alerta: Solo Seco,2026-11-04 00:27:51.000,ESP32,2
+e49dd41deff31e9d48a4cbef9610a488,Alerta: Estresse Termico,2026-11-04 00:27:51.000,ESP32,2
+e49dd41deff31e9d48a4cbef9610a488,Recebida pelo subscriber,2026-11-04 00:28:33.770,ingestao.py,3
+e49dd41deff31e9d48a4cbef9610a488,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+e49dd41deff31e9d48a4cbef9610a488,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+e5393e30b64bbded658af57f8ff74bca,Leitura gerada,2026-11-05 00:48:42.000,ESP32,1
+e5393e30b64bbded658af57f8ff74bca,Alerta: Solo Seco,2026-11-05 00:48:42.000,ESP32,2
+e5393e30b64bbded658af57f8ff74bca,Alerta: Estresse Termico,2026-11-05 00:48:42.000,ESP32,2
+e5393e30b64bbded658af57f8ff74bca,Recebida pelo subscriber,2026-11-05 01:19:41.223,ingestao.py,3
+e5393e30b64bbded658af57f8ff74bca,Gravada em lote,2026-11-05 01:20:05.290,ingestao.py,4
+e5393e30b64bbded658af57f8ff74bca,Carregada no Snowflake,2026-11-05 01:20:07.547,Snowflake,5
+e67c676fe0f6ce847d38539e79d51e86,Leitura gerada,2026-11-05 00:44:26.000,ESP32,1
+e67c676fe0f6ce847d38539e79d51e86,Alerta: Risco Geada,2026-11-05 00:44:26.000,ESP32,2
+e67c676fe0f6ce847d38539e79d51e86,Recebida pelo subscriber,2026-11-05 00:45:08.418,ingestao.py,3
+e67c676fe0f6ce847d38539e79d51e86,Gravada em lote,2026-11-05 00:45:23.263,ingestao.py,4
+e67c676fe0f6ce847d38539e79d51e86,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+e773ff610f18257861f7d4bcd7326453,Leitura gerada,2026-11-04 00:27:24.000,ESP32,1
+e773ff610f18257861f7d4bcd7326453,Alerta: Solo Seco,2026-11-04 00:27:24.000,ESP32,2
+e773ff610f18257861f7d4bcd7326453,Alerta: Risco Geada,2026-11-04 00:27:24.000,ESP32,2
+e773ff610f18257861f7d4bcd7326453,Recebida pelo subscriber,2026-11-04 00:27:47.131,ingestao.py,3
+e773ff610f18257861f7d4bcd7326453,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+e773ff610f18257861f7d4bcd7326453,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+e7765f6e423ef389b91e25ab0e49a19d,Leitura gerada,2026-11-05 00:49:05.000,ESP32,1
+e7765f6e423ef389b91e25ab0e49a19d,Recebida pelo subscriber,2026-11-05 01:20:32.724,ingestao.py,3
+e7765f6e423ef389b91e25ab0e49a19d,Gravada em lote,2026-11-05 01:20:53.372,ingestao.py,4
+e7765f6e423ef389b91e25ab0e49a19d,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+e87e7fe2fbc86ab55519b8eaefcc5061,Leitura gerada,2026-11-05 00:40:57.000,ESP32,1
+e87e7fe2fbc86ab55519b8eaefcc5061,Alerta: Estresse Termico,2026-11-05 00:40:57.000,ESP32,2
+e87e7fe2fbc86ab55519b8eaefcc5061,Alerta: Solo Seco,2026-11-05 00:40:57.000,ESP32,2
+e87e7fe2fbc86ab55519b8eaefcc5061,Recebida pelo subscriber,2026-11-05 00:42:04.949,ingestao.py,3
+e87e7fe2fbc86ab55519b8eaefcc5061,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+e87e7fe2fbc86ab55519b8eaefcc5061,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+e8dc1a3936298264fddc4fcab17ef601,Leitura gerada,2026-11-05 00:40:30.000,ESP32,1
+e8dc1a3936298264fddc4fcab17ef601,Alerta: Solo Seco,2026-11-05 00:40:30.000,ESP32,2
+e8dc1a3936298264fddc4fcab17ef601,Alerta: Estresse Termico,2026-11-05 00:40:30.000,ESP32,2
+e8dc1a3936298264fddc4fcab17ef601,Recebida pelo subscriber,2026-11-05 00:41:08.581,ingestao.py,3
+e8dc1a3936298264fddc4fcab17ef601,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+e8dc1a3936298264fddc4fcab17ef601,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+eaa620fc27906882612f9147b759d497,Leitura gerada,2026-11-05 00:45:07.000,ESP32,1
+eaa620fc27906882612f9147b759d497,Alerta: Solo Encharcado,2026-11-05 00:45:07.000,ESP32,2
+eaa620fc27906882612f9147b759d497,Recebida pelo subscriber,2026-11-05 01:07:17.712,ingestao.py,3
+eaa620fc27906882612f9147b759d497,Gravada em lote,2026-11-05 01:07:28.189,ingestao.py,4
+eaa620fc27906882612f9147b759d497,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+ebb8af1145ac2d520b928234e5336607,Leitura gerada,2026-11-05 00:40:55.000,ESP32,1
+ebb8af1145ac2d520b928234e5336607,Alerta: Estresse Termico,2026-11-05 00:40:55.000,ESP32,2
+ebb8af1145ac2d520b928234e5336607,Alerta: Solo Seco,2026-11-05 00:40:55.000,ESP32,2
+ebb8af1145ac2d520b928234e5336607,Recebida pelo subscriber,2026-11-05 00:42:01.604,ingestao.py,3
+ebb8af1145ac2d520b928234e5336607,Gravada em lote,2026-11-05 00:42:05.819,ingestao.py,4
+ebb8af1145ac2d520b928234e5336607,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
+ebd7e0cfedaa36b3509a92034a621381,Leitura gerada,2026-11-04 11:48:13.000,ESP32,1
+ebd7e0cfedaa36b3509a92034a621381,Alerta: Solo Seco,2026-11-04 11:48:13.000,ESP32,2
+ebd7e0cfedaa36b3509a92034a621381,Recebida pelo subscriber,2026-11-04 11:49:00.106,ingestao.py,3
+ebd7e0cfedaa36b3509a92034a621381,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+ebd7e0cfedaa36b3509a92034a621381,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+ec7f55b931a8f94ee7bf5caca9721356,Leitura gerada,2026-11-05 00:44:14.000,ESP32,1
+ec7f55b931a8f94ee7bf5caca9721356,Recebida pelo subscriber,2026-11-05 00:44:45.217,ingestao.py,3
+ec7f55b931a8f94ee7bf5caca9721356,Gravada em lote,2026-11-05 00:44:53.261,ingestao.py,4
+ec7f55b931a8f94ee7bf5caca9721356,Carregada no Snowflake,2026-11-05 00:45:26.120,Snowflake,5
+ef42b2bc08ba7b4c256bf57acea5f041,Leitura gerada,2026-11-04 00:27:50.000,ESP32,1
+ef42b2bc08ba7b4c256bf57acea5f041,Alerta: Estresse Termico,2026-11-04 00:27:50.000,ESP32,2
+ef42b2bc08ba7b4c256bf57acea5f041,Alerta: Solo Seco,2026-11-04 00:27:50.000,ESP32,2
+ef42b2bc08ba7b4c256bf57acea5f041,Recebida pelo subscriber,2026-11-04 00:28:32.130,ingestao.py,3
+ef42b2bc08ba7b4c256bf57acea5f041,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+ef42b2bc08ba7b4c256bf57acea5f041,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+f059d7b3c55a12fa07ae1d753b046145,Leitura gerada,2026-11-04 00:27:28.000,ESP32,1
+f059d7b3c55a12fa07ae1d753b046145,Alerta: Estresse Termico,2026-11-04 00:27:28.000,ESP32,2
+f059d7b3c55a12fa07ae1d753b046145,Recebida pelo subscriber,2026-11-04 00:27:53.765,ingestao.py,3
+f059d7b3c55a12fa07ae1d753b046145,Gravada em lote,2026-11-04 00:28:14.520,ingestao.py,4
+f059d7b3c55a12fa07ae1d753b046145,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+f0afb24417f9eab7fd9d206f59f843ae,Leitura gerada,2026-11-05 00:44:57.000,ESP32,1
+f0afb24417f9eab7fd9d206f59f843ae,Alerta: Solo Seco,2026-11-05 00:44:57.000,ESP32,2
+f0afb24417f9eab7fd9d206f59f843ae,Recebida pelo subscriber,2026-11-05 01:06:57.551,ingestao.py,3
+f0afb24417f9eab7fd9d206f59f843ae,Gravada em lote,2026-11-05 01:07:13.095,ingestao.py,4
+f0afb24417f9eab7fd9d206f59f843ae,Carregada no Snowflake,2026-11-05 01:07:26.856,Snowflake,5
+f414777620daef2fbbcf49a2db605b87,Leitura gerada,2026-11-04 10:40:22.000,ESP32,1
+f414777620daef2fbbcf49a2db605b87,Alerta: Risco Geada,2026-11-04 10:40:22.000,ESP32,2
+f414777620daef2fbbcf49a2db605b87,Recebida pelo subscriber,2026-11-04 10:43:13.528,ingestao.py,3
+f414777620daef2fbbcf49a2db605b87,Gravada em lote,2026-11-04 10:43:15.531,ingestao.py,4
+f414777620daef2fbbcf49a2db605b87,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+f5b41fd0e03e962c45d82d691f06a349,Leitura gerada,2026-11-05 00:49:23.000,ESP32,1
+f5b41fd0e03e962c45d82d691f06a349,Recebida pelo subscriber,2026-11-05 01:21:09.990,ingestao.py,3
+f5b41fd0e03e962c45d82d691f06a349,Gravada em lote,2026-11-05 01:21:11.000,ingestao.py,4
+f5b41fd0e03e962c45d82d691f06a349,Carregada no Snowflake,2026-11-05 01:21:09.556,Snowflake,5
+f6845187cc73a513ff1c792fdc7c7ae6,Leitura gerada,2026-11-04 11:41:35.000,ESP32,1
+f6845187cc73a513ff1c792fdc7c7ae6,Alerta: Risco Geada,2026-11-04 11:41:35.000,ESP32,2
+f6845187cc73a513ff1c792fdc7c7ae6,Recebida pelo subscriber,2026-11-04 11:41:57.774,ingestao.py,3
+f6845187cc73a513ff1c792fdc7c7ae6,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+f6845187cc73a513ff1c792fdc7c7ae6,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+f79b054ad9723929ee3f89c8b928d49c,Leitura gerada,2026-11-04 00:32:07.000,ESP32,1
+f79b054ad9723929ee3f89c8b928d49c,Alerta: Estresse Termico,2026-11-04 00:32:07.000,ESP32,2
+f79b054ad9723929ee3f89c8b928d49c,Recebida pelo subscriber,2026-11-04 00:32:26.961,ingestao.py,3
+f79b054ad9723929ee3f89c8b928d49c,Gravada em lote,2026-11-04 00:32:31.243,ingestao.py,4
+f79b054ad9723929ee3f89c8b928d49c,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+f8520e9b2d136ac09b8bb580d2101fa4,Leitura gerada,2026-11-04 00:32:12.000,ESP32,1
+f8520e9b2d136ac09b8bb580d2101fa4,Alerta: Estresse Termico,2026-11-04 00:32:12.000,ESP32,2
+f8520e9b2d136ac09b8bb580d2101fa4,Alerta: Solo Seco,2026-11-04 00:32:12.000,ESP32,2
+f8520e9b2d136ac09b8bb580d2101fa4,Recebida pelo subscriber,2026-11-04 00:32:35.223,ingestao.py,3
+f8520e9b2d136ac09b8bb580d2101fa4,Gravada em lote,2026-11-04 00:33:01.246,ingestao.py,4
+f8520e9b2d136ac09b8bb580d2101fa4,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+f8e3ea2b3a28b079d51eea20a6aa78ad,Leitura gerada,2026-11-04 11:41:39.000,ESP32,1
+f8e3ea2b3a28b079d51eea20a6aa78ad,Alerta: Solo Seco,2026-11-04 11:41:39.000,ESP32,2
+f8e3ea2b3a28b079d51eea20a6aa78ad,Alerta: Estresse Termico,2026-11-04 11:41:39.000,ESP32,2
+f8e3ea2b3a28b079d51eea20a6aa78ad,Recebida pelo subscriber,2026-11-04 11:42:04.374,ingestao.py,3
+f8e3ea2b3a28b079d51eea20a6aa78ad,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+f8e3ea2b3a28b079d51eea20a6aa78ad,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+f9c4ee479af906a3ed5cc949b4345819,Leitura gerada,2026-11-04 10:39:56.000,ESP32,1
+f9c4ee479af906a3ed5cc949b4345819,Alerta: Estresse Termico,2026-11-04 10:39:56.000,ESP32,2
+f9c4ee479af906a3ed5cc949b4345819,Recebida pelo subscriber,2026-11-04 10:42:21.497,ingestao.py,3
+f9c4ee479af906a3ed5cc949b4345819,Gravada em lote,2026-11-04 10:42:39.027,ingestao.py,4
+f9c4ee479af906a3ed5cc949b4345819,Carregada no Snowflake,2026-11-04 10:43:16.172,Snowflake,5
+fa8055e2e88fe7bde0b3528bb957267a,Leitura gerada,2026-11-04 11:41:33.000,ESP32,1
+fa8055e2e88fe7bde0b3528bb957267a,Alerta: Risco Geada,2026-11-04 11:41:33.000,ESP32,2
+fa8055e2e88fe7bde0b3528bb957267a,Recebida pelo subscriber,2026-11-04 11:41:54.546,ingestao.py,3
+fa8055e2e88fe7bde0b3528bb957267a,Gravada em lote,2026-11-04 11:42:22.729,ingestao.py,4
+fa8055e2e88fe7bde0b3528bb957267a,Carregada no Snowflake,2026-11-04 11:42:31.562,Snowflake,5
+fcc7dbe04fa9e9f1277f4f5378de96ad,Leitura gerada,2026-11-04 11:48:04.000,ESP32,1
+fcc7dbe04fa9e9f1277f4f5378de96ad,Alerta: Solo Seco,2026-11-04 11:48:04.000,ESP32,2
+fcc7dbe04fa9e9f1277f4f5378de96ad,Recebida pelo subscriber,2026-11-04 11:48:44.338,ingestao.py,3
+fcc7dbe04fa9e9f1277f4f5378de96ad,Gravada em lote,2026-11-04 11:49:12.830,ingestao.py,4
+fcc7dbe04fa9e9f1277f4f5378de96ad,Carregada no Snowflake,2026-11-04 11:49:14.928,Snowflake,5
+ff03106ba4c87f35d6d39f1fcb811df9,Leitura gerada,2026-11-04 00:27:47.000,ESP32,1
+ff03106ba4c87f35d6d39f1fcb811df9,Alerta: Estresse Termico,2026-11-04 00:27:47.000,ESP32,2
+ff03106ba4c87f35d6d39f1fcb811df9,Alerta: Solo Seco,2026-11-04 00:27:47.000,ESP32,2
+ff03106ba4c87f35d6d39f1fcb811df9,Recebida pelo subscriber,2026-11-04 00:28:27.321,ingestao.py,3
+ff03106ba4c87f35d6d39f1fcb811df9,Gravada em lote,2026-11-04 00:28:44.522,ingestao.py,4
+ff03106ba4c87f35d6d39f1fcb811df9,Carregada no Snowflake,2026-11-04 00:33:02.487,Snowflake,5
+ffa40b28e125a3d0006e8e380a7ea32d,Leitura gerada,2026-11-05 00:40:36.000,ESP32,1
+ffa40b28e125a3d0006e8e380a7ea32d,Alerta: Solo Seco,2026-11-05 00:40:36.000,ESP32,2
+ffa40b28e125a3d0006e8e380a7ea32d,Alerta: Estresse Termico,2026-11-05 00:40:36.000,ESP32,2
+ffa40b28e125a3d0006e8e380a7ea32d,Recebida pelo subscriber,2026-11-05 00:41:20.182,ingestao.py,3
+ffa40b28e125a3d0006e8e380a7ea32d,Gravada em lote,2026-11-05 00:41:35.816,ingestao.py,4
+ffa40b28e125a3d0006e8e380a7ea32d,Carregada no Snowflake,2026-11-05 00:42:06.715,Snowflake,5
