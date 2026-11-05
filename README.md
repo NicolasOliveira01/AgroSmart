@@ -22,6 +22,26 @@ O AgroSmart usa tecnologia e dados para monitorar a lavoura e apoiar decisões n
   <img src="docs/diagrama.png" alt="Diagrama da arquitetura" width="900">
 </p>
 
+### Componentes
+
+| Componente | Camada | Tecnologia | Função |
+|------------|--------|------------|--------|
+| Estação de campo | Geração e decisão | ESP32 (Wokwi), DHT22, LDR, potenciômetro | Lê os sensores a cada segundo, aplica as regras de decisão e publica o JSON com alertas e risco |
+| Broker MQTT | Geração e decisão | HiveMQ (público) | Intermediário entre o ESP32 e o subscriber: recebe as mensagens no tópico e as repassa |
+| Subscriber | Ingestão | Python (`paho-mqtt`, `snowflake-connector-python`) | Assina o tópico, acumula as leituras em lotes `.jsonl`, envia os arquivos para a stage e executa o `COPY INTO` |
+| Logs da aplicação | Ingestão | Python `logging` | Registra a execução em `logs/ingestao.log`, com níveis, rotação e resumo final |
+| Stage e tabela raw | Ingestão | Snowflake | Guarda os arquivos enviados e o JSON bruto em `RAW.LEITURAS_SENSORES` |
+| Transformação | Tratamento | dbt | Converte o JSON em tabelas relacionais (STG → FINAL): `fct_leituras`, `fct_alertas` e `fct_event_log` |
+| Dashboard | Visualização | Power BI | Mostra as leituras, a evolução no tempo e os alertas a partir da camada FINAL |
+| Event log | Visualização | dbt + CSV | `fct_event_log` exportado em `event_log.csv`, base da [análise de processos](#-análise-de-processos) |
+
+### Fluxo de dados
+
+1. **Entrada:** o ESP32 lê os sensores a cada segundo, aplica as regras de decisão e publica um JSON com as medições, os alertas e o risco geral no tópico MQTT do HiveMQ.
+2. **Ingestão:** o subscriber em Python recebe cada mensagem, acrescenta o horário de recebimento e acumula as leituras em lotes `.jsonl` (a cada 20 leituras ou 30 segundos). Ao encerrar, envia os arquivos para a stage do Snowflake (`PUT`) e carrega o JSON bruto na tabela `RAW.LEITURAS_SENSORES` (`COPY INTO`). Toda a execução fica registrada em `logs/ingestao.log`.
+3. **Processamento:** o dbt executa SQL no próprio Snowflake. A camada STG transforma o JSON em colunas tipadas e abre a lista de alertas em linhas; a camada FINAL expõe as tabelas prontas para consumo. Os dados não saem do Snowflake nessa etapa.
+4. **Saída:** o Power BI lê `fct_leituras` e `fct_alertas` e mostra o estado da lavoura e o que fazer. A `fct_event_log` é exportada em CSV e alimenta a análise de processos.
+
 ### Geração e Decisão
 
 O sistema embarcado foi simulado no **Wokwi**, com um **ESP32** ligado a três sensores:
@@ -180,6 +200,135 @@ O **Power BI** se conecta à camada FINAL no Snowflake e mostra os indicadores d
     <br>
     <em>Power bi usando as tabelas da camada final</em>
 </p>
+
+## 📈 Monitoramento
+
+O sistema pode ser acompanhado em cada etapa do pipeline, do ESP32 ao Power BI, usando os logs da aplicação e consultas ao Snowflake:
+
+| O que acompanhar | Onde olhar | Sinal de problema |
+|------------------|------------|-------------------|
+| Ingestão em tempo real | Console do `ingestao.py` | Linhas `WARNING` ou `ERROR` |
+| Histórico da ingestão | `logs/ingestao.log` | No resumo final, `recebidas` diferente de `linhas_carregadas`, ou `arquivos_com_erro` maior que 0 |
+| Cargas no Snowflake | Consulta ao `copy_history` | `STATUS` diferente de `Loaded` ou `ERROR_COUNT` maior que 0 |
+| Transformação | Saída do `dbt run` | `ERROR` maior que 0 |
+| Chegada de dados | Consulta da última leitura | Última leitura muito antiga enquanto o sistema deveria estar rodando |
+
+### Logs da ingestão e do dbt
+
+Descritos na seção [Logs da aplicação](#logs-da-aplicação): cada execução do `ingestao.py` registra conexões, lotes gravados, envios para a stage, o resultado do `COPY INTO` e, ao encerrar, um resumo com os totais. Um exemplo real está em [`docs/evidencias/ingestao_log.txt`](docs/evidencias/ingestao_log.txt), e a saída de uma execução do dbt em [`docs/evidencias/dbt_run.txt`](docs/evidencias/dbt_run.txt).
+
+### Status das cargas no Snowflake
+
+O Snowflake guarda automaticamente o histórico de todo `COPY INTO`, sem nenhum código adicional. A consulta abaixo lista cada arquivo carregado nas últimas 24 horas, com o horário, a quantidade de linhas, os erros e o status:
+
+```sql
+select file_name, last_load_time, row_count, error_count, status
+from table(AGROSMART.information_schema.copy_history(
+    table_name => 'AGROSMART.RAW.LEITURAS_SENSORES',
+    start_time => dateadd(hour, -24, current_timestamp())
+));
+```
+
+```
+FILE_NAME                                    LAST_LOAD_TIME                  ROW_COUNT  ERROR_COUNT  STATUS
+leituras/2026-11-05T21-10-51-050Z.jsonl.gz   2026-11-05 13:10:59.494 -0800   16         0            Loaded
+leituras/2026-11-05T21-10-57-998Z.jsonl.gz   2026-11-05 13:10:59.494 -0800   4          0            Loaded
+leituras/2026-11-05T04-21-11-000Z.jsonl.gz   2026-11-04 20:21:09.556 -0800   7          0            Loaded
+leituras/2026-11-05T04-20-53-372Z.jsonl.gz   2026-11-04 20:21:09.556 -0800   16         0            Loaded
+...
+```
+
+Arquivos com o mesmo `LAST_LOAD_TIME` foram carregados pelo mesmo `COPY INTO`, ou seja, na mesma execução do `ingestao.py`.
+
+> O horário aparece com `-0800` porque o fuso padrão de uma conta Snowflake é o do Pacífico. `13:10 -0800` é o mesmo instante que 18:10 em Brasília.
+
+### Chegada de dados
+
+A consulta abaixo mostra quando chegou a última leitura na camada final e quantas leituras chegaram na última hora:
+
+```sql
+select
+    max(leitura_em) as ultima_leitura,
+    count_if(leitura_em >= dateadd(hour, -1,
+        convert_timezone('America/Sao_Paulo', current_timestamp())::timestamp_ntz)) as leituras_ultima_hora
+from AGROSMART.RAW.FCT_LEITURAS;
+```
+
+```
+ULTIMA_LEITURA            LEITURAS_ULTIMA_HORA
+2026-11-05 18:10:09.000   0
+```
+
+Nesse exemplo, a última leitura chegou às 18:10 e nenhuma chegou na última hora: o sistema estava parado desde então. A `fct_leituras` só recebe dados novos depois do `dbt run`, então essa consulta reflete a última transformação, e não a última ingestão.
+
+### Como acompanhar o sistema
+
+1. **Durante a execução:** acompanhe o console do `ingestao.py`. Com `LOG_LEVEL=DEBUG` no `.env`, cada leitura recebida aparece em tempo real.
+2. **Ao encerrar:** confira o resumo no final do log. Se `recebidas` e `linhas_carregadas` forem iguais e `arquivos_com_erro` for 0, nenhuma leitura se perdeu.
+3. **Depois da carga:** rode a consulta do `copy_history` para confirmar que todos os arquivos estão como `Loaded`.
+4. **Depois do `dbt run`:** confira se terminou com `ERROR=0` e rode a consulta da última leitura para ver se os dados novos chegaram à camada final.
+5. **No dia a dia:** o dashboard do Power BI mostra o estado da lavoura com base na camada final.
+
+## 🔎 Análise de processos
+
+Para entender **como cada leitura percorre o sistema**, e não só o valor que ela carrega, aplicamos conceitos de mineração de processos. O modelo dbt `fct_event_log` transforma os dados em um *event log*: uma linha por etapa de cada leitura, com três colunas principais.
+
+- **case_id**: a leitura (`hash_id`);
+- **atividade**: o que aconteceu (leitura gerada, alerta, recebida, gravada em lote, carregada);
+- **momento**: quando aconteceu.
+
+Os horários vêm do próprio dado: `timestamp` do ESP32, `_recebido_em` gravado pelo `ingestao.py`, o horário no nome do arquivo `.jsonl` e `_carregado_em` do `COPY INTO`. O processo analisado vai da geração no ESP32 até a carga na tabela raw do Snowflake; o dbt roda depois, em lote, sobre todos os dados.
+
+A análise usa **254 leituras (1.275 eventos)** coletadas em 9 execuções nos dias 04 e 05/11/2026. O event log completo está em [`docs/evidencias/event_log.csv`](docs/evidencias/event_log.csv).
+
+<p align="center">
+    <img src="docs/evidencias/diagrama_processo.png" alt="Diagrama do processo de uma leitura, com a quantidade de leituras em cada etapa e o tempo entre elas" width="80%">
+    <br>
+    <em>Diagrama do processo gerado a partir do event log (código-fonte em <code>docs/evidencias/diagrama_processo.mmd</code>)</em>
+</p>
+
+### Gargalos
+
+| Etapa | Mediana | Máximo | O que explica o tempo |
+|-------|---------|--------|-----------------------|
+| Gerada → Recebida | 45 s | 32 min | Relógio do ESP32 simulado (ver abaixo), não é atraso de rede |
+| Recebida → Gravada em lote | 13 s | 30 s | Buffer do `ingestao.py` (20 leituras ou 30 s) |
+| **Gravada em lote → Carregada** | 9 s | **4,8 min** | **O arquivo espera na pasta até o script ser encerrado (Ctrl+C)** |
+
+O gargalo está na última etapa. O envio para o Snowflake só acontece quando o script é encerrado, então o tempo de espera de uma leitura depende de **quanto tempo a execução durou**, e não do sistema. Nas execuções de teste, que duraram de 30 segundos a 5 minutos, a primeira leitura de cada execução esperou até 5,3 minutos para chegar ao Snowflake. Em uma execução de 1 hora, ela esperaria 1 hora, e o dashboard ficaria desatualizado durante todo esse tempo.
+
+### Variações
+
+As leituras seguem 8 caminhos diferentes, que se distinguem pelos alertas disparados no ESP32:
+
+| Caminho | Leituras | % |
+|---------|---------:|--:|
+| Sem alerta | 63 | 24,8% |
+| Estresse térmico | 62 | 24,4% |
+| Solo seco + estresse térmico | 60 | 23,6% |
+| Solo seco | 32 | 12,6% |
+| Solo encharcado | 20 | 7,9% |
+| Risco de geada | 9 | 3,5% |
+| Estresse térmico + solo encharcado | 5 | 2,0% |
+| Solo seco + risco de geada | 3 | 1,2% |
+
+Depois dos alertas, todas as leituras seguem o mesmo caminho: as 254 geradas foram recebidas, gravadas e carregadas, **sem perda de mensagens** entre o ESP32 e o Snowflake.
+
+### Outros achados
+
+- **O limite de 20 leituras por lote nunca é atingido.** Os 23 lotes tiveram em média 11 leituras (no máximo 18), porque chega uma leitura a cada ~2 segundos. Na prática, quem fecha o lote é sempre o timer de 30 segundos.
+- **Os relógios dos componentes não batem.** O Wokwi simula o ESP32 mais devagar que o tempo real, e o relógio dele fica até 32 minutos atrasado em relação ao servidor. Além disso, 17 leituras aparecem "carregadas" até 1,4 s antes de serem "gravadas", porque o horário de gravação vem do relógio do computador e o de carga, do relógio do Snowflake. É um problema clássico de sistemas distribuídos: cada componente tem o seu relógio.
+- **75% das leituras geraram alerta** e 27% geraram dois. Nos testes isso é esperado, porque os sensores foram levados aos extremos de propósito. Mas, como o ESP32 envia uma leitura por segundo, uma mesma condição (por exemplo, solo seco) gera um alerta novo a cada segundo enquanto durar. Numa lavoura real, isso levaria à *fadiga de alerta*: o produtor passaria a ignorar os avisos.
+
+### Oportunidades de melhoria
+
+| Problema encontrado | Melhoria proposta |
+|---------------------|-------------------|
+| Carga no Snowflake só ao encerrar o script (gargalo) | **Carga periódica** a cada X minutos: a espera máxima passa a ser o intervalo configurado, e não a duração da execução |
+| Lote de 20 leituras nunca atingido | Ajustar o tamanho do lote ao ritmo real de leituras ou manter apenas o critério de tempo |
+| Relógios divergentes entre ESP32, computador e Snowflake | Usar o horário de recebimento (`_recebido_em`) como referência e sincronizar os relógios via NTP |
+| Um alerta novo a cada segundo para a mesma condição | Notificar só na **mudança de estado** (quando o problema começa e quando termina) |
+| Muitas leituras em situação de alerta | Calibrar os limites das regras com dados reais de campo |
 
 ## 🎥 Vídeo de demonstração
 
