@@ -9,6 +9,8 @@ select
     _doc:luminosidade::float        as luminosidade,
     _doc:risco_geral::string        as nivel_risco,
     _arquivo                        as arquivo,
-    _linha_arquivo                  as linha_arquivo
+    _linha_arquivo                  as linha_arquivo,
+    _doc:_recebido_em::timestamp_tz as recebido_em,     -- quando o ingestao.py recebeu do broker
+    _carregado_em                   as carregado_em     -- quando o COPY INTO carregou (UTC)
 from {{ source('AGROSMART', 'LEITURAS_SENSORES') }}
 order by leitura_em desc
