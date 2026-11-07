@@ -2,8 +2,10 @@
 Subscriber MQTT do AgroSmart.
 Assina o tópico em que o ESP32 publica, acumula as leituras num buffer
 e grava lotes em JSON Lines (uma leitura por linha).
-Ao encerrar, envia todos os arquivos para o stage interno do Snowflake
-e apaga localmente os que foram enviados com sucesso.
+A cada INTERVALO_CARGA_S (padrão 5 min) e ao encerrar, envia os arquivos para o
+stage interno do Snowflake, roda o COPY INTO e apaga localmente os que foram enviados.
+Funciona rodando à mão (Ctrl+C encerra) e em container (docker compose stop envia
+SIGTERM, que é tratado do mesmo jeito).
 
 Logs: console + arquivo logs/ingestao.log (na raiz do projeto), com rotação.
 O nível vem da variável LOG_LEVEL do .env (padrão INFO; use DEBUG para ver cada leitura).
@@ -11,6 +13,7 @@ O nível vem da variável LOG_LEVEL do .env (padrão INFO; use DEBUG para ver ca
 import json
 import logging
 import os
+import signal
 import sys
 import threading
 import time
@@ -32,6 +35,7 @@ TOPICO = "agrosmart-fiap/talhao01/leituras"  # idêntico ao do ESP32
 PASTA_SAIDA = "dados_landing"
 LOTE_MAX = 20      # grava ao juntar 20 leituras...
 INTERVALO_S = 30   # ...ou a cada 30 segundos, o que vier primeiro
+INTERVALO_CARGA_S = int(os.getenv("INTERVALO_CARGA_S", "300"))  # carga no Snowflake (padrão: 5 min)
 
 STAGE = "@AGROSMART.RAW.STG_LEITURAS/leituras/"
 TABELA = "AGROSMART.RAW.LEITURAS_SENSORES"
@@ -50,6 +54,7 @@ log_copy = logging.getLogger("copy")
 
 buffer = []
 trava = threading.Lock()
+parar = threading.Event()  # sinalizado pelo SIGTERM (docker compose stop)
 
 # contadores da execução, mostrados no resumo ao encerrar
 contadores = {
@@ -156,9 +161,15 @@ def gravar_lote(leituras):
         agora = datetime.now(timezone.utc)
         nome = f"{agora:%Y-%m-%dT%H-%M-%S}-{agora.microsecond // 1000:03d}Z.jsonl"
         caminho = os.path.join(PASTA_SAIDA, nome)
+        temporario = caminho + ".tmp"
         try:
-            with open(caminho, "x", encoding="utf-8") as f:
+            if os.path.exists(caminho):
+                raise FileExistsError(caminho)
+            # grava num .tmp e só renomeia no final: a carga procura apenas *.jsonl,
+            # então nunca envia um arquivo que ainda está sendo escrito
+            with open(temporario, "x", encoding="utf-8") as f:
                 f.write("\n".join(json.dumps(l, ensure_ascii=False) for l in leituras))
+            os.replace(temporario, caminho)
             break
         except FileExistsError:
             log_lote.debug("nome %s já existe, tentando outro", nome)
@@ -278,6 +289,59 @@ def carregar_tabela(conn):
     log_copy.info("%d linha(s) carregada(s) em %s", total, TABELA)
 
 
+def descarregar_sem_parar():
+    """Como descarregar(), mas registra o erro em vez de derrubar o processo."""
+    try:
+        descarregar()
+    except Exception:
+        log_lote.exception("falha ao gravar lote")
+
+
+def executar_carga():
+    """Grava o que está no buffer, envia os .jsonl para a stage e roda o COPY INTO.
+
+    Abre uma conexão nova a cada carga: num processo que roda por horas, uma
+    conexão única pode expirar. Se algo falhar, os arquivos continuam na pasta
+    e sobem na próxima carga (o COPY INTO ignora arquivos já carregados)."""
+    descarregar_sem_parar()
+
+    # sem arquivos novos não há o que carregar: pula a carga inteira, sem conectar.
+    # O COPY INTO liga o warehouse, e rodá-lo sem dados só consumiria créditos.
+    # Se uma carga anterior deixou arquivos pendentes na stage, o próximo COPY
+    # com dados novos carrega tudo junto.
+    if not any(Path(PASTA_SAIDA).glob("*.jsonl")):
+        log_sf.info("nenhum dado novo, carga pulada")
+        return
+
+    try:
+        conn = conectar_snowflake()
+    except Exception:
+        log_sf.exception("falha ao conectar; os arquivos ficam em %s para a próxima carga", PASTA_SAIDA)
+        return
+    try:
+        enviar_arquivos(conn)
+        carregar_tabela(conn)
+    except Exception:
+        log_sf.exception("falha durante a carga; o que não subiu fica para a próxima")
+    finally:
+        conn.close()
+
+
+def registrar_ciclo(anterior):
+    """Resumo só do último intervalo de carga.
+    Retorna os contadores atuais, que viram a base do próximo ciclo."""
+    with trava:
+        atual = dict(contadores)
+    d = {k: atual[k] - anterior[k] for k in atual}
+    log.info(
+        "ciclo | recebidas=%d inválidas=%d lotes=%d arquivos_enviados=%d "
+        "arquivos_com_erro=%d linhas_carregadas=%d",
+        d["recebidas"], d["invalidas"], d["lotes"], d["arquivos_enviados"],
+        d["arquivos_com_erro"], d["linhas_carregadas"],
+    )
+    return atual
+
+
 def registrar_resumo(inicio):
     """Uma linha com os totais da execução: serve de indicador rápido de funcionamento."""
     duracao = timedelta(seconds=round(time.monotonic() - inicio))
@@ -295,13 +359,18 @@ def registrar_resumo(inicio):
 def main():
     inicio = time.monotonic()
     log.info(
-        "iniciando ingestão | broker=%s tópico=%s nível=%s log=%s",
-        BROKER, TOPICO, LOG_LEVEL, ARQUIVO_LOG,
+        "iniciando ingestão | broker=%s tópico=%s carga a cada %ds nível=%s log=%s",
+        BROKER, TOPICO, INTERVALO_CARGA_S, LOG_LEVEL, ARQUIVO_LOG,
     )
 
-    # conecta primeiro: se a credencial estiver errada, falha antes de começar a coleta
-    conn = conectar_snowflake()
-    log_sf.info("conectado")
+    # testa a conexão antes de começar: se a credencial estiver errada, falha logo.
+    # Cada carga abre a sua própria conexão depois.
+    conectar_snowflake().close()
+    log_sf.info("conexão testada")
+
+    # docker compose stop envia SIGTERM (e não Ctrl+C): tratado do mesmo jeito,
+    # para fazer a última carga antes de sair
+    signal.signal(signal.SIGTERM, lambda *_: parar.set())
 
     cliente = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
     cliente.enable_logger(logging.getLogger("paho"))  # erros internos da biblioteca vão para o log
@@ -312,19 +381,30 @@ def main():
     cliente.connect(BROKER, PORTA)
     cliente.loop_start()  # recebe as mensagens numa thread separada
 
+    proximo_lote = time.monotonic() + INTERVALO_S
+    proxima_carga = time.monotonic() + INTERVALO_CARGA_S
+    with trava:
+        base_ciclo = dict(contadores)
+
     try:
-        while True:
-            time.sleep(INTERVALO_S)
-            descarregar()  # garante gravação mesmo com poucas mensagens
+        # passos de 1 s (em vez de dormir 30 s de uma vez) para reagir rápido ao Ctrl+C e ao SIGTERM
+        while not parar.is_set():
+            time.sleep(1)
+            agora = time.monotonic()
+            if agora >= proximo_lote:
+                descarregar_sem_parar()  # garante gravação mesmo com poucas mensagens
+                proximo_lote = agora + INTERVALO_S
+            if agora >= proxima_carga:
+                executar_carga()
+                base_ciclo = registrar_ciclo(base_ciclo)
+                proxima_carga = time.monotonic() + INTERVALO_CARGA_S
+        log.info("encerrando (sinal de parada)...")
     except KeyboardInterrupt:
         log.info("encerrando (Ctrl+C)...")
     finally:
-        cliente.loop_stop()    # para de receber antes do último flush
+        cliente.loop_stop()    # para de receber antes da última carga
         cliente.disconnect()
-        descarregar()          # não perde o que ficou no buffer
-        enviar_arquivos(conn)  # sobe tudo e apaga os enviados
-        carregar_tabela(conn)   # stage → tabela raw
-        conn.close()
+        executar_carga()       # grava o buffer e sobe o que faltou
         registrar_resumo(inicio)
 
 if __name__ == "__main__":
