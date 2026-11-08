@@ -1,0 +1,27 @@
+HASH_ID,PROBLEMA,PROBLEMA_DESCRICAO,RECOMENDACAO,RISCO,NIVEL_RISCO
+9175f5e9f748e48c19cbe622cea574de,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+23c382e168c54c59ea69c1ea3109f8d3,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+28c17fb6bcd0c1661bae329052ebfac8,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+ee5ac24e52b6f5561bae8c23399cf162,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+ddad76d4c561d584b63d3b93e2434620,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+5e1807c19d0376a85a3541c0a429a15e,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+01137dd2c9cfb19546f89e9ebfd7f5b2,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+fa29e57846943f078bd514a5e809cd18,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+c8362bffe126c846691cc16fdcfd7b4d,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+dfba3b8a9c872153acbc9f6ed0e6834b,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+8315e3d919a8b1b158de12c2fb921cb1,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+4be480a5c1e6c1a041d1ff44a2a86630,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+8df34b35381f0b2543deb42ca37f19b2,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+6779632e2d0d4ef035671c9bcd74d450,risco_geada,Risco Geada,Risco de geada: proteger a lavoura,Alto,3
+f8cb5c4a3b570c2cae2269526278d3a3,solo_seco,Solo Seco,Irrigar o talhão,Alto,3
+f8cb5c4a3b570c2cae2269526278d3a3,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+063ce099bf266734aae692ce3f32d8a1,solo_seco,Solo Seco,Irrigar o talhão,Alto,3
+063ce099bf266734aae692ce3f32d8a1,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+91181293f3888962b0171a76047ed6be,solo_seco,Solo Seco,Irrigar o talhão,Alto,3
+91181293f3888962b0171a76047ed6be,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+0907c7eda8f23b5c99360ac69d66d3bb,solo_seco,Solo Seco,Irrigar o talhão,Alto,3
+0907c7eda8f23b5c99360ac69d66d3bb,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+e18cc3e55427b9d288534ac4036cf17e,solo_seco,Solo Seco,Irrigar o talhão,Alto,3
+e18cc3e55427b9d288534ac4036cf17e,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+0987ee66b57f75d5baa130d1b0108bd9,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
+effba71c6dafc4ca9ef0d1ebba842315,estresse_termico,Estresse Termico,Monitorar estresse térmico,Médio,2
