@@ -1,0 +1,13 @@
+# o que NÃO entra na imagem
+.git
+.venv
+.env
+.env.*
+**/__pycache__
+logs/
+02_ingestao/dados_landing/
+03_dbt/target/
+03_dbt/logs/
+docs/
+01_wokwi/
+*.pbix

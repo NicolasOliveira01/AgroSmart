@@ -1,0 +1,37 @@
+# Automação do AgroSmart: dois serviços criados a partir da mesma imagem.
+#   ingestao -> subscriber MQTT rodando sem parar; carga no Snowflake a cada INTERVALO_CARGA_S
+#   dbt      -> roda o "dbt run" a cada INTERVALO_DBT_S
+#
+# Subir:     docker compose up -d --build
+# Status:    docker compose ps
+# Logs:      docker compose logs -f ingestao     (ou: docker compose logs -f dbt)
+# Desligar:  docker compose down
+#
+# Atenção: não rode o "python ingestao.py" manual com os containers ligados,
+# senão cada leitura é recebida duas vezes.''
+
+services:
+  ingestao:
+    build: .
+    image: agrosmart:latest
+    container_name: agrosmart-ingestao
+    env_file: .env
+    init: true                 # repassa o sinal de parada (SIGTERM) para o Python
+    restart: unless-stopped    # se o processo cair, o Docker sobe de novo
+    stop_grace_period: 30s     # tempo para fazer a última carga antes de desligar
+    volumes:
+      - landing:/app/02_ingestao/dados_landing   # lotes ainda não enviados sobrevivem a reinícios
+
+  dbt:
+    build: .
+    image: agrosmart:latest
+    container_name: agrosmart-dbt
+    env_file: .env
+    init: true
+    restart: unless-stopped
+    working_dir: /app/03_dbt
+    # $$ porque o docker-compose usaria um $ sozinho para as variáveis dele
+    command: ["sh", "-c", "while true; do dbt run --profiles-dir /app/docker; sleep $${INTERVALO_DBT_S:-300}; done"]
+
+volumes:
+  landing:

@@ -234,3 +234,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# perfil do dbt para o Docker: lê tudo de variáveis de ambiente, sem senhas
+!docker/profiles.yml
