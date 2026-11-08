@@ -1,0 +1,99 @@
+# Pipeline DevSecOps do AgroSmart: roda a cada push na main, em pull requests
+# e manualmente (aba Actions > DevSecOps > Run workflow).
+#
+#   qualidade  -> lint do Python (ruff) e validação dos modelos do dbt (dbt parse)
+#   seguranca  -> análise do código (bandit) e das dependências (pip-audit)
+#   build      -> só roda se os dois passarem: build da imagem Docker, teste da
+#                 imagem e varredura de vulnerabilidades do container (Trivy)
+
+name: DevSecOps
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# o pipeline só precisa ler o código
+permissions:
+  contents: read
+
+jobs:
+  qualidade:
+    name: Qualidade de código
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
+          pip install ruff==0.16.9
+
+      - name: Lint do Python (ruff)
+        run: ruff check 02_ingestao
+
+      # dbt parse valida SQL, Jinja e referências entre modelos sem conectar no Snowflake;
+      # as variáveis abaixo são fictícias, só para o profiles.yml ser lido
+      - name: Validar os modelos do dbt (dbt parse)
+        env:
+          SNOWFLAKE_ACCOUNT: ci
+          SNOWFLAKE_USER: ci
+          SNOWFLAKE_PASSWORD: ci
+          SNOWFLAKE_WAREHOUSE: ci
+          SNOWFLAKE_DATABASE: AGROSMART
+          SNOWFLAKE_SCHEMA: RAW
+        run: dbt parse --project-dir 03_dbt --profiles-dir docker
+
+  seguranca:
+    name: Análise de vulnerabilidades
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar ferramentas
+        run: pip install bandit==1.7.10 pip-audit==2.7.3
+
+      # relatório completo, inclusive achados de baixa severidade ou confiança (não bloqueia)
+      - name: Código - relatório completo (bandit)
+        run: bandit -r 02_ingestao --exit-zero
+
+      # bloqueia o pipeline se houver achado de severidade E confiança média ou alta
+      - name: Código - bloqueio (bandit)
+        run: bandit -r 02_ingestao --severity-level medium --confidence-level medium
+
+      # procura vulnerabilidades conhecidas (CVEs) nas versões do requirements.txt
+      - name: Dependências (pip-audit)
+        run: pip-audit -r requirements.txt --no-deps --progress-spinner off
+
+  build:
+    name: Build e varredura da imagem
+    needs: [qualidade, seguranca]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build da imagem Docker
+        run: docker build -t agrosmart:ci .
+
+      - name: Testar a imagem
+        run: |
+          docker run --rm agrosmart:ci python -c "import paho.mqtt.client, snowflake.connector; print('dependências ok')"
+          docker run --rm agrosmart:ci dbt --version
+
+      # vulnerabilidades do sistema operacional e das bibliotecas dentro da imagem;
+      # informativo: mostra o relatório sem bloquear o pipeline
+      - name: Vulnerabilidades da imagem (Trivy)
+        run: |
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy:0.57.0 image --severity HIGH,CRITICAL --ignore-unfixed \
+            --exit-code 0 --no-progress agrosmart:ci

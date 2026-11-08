@@ -34,12 +34,14 @@ O AgroSmart usa tecnologia e dados para monitorar a lavoura e apoiar decisões n
 | Transformação | Tratamento | dbt | Converte o JSON em tabelas relacionais (STG → FINAL): `fct_leituras`, `fct_alertas` e `fct_event_log` |
 | Dashboard | Visualização | Power BI | Mostra as leituras, a evolução no tempo e os alertas a partir da camada FINAL |
 | Event log | Visualização | dbt + CSV | `fct_event_log` exportado em `event_log.csv`, base da [análise de processos](#-análise-de-processos) |
+| Orquestração | Automação | Docker Compose | Dois containers criados da mesma imagem: `ingestao` (subscriber rodando sem parar) e `dbt` (`dbt run` periódico); reiniciam sozinhos se caírem |
+| Pipeline DevSecOps | Automação | GitHub Actions | A cada push: qualidade do código (ruff, dbt parse), vulnerabilidades (bandit, pip-audit) e build da imagem com varredura do container (Trivy) |
 
 ### Fluxo de dados
 
 1. **Entrada:** o ESP32 lê os sensores a cada segundo, aplica as regras de decisão e publica um JSON com as medições, os alertas e o risco geral no tópico MQTT do HiveMQ.
-2. **Ingestão:** o subscriber em Python recebe cada mensagem, acrescenta o horário de recebimento e acumula as leituras em lotes `.jsonl` (a cada 20 leituras ou 30 segundos). Ao encerrar, envia os arquivos para a stage do Snowflake (`PUT`) e carrega o JSON bruto na tabela `RAW.LEITURAS_SENSORES` (`COPY INTO`). Toda a execução fica registrada em `logs/ingestao.log`.
-3. **Processamento:** o dbt executa SQL no próprio Snowflake. A camada STG transforma o JSON em colunas tipadas e abre a lista de alertas em linhas; a camada FINAL expõe as tabelas prontas para consumo. Os dados não saem do Snowflake nessa etapa.
+2. **Ingestão:** o subscriber em Python recebe cada mensagem, acrescenta o horário de recebimento e acumula as leituras em lotes `.jsonl` (a cada 20 leituras ou 30 segundos). A cada `INTERVALO_CARGA_S` (5 minutos por padrão) e ao encerrar, envia os arquivos para a stage do Snowflake (`PUT`) e carrega o JSON bruto na tabela `RAW.LEITURAS_SENSORES` (`COPY INTO`). Toda a execução fica registrada em `logs/ingestao.log`.
+3. **Processamento:** o dbt executa SQL no próprio Snowflake. A camada STG transforma o JSON em colunas tipadas e abre a lista de alertas em linhas; a camada FINAL expõe as tabelas prontas para consumo. Os dados não saem do Snowflake nessa etapa. Com a [execução automatizada](#-execução-automatizada-docker), o `dbt run` roda sozinho a cada `INTERVALO_DBT_S`.
 4. **Saída:** o Power BI lê `fct_leituras` e `fct_alertas` e mostra o estado da lavoura e o que fazer. A `fct_event_log` é exportada em CSV e alimenta a análise de processos.
 
 ### Geração e Decisão
@@ -115,7 +117,7 @@ O script **Python** se conecta ao **HiveMQ**, assina o tópico e passa a receber
 }
 ```
 
-Quando o buffer chega a 20 leituras ou passam 30 segundos, o que acontecer primeiro, as leituras são gravadas em um arquivo **.jsonl**, com um JSON por linha. Ao final da execução, o script se autentica no **Snowflake**, envia os arquivos para a **stage** e executa o `COPY INTO`, que carrega os dados brutos na tabela source.
+Quando o buffer chega a 20 leituras ou passam 30 segundos, o que acontecer primeiro, as leituras são gravadas em um arquivo **.jsonl**, com um JSON por linha. A cada `INTERVALO_CARGA_S` segundos (5 minutos por padrão, configurável no `.env`), e também ao encerrar, o script se autentica no **Snowflake**, envia os arquivos para a **stage** e executa o `COPY INTO`, que carrega os dados brutos na tabela source. Se não houver arquivos novos, a carga é pulada para não ligar o warehouse à toa. Cada lote é gravado primeiro como `.jsonl.tmp` e só renomeado para `.jsonl` quando está completo, para a carga nunca enviar um arquivo pela metade.
 
 <p align="center">
     <img src="docs/jsonl.png" alt="Diagrama da arquitetura" width="50%">
@@ -201,16 +203,71 @@ O **Power BI** se conecta à camada FINAL no Snowflake e mostra os indicadores d
     <em>Power bi usando as tabelas da camada final</em>
 </p>
 
+## 🐳 Execução automatizada (Docker)
+
+Com o **Docker Compose**, a pipeline roda sozinha do broker MQTT até as tabelas finais: basta ligar a simulação no Wokwi e subir os containers. Os dois serviços são criados a partir da mesma imagem, definida no [`Dockerfile`](Dockerfile):
+
+| Container | O que faz | Frequência |
+|-----------|-----------|------------|
+| `agrosmart-ingestao` | Roda o `ingestao.py` sem parar: recebe as leituras, grava os lotes e carrega no Snowflake | Lotes a cada 30 s; carga a cada `INTERVALO_CARGA_S` |
+| `agrosmart-dbt` | Roda o `dbt run`, atualizando `fct_leituras`, `fct_alertas` e `fct_event_log` | A cada `INTERVALO_DBT_S`, contado a partir do fim da execução anterior |
+
+```
+  Wokwi (manual) ──► MQTT ──► [agrosmart-ingestao] ──► Snowflake RAW ──► [agrosmart-dbt] ──► tabelas FINAL ──► Power BI
+```
+
+Os intervalos são definidos no `.env` (padrão: 300 segundos). Para testes e demonstrações, 60 segundos permitem ver as cargas acontecendo; para deixar rodando, valores maiores economizam créditos do Snowflake, porque cada carga e cada `dbt run` ligam o warehouse.
+
+```env
+INTERVALO_CARGA_S=300
+INTERVALO_DBT_S=300
+```
+
+Comandos, sempre a partir da raiz do projeto e com o Docker Desktop aberto:
+
+| Comando | O que faz |
+|---------|-----------|
+| `docker compose up -d --build` | Monta a imagem e liga os containers (use `--build` quando o código mudar) |
+| `docker compose up -d` | Liga os containers com a imagem já montada; também aplica mudanças no `.env` |
+| `docker compose ps` | Mostra os containers e o status (`Up` = rodando) |
+| `docker compose logs -f ingestao` | Log da ingestão ao vivo (`dbt` no lugar de `ingestao` para o log do dbt) |
+| `docker compose down` | Desliga os containers, depois de uma última carga no Snowflake |
+
+Decisões da configuração:
+
+- **Credenciais fora da imagem:** o `.env` não entra na imagem (está no [`.dockerignore`](.dockerignore)); os containers recebem as variáveis só na hora de rodar. O perfil do dbt usado no container, [`docker/profiles.yml`](docker/profiles.yml), lê tudo de variáveis de ambiente e não tem nenhuma senha escrita.
+- **Usuário sem privilégios:** os containers rodam com um usuário comum, e não como administrador (`root`).
+- **Reinício automático:** com `restart: unless-stopped`, um container que cair por erro volta sozinho.
+- **Desligamento sem perda:** o `docker compose down` envia um sinal de parada (SIGTERM) que o `ingestao.py` trata como o Ctrl+C, fazendo a última carga antes de sair. Os lotes ainda não enviados ficam num volume e sobrevivem a reinícios.
+
+> **Atenção:** não rode o `python ingestao.py` manualmente com os containers ligados. Os dois assinam o mesmo tópico, o broker entrega uma cópia de cada mensagem para cada um, e cada leitura entraria duas vezes no Snowflake.
+
+## 🔐 Pipeline DevSecOps
+
+A cada `push` na `main` (e em pull requests), o **GitHub Actions** executa o pipeline definido em [`.github/workflows/devsecops.yml`](.github/workflows/devsecops.yml). Ele também pode ser disparado manualmente na aba **Actions** do repositório.
+
+| Etapa | Ferramenta | O que verifica | Bloqueia o pipeline? |
+|-------|-----------|----------------|----------------------|
+| Qualidade | **ruff** | Erros e más práticas no código Python | Sim |
+| Qualidade | **dbt parse** | SQL, Jinja e referências entre os modelos do dbt, sem conectar no Snowflake | Sim |
+| Segurança | **bandit** | Padrões inseguros no código (SQL montado com texto, senhas no código, etc.) | Sim, para achados de severidade e confiança média ou alta |
+| Segurança | **pip-audit** | Vulnerabilidades conhecidas (CVEs) nas bibliotecas do `requirements.txt` | Sim |
+| Build | **docker build** | Se a imagem continua sendo montada e as dependências carregam dentro dela | Sim |
+| Build | **Trivy** | Vulnerabilidades do sistema operacional e das bibliotecas dentro da imagem | Não (relatório informativo) |
+
+Os jobs de qualidade e de segurança rodam em paralelo; o build só acontece se os dois passarem. O pipeline tem permissão apenas de leitura no repositório e não usa nenhuma credencial do Snowflake: o `dbt parse` roda com variáveis fictícias.
+
 ## 📈 Monitoramento
 
 O sistema pode ser acompanhado em cada etapa do pipeline, do ESP32 ao Power BI, usando os logs da aplicação e consultas ao Snowflake:
 
 | O que acompanhar | Onde olhar | Sinal de problema |
 |------------------|------------|-------------------|
-| Ingestão em tempo real | Console do `ingestao.py` | Linhas `WARNING` ou `ERROR` |
+| Containers | `docker compose ps` | `STATUS` diferente de `Up` (por exemplo, `Restarting`) |
+| Ingestão em tempo real | Console do `ingestao.py` ou `docker compose logs -f ingestao` | Linhas `WARNING` ou `ERROR`; linhas `ciclo` com `recebidas=0` indicam que não estão chegando dados |
 | Histórico da ingestão | `logs/ingestao.log` | No resumo final, `recebidas` diferente de `linhas_carregadas`, ou `arquivos_com_erro` maior que 0 |
 | Cargas no Snowflake | Consulta ao `copy_history` | `STATUS` diferente de `Loaded` ou `ERROR_COUNT` maior que 0 |
-| Transformação | Saída do `dbt run` | `ERROR` maior que 0 |
+| Transformação | Saída do `dbt run` ou `docker compose logs -f dbt` | `ERROR` maior que 0 |
 | Chegada de dados | Consulta da última leitura | Última leitura muito antiga enquanto o sistema deveria estar rodando |
 
 ### Logs da ingestão e do dbt
@@ -263,10 +320,10 @@ Nesse exemplo, a última leitura chegou às 18:10 e nenhuma chegou na última ho
 
 ### Como acompanhar o sistema
 
-1. **Durante a execução:** acompanhe o console do `ingestao.py`. Com `LOG_LEVEL=DEBUG` no `.env`, cada leitura recebida aparece em tempo real.
-2. **Ao encerrar:** confira o resumo no final do log. Se `recebidas` e `linhas_carregadas` forem iguais e `arquivos_com_erro` for 0, nenhuma leitura se perdeu.
+1. **Durante a execução:** acompanhe o console do `ingestao.py`, ou `docker compose logs -f ingestao` se estiver rodando no Docker. Com `LOG_LEVEL=DEBUG` no `.env`, cada leitura recebida aparece em tempo real, e a cada carga sai uma linha `ciclo` com os números do intervalo.
+2. **Ao encerrar:** confira o resumo no final do log (no Docker, antes do `docker compose down`, que remove os logs dos containers). Se `recebidas` e `linhas_carregadas` forem iguais e `arquivos_com_erro` for 0, nenhuma leitura se perdeu.
 3. **Depois da carga:** rode a consulta do `copy_history` para confirmar que todos os arquivos estão como `Loaded`.
-4. **Depois do `dbt run`:** confira se terminou com `ERROR=0` e rode a consulta da última leitura para ver se os dados novos chegaram à camada final.
+4. **Depois do `dbt run`:** confira se terminou com `ERROR=0` (no Docker, em `docker compose logs -f dbt`) e rode a consulta da última leitura para ver se os dados novos chegaram à camada final.
 5. **No dia a dia:** o dashboard do Power BI mostra o estado da lavoura com base na camada final.
 
 ## 🔎 Análise de processos
@@ -324,7 +381,7 @@ Depois dos alertas, todas as leituras seguem o mesmo caminho: as 254 geradas for
 
 | Problema encontrado | Melhoria proposta |
 |---------------------|-------------------|
-| Carga no Snowflake só ao encerrar o script (gargalo) | **Carga periódica** a cada X minutos: a espera máxima passa a ser o intervalo configurado, e não a duração da execução |
+| Carga no Snowflake só ao encerrar o script (gargalo) | ✅ **Implementada:** carga periódica a cada `INTERVALO_CARGA_S` e execução contínua em [Docker](#-execução-automatizada-docker). A espera máxima passa a ser o intervalo configurado, e não a duração da execução |
 | Lote de 20 leituras nunca atingido | Ajustar o tamanho do lote ao ritmo real de leituras ou manter apenas o critério de tempo |
 | Relógios divergentes entre ESP32, computador e Snowflake | Usar o horário de recebimento (`_recebido_em`) como referência e sincronizar os relógios via NTP |
 | Um alerta novo a cada segundo para a mesma condição | Notificar só na **mudança de estado** (quando o problema começa e quando termina) |
