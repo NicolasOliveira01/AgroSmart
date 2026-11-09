@@ -272,7 +272,7 @@ O sistema pode ser acompanhado em cada etapa do pipeline, do ESP32 ao Power BI, 
 
 ### Logs da ingestão e do dbt
 
-Descritos na seção [Logs da aplicação](#logs-da-aplicação): cada execução do `ingestao.py` registra conexões, lotes gravados, envios para a stage, o resultado do `COPY INTO` e, ao encerrar, um resumo com os totais. Um exemplo real está em [`docs/evidencias/ingestao_log.txt`](docs/evidencias/ingestao_log.txt), e a saída de uma execução do dbt em [`docs/evidencias/dbt_run.txt`](docs/evidencias/dbt_run.txt).
+Descritos na seção [Logs da aplicação](#logs-da-aplicação): cada execução do `ingestao.py` registra conexões, lotes gravados, envios para a stage, o resultado do `COPY INTO` e, ao encerrar, um resumo com os totais. Um exemplo real está em [`docs/evidencias/execucao/ingestao_log.txt`](docs/evidencias/execucao/ingestao_log.txt), e a saída de uma execução do dbt em [`docs/evidencias/execucao/dbt_run.txt`](docs/evidencias/execucao/dbt_run.txt).
 
 ### Status das cargas no Snowflake
 
@@ -336,12 +336,12 @@ Para entender **como cada leitura percorre o sistema**, e não só o valor que e
 
 Os horários vêm do próprio dado: `timestamp` do ESP32, `_recebido_em` gravado pelo `ingestao.py`, o horário no nome do arquivo `.jsonl` e `_carregado_em` do `COPY INTO`. O processo analisado vai da geração no ESP32 até a carga na tabela raw do Snowflake; o dbt roda depois, em lote, sobre todos os dados.
 
-A análise usa **254 leituras (1.275 eventos)** coletadas em 9 execuções nos dias 04 e 05/11/2026. O event log completo está em [`docs/evidencias/event_log.csv`](docs/evidencias/event_log.csv).
+A análise usa **254 leituras (1.275 eventos)** coletadas em 9 execuções nos dias 04 e 05/11/2026. O event log completo está em [`docs/evidencias/analise_processos/event_log.csv`](docs/evidencias/analise_processos/event_log.csv).
 
 <p align="center">
-    <img src="docs/evidencias/diagrama_processo.png" alt="Diagrama do processo de uma leitura, com a quantidade de leituras em cada etapa e o tempo entre elas" width="80%">
+    <img src="docs/evidencias/analise_processos/diagrama_processo.png" alt="Diagrama do processo de uma leitura, com a quantidade de leituras em cada etapa e o tempo entre elas" width="80%">
     <br>
-    <em>Diagrama do processo gerado a partir do event log (código-fonte em <code>docs/evidencias/diagrama_processo.mmd</code>)</em>
+    <em>Diagrama do processo gerado a partir do event log (código-fonte em <code>docs/evidencias/analise_processos/diagrama_processo.mmd</code>)</em>
 </p>
 
 ### Gargalos
@@ -386,6 +386,21 @@ Depois dos alertas, todas as leituras seguem o mesmo caminho: as 254 geradas for
 | Relógios divergentes entre ESP32, computador e Snowflake | Usar o horário de recebimento (`_recebido_em`) como referência e sincronizar os relógios via NTP |
 | Um alerta novo a cada segundo para a mesma condição | Notificar só na **mudança de estado** (quando o problema começa e quando termina) |
 | Muitas leituras em situação de alerta | Calibrar os limites das regras com dados reais de campo |
+
+## 📁 Evidências
+
+Os arquivos de evidência ficam em [`docs/evidencias`](docs/evidencias), organizados por assunto:
+
+| Pasta | Arquivo | O que é |
+|-------|---------|---------|
+| `execucao/` | [`2026-11-05T04-20-53-372Z.jsonl`](docs/evidencias/execucao/2026-11-05T04-20-53-372Z.jsonl) | Lote real gravado pelo `ingestao.py`, com uma leitura do ESP32 por linha |
+| `execucao/` | [`ingestao_log.txt`](docs/evidencias/execucao/ingestao_log.txt) | Log de uma execução completa da ingestão, da conexão ao resumo final |
+| `execucao/` | [`dbt_run.txt`](docs/evidencias/execucao/dbt_run.txt) | Saída de um `dbt run` |
+| `tabelas_finais/` | [`exemplo_leituras.csv`](docs/evidencias/tabelas_finais/exemplo_leituras.csv), [`exemplo_alertas.csv`](docs/evidencias/tabelas_finais/exemplo_alertas.csv), [`exemplo_event_log.csv`](docs/evidencias/tabelas_finais/exemplo_event_log.csv) | Amostras das tabelas da camada FINAL no Snowflake |
+| `analise_processos/` | [`event_log.csv`](docs/evidencias/analise_processos/event_log.csv) | Event log completo usado na análise de processos |
+| `analise_processos/` | [`diagrama_processo.png`](docs/evidencias/analise_processos/diagrama_processo.png) | Diagrama do processo, com o código-fonte em [`diagrama_processo.mmd`](docs/evidencias/analise_processos/diagrama_processo.mmd) |
+
+Os logs gerados durante a execução (`logs/ingestao.log` e `logs/dbt.log`) ficam na pasta `logs/` e não vão para o repositório.
 
 ## 🎥 Vídeo de demonstração
 
