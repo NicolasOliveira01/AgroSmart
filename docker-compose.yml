@@ -21,6 +21,7 @@ services:
     stop_grace_period: 30s     # tempo para fazer a última carga antes de desligar
     volumes:
       - landing:/app/02_ingestao/dados_landing   # lotes ainda não enviados sobrevivem a reinícios
+      - ./logs:/app/logs                          # logs/ingestao.log aparece na pasta logs do projeto
 
   dbt:
     build: .
@@ -30,6 +31,10 @@ services:
     init: true
     restart: unless-stopped
     working_dir: /app/03_dbt
+    environment:
+      DBT_LOG_PATH: /app/logs                     # grava logs/dbt.log na pasta logs do projeto
+    volumes:
+      - ./logs:/app/logs
     # $$ porque o docker-compose usaria um $ sozinho para as variáveis dele
     command: ["sh", "-c", "while true; do dbt run --profiles-dir /app/docker; sleep $${INTERVALO_DBT_S:-300}; done"]
 
